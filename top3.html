@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Top 3 imperdibles por ciudad — Selva Negra 2026.">
+<meta name="theme-color" content="#244c40">
+<title>Top 3 imperdibles · Selva Negra 2026</title>
+<style>
+  :root{
+    --bg:#f6f1e7;--paper:#fcfaf4;--paper-sunken:#efe8da;
+    --ink:#232019;--ink-soft:#3d372d;--muted:#6b6354;--line:#e2d8c5;
+    --green:#2c5749;--green-deep:#1f4034;--green-soft:#e3ece5;
+    --wine:#7a3340;--gold:#b07b2c;--gold-soft:#e8d9bc;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Hoefler Text",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --shadow-sm:0 1px 2px rgba(35,32,25,.06),0 1px 1px rgba(35,32,25,.04);
+    --shadow:0 2px 4px rgba(35,32,25,.05),0 8px 20px rgba(35,32,25,.07);
+    --radius:16px;--ease-out:cubic-bezier(.22,1,.36,1);--t:.22s;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:16px}
+  body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--ink-soft);font-size:17.5px;line-height:1.6;-webkit-text-size-adjust:100%}
+  a{color:var(--green)}
+  h1,h2,h3{line-height:1.2;margin:0;font-family:var(--serif);color:var(--ink);letter-spacing:-.01em}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  header.hero{background:linear-gradient(160deg,#2f5d4f,#244c40);color:#f7f2e7;padding:30px 0 26px;text-align:center}
+  header.hero h1{font-size:30px;letter-spacing:.3px}
+  header.hero .sub{margin-top:8px;color:#d6e4dc;font-size:16px}
+  .backlink{display:inline-block;margin-top:16px;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;padding:8px 15px;border-radius:999px;font-size:14px;font-weight:700}
+  .backlink:active{background:rgba(255,255,255,.22)}
+
+  .citynav{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow);overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .citynav ul{display:flex;gap:6px;list-style:none;margin:0;padding:8px 12px;white-space:nowrap}
+  .citynav a{display:inline-flex;align-items:center;min-height:40px;text-decoration:none;color:var(--ink);padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600;background:var(--green-soft)}
+  .citynav a:active{background:var(--green);color:#fff}
+
+  section{padding:26px 0 6px}
+  .cityhead{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+  .cityhead h2{font-size:27px;color:var(--green);display:flex;align-items:center;gap:9px}
+  .cityhead .dates{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  .sec-rule{width:60px;height:2px;background:var(--gold);margin:0 0 16px;border:0}
+
+  .t3{position:relative;background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid var(--line);margin-bottom:14px;overflow:hidden}
+  .t3 .media{position:relative;display:block;width:100%;aspect-ratio:16/9;background:var(--paper-sunken);overflow:hidden}
+  .t3 .media img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .4s var(--ease-out)}
+  .t3 .media.is-loaded img{opacity:1}
+  .t3 .media.is-error img{display:none}
+  .t3 .media .imgmsg{display:none}
+  .t3 .media.is-error .imgmsg{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;padding:14px;font:600 14px/1.35 var(--sans);color:var(--muted);background:repeating-linear-gradient(45deg,#efe8da 0 14px,#e7ddc9 14px 28px)}
+  .t3 .rank{position:absolute;top:10px;left:10px;z-index:2;width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(31,32,25,.55);box-shadow:var(--shadow-sm)}
+  .t3 .body{padding:14px 16px}
+  .t3 h3{font-size:19px;margin:0 0 6px;font-family:var(--serif)}
+  .t3 .why{font-size:15.5px;margin:0 0 10px}
+  .t3 .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .acc{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:4px 11px;border-radius:999px;border:1px solid transparent}
+  .acc.facil{background:#e4f2e6;color:#2c6b3a;border-color:#c7e4cb}
+  .acc.caminata{background:#fdf1dd;color:#9a6a17;border-color:#f0dcb4}
+  .acc.auto{background:#e7eef7;color:#2c4f6e;border-color:#cdddec}
+  .acc.teleferico{background:#f0e7f7;color:#6a3a9a;border-color:#ddcaf0}
+  .t3 a.maps{background:var(--green);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;padding:7px 13px;border-radius:10px}
+  .t3 a.guia{background:#fff;color:var(--green);border:1.5px solid var(--green);text-decoration:none;font-size:13.5px;font-weight:700;padding:7px 13px;border-radius:10px}
+  .bonus{background:var(--green-soft);border-radius:12px;padding:11px 14px;margin:2px 0 18px;font-size:14.5px}
+  .bonus b{color:var(--green)}
+  footer{background:#244c40;color:#cfe0d8;text-align:center;padding:24px 16px;margin-top:24px;font-size:13.5px}
+  footer a{color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>🏆 Top 3 imperdibles</h1>
+    <div class="sub">Lo que sí o sí, ciudad por ciudad · Selva Negra 2026</div>
+    <a class="backlink" href="itinerario-selva-negra.html">← Volver a la guía completa</a>
+  </div>
+</header>
+
+<nav class="citynav" aria-label="Ciudades">
+  <ul>
+    <li><a href="#t-berlin">🐻 Berlín</a></li>
+    <li><a href="#t-estrasburgo">⚜️ Estrasburgo</a></li>
+    <li><a href="#t-baden">🎂 Baden-Baden</a></li>
+    <li><a href="#t-friburgo">🌲 Friburgo</a></li>
+  </ul>
+</nav>
+
+<div class="wrap" id="cont"></div>
+
+<footer>
+  <div>Top 3 de <b>Selva Negra 2026</b> · <a href="itinerario-selva-negra.html">abrir la guía completa →</a></div>
+</footer>
+
+<script>
+function commons(f){ return "https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(String(f).replace(/ /g,"_"))+"?width="+(arguments[1]||1000); }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+var MEDAL=["🥇","🥈","🥉"];
+var ACCLBL={facil:"🟢 Fácil / plano",teleferico:"🚡 Teleférico / funicular",auto:"🚗 En auto",caminata:"🟡 Requiere caminata"};
+
+var CITIES=[
+  {id:"berlin", anchor:"berlin", em:"🐻", nombre:"Berlín", fechas:"23 al 27 de junio",
+   bonus:"De yapa para papá: las noches de <b>jazz en el A-Trane</b> (Maria Baptist Trio, 23–27 jun).",
+   top:[
+     {nombre:"Cúpula del Reichstag", acc:"teleferico", img:"Reichstag building, Berlin, Germany (wide view) 01.jpg", why:"La cúpula de vidrio de Norman Foster, con rampa en espiral y ascensor: accesible y con vista del centro. Entrada gratis con reserva previa obligatoria.", maps:"Reichstag+Building+Berlin"},
+     {nombre:"Isla de los Museos", acc:"facil", img:"Museumsinsel Berlin.jpg", why:"Cinco museos de fama mundial en una isla peatonal del Spree, varios con acceso adaptado. El gran imperdible cultural, en pleno centro y llano.", maps:"Museumsinsel+Berlin"},
+     {nombre:"Puerta de Brandeburgo", acc:"facil", img:"Brandenburger Tor morgens.jpg", why:"El monumento símbolo de Berlín, coronado por la cuádriga, totalmente plano y peatonal en la Pariser Platz. Mejor temprano o al atardecer.", maps:"Brandenburger+Tor+Berlin"}
+   ]},
+  {id:"estrasburgo", anchor:"estrasburgo", em:"⚜️", nombre:"Estrasburgo", fechas:"27 al 30 de junio",
+   bonus:"Imperdible de cuento a 45 min: <b>Colmar</b>, la 'Petite Venise' de Alsacia (en auto).",
+   top:[
+     {nombre:"Catedral de Notre-Dame", acc:"facil", img:"Strasbourg - Cathedral - West Façade I.jpg", why:"Una de las catedrales góticas más impresionantes de Europa, con su reloj astronómico y la fachada tallada en arenisca rosa. Interior plano y accesible.", maps:"Cathedrale+Notre+Dame+Strasbourg"},
+     {nombre:"Petite France (Pont du Faisan y Place Benjamin Zix)", acc:"facil", img:"Place Benjamin Zix, Strasbourg, 2025.jpg", why:"La postal de Estrasburgo: casas de entramado del s. XVI, canales y plazas floridas. Todo llano y peatonal, perfecto para mamá.", maps:"Place+Benjamin+Zix+Strasbourg"},
+     {nombre:"Palais Rohan", acc:"facil", img:"Palais Rohan face au quai des Bateliers, Strasbourg.jpg", why:"Palacio barroco junto a la catedral con tres museos y los apartamentos del cardenal. Historia y arte sin caminar lejos. Cerrado los martes.", maps:"Palais+Rohan+Strasbourg"}
+   ]},
+  {id:"baden", anchor:"baden-baden", em:"🎂", nombre:"Baden-Baden", fechas:"30 de junio al 2 de julio",
+   bonus:"El <b>1 de julio</b> es el cumple 70 de papá: la cena en <b>Le Jardin de France</b> (1★ Michelin).",
+   top:[
+     {nombre:"Lichtentaler Allee", acc:"facil", img:"Baden Baden - Lichtentaler Allee - View South.jpg", why:"El paseo más lindo y más plano de la ciudad, junto al río Oos, con árboles centenarios y jardines. Justo al lado del hotel y sin desniveles.", maps:"Lichtentaler+Allee+Baden-Baden"},
+     {nombre:"Torre mirador del Merkur (en funicular)", acc:"teleferico", img:"Merkurturm Baden-Baden 2022-09-08.jpg", why:"Vista de 360° sin caminar nada: se sube todo en funicular y hay un ascensor gratis dentro de la torre. El plan perfecto para mamá.", maps:"Merkurbergbahn+Baden-Baden"},
+     {nombre:"Trinkhalle (columnata)", acc:"facil", img:"Baden-Baden-Trinkhalle Panorama1-gje.jpg", why:"Una columnata neoclásica de 90 metros con 16 columnas y 14 frescos enormes. Plana, en pleno centro y gratis: monumento y foto a cualquier hora.", maps:"Trinkhalle+Baden-Baden"}
+   ]},
+  {id:"friburgo", anchor:"friburgo", em:"🌲", nombre:"Friburgo", fechas:"2 al 6 de julio",
+   bonus:"Para papá: el <b>Münstermarkt</b> alrededor de la catedral, con la famosa Lange Rote (jue–sáb).",
+   top:[
+     {nombre:"Catedral de Friburgo (Münster) y Münsterplatz", acc:"facil", img:"Freiburg - Münsterplatz.jpg", why:"La joya de la ciudad: una catedral gótica con una de las torres caladas más bellas de Europa, rodeada por su plaza y el mercado diario. Llano.", maps:"Freiburger+Munster+cathedral"},
+     {nombre:"Teleférico Schauinslandbahn", acc:"teleferico", img:"Schauinsland-2007-12-19.jpg", why:"Subís casi 800 metros en cabina cerrada sin caminar, con vistas enormes al valle del Rin. Es el teleférico circulante de pasajeros más viejo del mundo.", maps:"Schauinslandbahn+Talstation+Freiburg"},
+     {nombre:"Lago Titisee", acc:"facil", img:"Titisee-blick von hochfirst.jpg", why:"El lago clásico de la Selva Negra. Para mamá, el paseo en barco es ideal: media hora sentados viendo el lago desde el agua, sin caminar.", maps:"Titisee+lake+Black+Forest"}
+   ]}
+];
+
+function cardHtml(it,i){
+  var u=commons(it.img,1000);
+  var media='<a class="media" href="'+commons(it.img,1600)+'" target="_blank" rel="noopener">'
+    +'<img src="'+u+'" alt="'+esc(it.nombre)+'" loading="lazy" decoding="async" onload="this.parentNode.classList.add(\'is-loaded\')" onerror="this.parentNode.classList.add(\'is-error\')">'
+    +'<span class="imgmsg">📷 Necesita internet para ver la foto</span>'
+    +'<span class="rank">'+MEDAL[i]+'</span></a>';
+  return '<div class="t3">'+media
+    +'<div class="body"><h3>'+it.nombre+'</h3>'
+    +'<p class="why">'+it.why+'</p>'
+    +'<div class="meta"><span class="acc '+it.acc+'">'+ACCLBL[it.acc]+'</span>'
+    +'<a class="maps" href="https://www.google.com/maps/search/?api=1&query='+it.maps+'" target="_blank" rel="noopener">📍 Maps</a>'
+    +'</div></div></div>';
+}
+function cityHtml(c){
+  var h='<span id="t-'+c.id+'" style="position:relative;top:-12px"></span><section>'
+    +'<div class="cityhead"><h2><span>'+c.em+'</span> '+c.nombre+'</h2><span class="dates">'+c.fechas+'</span></div>'
+    +'<hr class="sec-rule">'
+    +c.top.map(cardHtml).join("")
+    +'<div class="bonus">✨ '+c.bonus+' <a href="itinerario-selva-negra.html#'+c.anchor+'">Ver todo en la guía →</a></div>'
+    +'</section>';
+  return h;
+}
+document.getElementById("cont").innerHTML = CITIES.map(cityHtml).join("");
+</script>
+</body>
+</html>

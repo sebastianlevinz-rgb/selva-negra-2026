@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Guía de viaje de la familia por Berlín, la Alsacia y la Selva Negra. 23 de junio al 8 de julio de 2026.">
+<meta name="theme-color" content="#244c40">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Selva Negra 2026">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://commons.wikimedia.org" crossorigin>
+<link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+<title>Selva Negra 2026 — Guía de la familia</title>
+<script>document.documentElement.classList.replace("no-js","js");</script>
+<style>
+  :root{
+    /* superficies — papel cálido, en capas */
+    --bg:#f6f1e7;
+    --paper:#fcfaf4;
+    --paper-sunken:#efe8da;
+    /* tinta */
+    --ink:#232019;
+    --ink-soft:#3d372d;
+    --muted:#6b6354;
+    --line:#e2d8c5;
+    --line-strong:#cdbfa6;
+    /* acentos */
+    --green:#2c5749;
+    --green-deep:#1f4034;
+    --green-soft:#e3ece5;
+    --wine:#7a3340;
+    --gold:#b07b2c;
+    --gold-soft:#e8d9bc;
+    --blue:#345b78;
+    /* tipografía */
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Hoefler Text",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    /* sombras de dos capas */
+    --shadow-sm:0 1px 2px rgba(35,32,25,.06),0 1px 1px rgba(35,32,25,.04);
+    --shadow:0 2px 4px rgba(35,32,25,.05),0 8px 20px rgba(35,32,25,.07);
+    --shadow-lg:0 4px 8px rgba(35,32,25,.06),0 18px 40px rgba(35,32,25,.11);
+    --radius:16px;
+    /* movimiento */
+    --ease-out:cubic-bezier(.22,1,.36,1);
+    --t:.22s;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--ink-soft);
+    font-size:17.5px;
+    line-height:1.6;
+    -webkit-text-size-adjust:100%;
+  }
+  a{color:var(--green)}
+  h1,h2,h3{line-height:1.2;margin:0;font-family:var(--serif);color:var(--ink);letter-spacing:-.01em}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  /* skip link */
+  .skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--green);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;font-weight:700;text-decoration:none}
+  .skip:focus{left:0}
+  /* foco visible y accesibilidad */
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+  button{font-family:inherit}
+  /* contención de pintado por card, sin reservar tamaño (evita saltos de scroll) */
+  .card{contain:layout paint style}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  }
+  @media print{
+    nav.sticky,.progress,.backtop,.filters,.cardmedia,.nthumb,.favbtn,.zoomhint,.skip{display:none!important}
+    body{background:#fff;color:#000;font-size:12pt}
+    .card,.hotel,.plan,.move,.cierres,.ev,.big-flag{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+    a[href^="http"]::after{content:" ("attr(href)")";font-size:.75em;color:#444;word-break:break-all}
+    details{display:block}
+  }
+
+  /* HERO */
+  header.hero{
+    background:linear-gradient(160deg,#2f5d4f,#244c40);
+    color:#f7f2e7;
+    padding:30px 0 26px;
+    text-align:center;
+  }
+  header.hero h1{font-size:30px;letter-spacing:.3px}
+  header.hero .sub{margin-top:8px;color:#d6e4dc;font-size:16px}
+  header.hero .dates{margin-top:14px;display:inline-block;background:rgba(255,255,255,.12);padding:7px 14px;border-radius:999px;font-size:14px}
+
+  /* NAV STICKY */
+  nav.sticky{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  nav.sticky ul{display:flex;gap:6px;list-style:none;margin:0;padding:8px 12px;white-space:nowrap}
+  nav.sticky a{
+    display:inline-flex;align-items:center;min-height:40px;text-decoration:none;color:var(--ink);
+    padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600;
+    background:var(--green-soft);transition:background var(--t),color var(--t);
+  }
+  nav.sticky a:active,nav.sticky a.active{background:var(--green);color:#fff}
+
+  section{padding:30px 0 10px}
+  section h2.sec{
+    font-size:28px;color:var(--green);
+    display:flex;align-items:center;gap:10px;
+    border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:4px;
+  }
+  section h2.sec .em{font-size:26px}
+  .sec-dates{color:var(--green);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;margin:9px 0 4px}
+  .sec-rule{width:60px;height:2px;background:var(--gold);margin:0 0 14px;border:0}
+  .intro{background:var(--paper);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-sm);border:1px solid var(--line);margin-bottom:18px;font-size:16.5px}
+  .intro::first-letter{font-family:var(--serif);font-weight:600;color:var(--green);float:left;font-size:3.1em;line-height:.78;padding:.02em .1em 0 0}
+
+  h3.block{font-size:18px;margin:24px 0 12px;color:var(--ink);display:flex;align-items:center;gap:8px}
+  h3.block .bem{font-size:20px}
+  h3.block .who{font-size:12.5px;font-weight:600;color:var(--muted);background:var(--gold-soft);padding:3px 9px;border-radius:999px}
+
+  /* CARDS */
+  .card{
+    position:relative;background:var(--paper);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);padding:15px 16px;margin-bottom:13px;
+    border:1px solid var(--line);transition:transform var(--t) var(--ease-out),box-shadow var(--t) var(--ease-out);
+  }
+  @media (hover:hover){.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}}
+  /* media de la card: figura con placeholder, shimmer, lavado cálido y panel offline */
+  .cardmedia{position:relative;width:calc(100% + 32px);margin:-15px -16px 13px;aspect-ratio:3/2;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0;background:var(--paper-sunken)}
+  .cartrack{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .cartrack::-webkit-scrollbar{display:none}
+  .carslide{position:relative;flex:0 0 100%;height:100%;scroll-snap-align:center;overflow:hidden;cursor:zoom-in}
+  .carslide img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .4s var(--ease-out)}
+  .carslide.is-loaded img{opacity:1}
+  .carslide.is-error img{display:none}
+  .carslide::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 1.4s linear infinite;pointer-events:none}
+  .carslide.is-loaded::after,.carslide.is-error::after{display:none}
+  @keyframes shimmer{to{background-position:-200% 0}}
+  .carslide::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(44,87,73,.05),rgba(176,123,44,.07));mix-blend-mode:multiply;pointer-events:none;opacity:0;transition:opacity .4s}
+  .carslide.is-loaded::before{opacity:1}
+  .carslide .imgmsg{display:none}
+  .carslide.is-error{cursor:default}
+  .carslide.is-error .imgmsg{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;padding:14px;font:600 14.5px/1.35 var(--sans);color:var(--muted);background:repeating-linear-gradient(45deg,#efe8da 0 14px,#e7ddc9 14px 28px)}
+  /* carrusel: flechas, puntos, video */
+  .carbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:38px;height:38px;border-radius:999px;border:none;background:rgba(31,32,25,.5);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.85;transition:opacity var(--t)}
+  .carbtn:active{opacity:1}
+  .carprev{left:8px}
+  .carnext{right:8px}
+  .cardots{position:absolute;left:0;right:0;bottom:9px;z-index:4;display:flex;gap:6px;justify-content:center;pointer-events:none}
+  .cardots i{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.55);box-shadow:0 0 2px rgba(0,0,0,.45);transition:background var(--t),width var(--t)}
+  .cardots i.on{background:#fff;width:18px}
+  .carvideo{position:absolute;left:9px;bottom:9px;z-index:4;border:none;cursor:pointer;background:rgba(122,51,64,.92);color:#fff;font:700 12.5px/1 var(--sans);padding:8px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;box-shadow:var(--shadow-sm)}
+  .carvideo:active{transform:scale(.95)}
+  .zoomhint{position:absolute;right:9px;bottom:9px;z-index:2;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(31,32,25,.5);color:#fff;font-size:15px}
+  /* dialogo de video */
+  .vdialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100dvh;width:100vw;height:100dvh}
+  .vdialog::backdrop{background:rgba(20,18,12,.93)}
+  .vdframe{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px}
+  .vdframe iframe{width:min(94vw,960px);aspect-ratio:16/9;height:auto;max-height:84dvh;border:0;border-radius:10px;background:#000;box-shadow:0 10px 50px rgba(0,0,0,.6)}
+  .vdclose{position:absolute;top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));z-index:2;width:50px;height:50px;border-radius:999px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:24px;cursor:pointer}
+  /* botón favorito */
+  .favbtn{position:absolute;top:9px;right:9px;z-index:4;width:42px;height:42px;border-radius:999px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;background:var(--green-soft);color:var(--green);box-shadow:var(--shadow-sm);transition:transform var(--t) var(--ease-out),background var(--t)}
+  .card.hasimg .favbtn{background:rgba(31,32,25,.45);color:#fff;box-shadow:none}
+  .favbtn:active{transform:scale(.88)}
+  .favbtn .favheart::before{content:"♡"}
+  .favbtn[aria-pressed="true"]{background:#fff;box-shadow:var(--shadow-sm)}
+  .favbtn[aria-pressed="true"] .favheart{color:var(--wine)}
+  .favbtn[aria-pressed="true"] .favheart::before{content:"♥"}
+  .card h4{font-size:17.5px;margin:0 46px 8px 0;line-height:1.25;font-family:var(--serif);color:var(--ink)}
+  /* tap targets cómodos */
+  .fbtn,.links a,.hlinks a,.move a,.ev a{min-height:44px}
+  .links a,.hlinks a{display:inline-flex;align-items:center}
+  /* barra de progreso de lectura */
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0;background:var(--gold);z-index:120}
+  @supports (animation-timeline:scroll()){.progress{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
+  /* botón volver arriba */
+  .backtop{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:110;width:50px;height:50px;border-radius:999px;border:none;background:var(--green);color:#fff;font-size:22px;box-shadow:var(--shadow-lg);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity var(--t),transform var(--t)}
+  .backtop.show{opacity:1;pointer-events:auto;transform:none}
+  /* lightbox */
+  .lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100dvh;width:100vw;height:100dvh;overflow:hidden}
+  .lightbox::backdrop{background:rgba(20,18,12,.93)}
+  .lbwrap{position:relative;width:100vw;height:100dvh;display:flex;align-items:center;justify-content:center}
+  .lightbox img{max-width:94vw;max-height:84dvh;object-fit:contain;border-radius:8px;box-shadow:0 10px 50px rgba(0,0,0,.6)}
+  .lbbtn{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:999px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lbbtn:active{background:rgba(255,255,255,.3)}
+  .lbprev{left:max(10px,env(safe-area-inset-left))}
+  .lbnext{right:max(10px,env(safe-area-inset-right))}
+  .lbclose{position:absolute;top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));width:50px;height:50px;border-radius:999px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:24px;cursor:pointer;z-index:2}
+  .lbcap{position:absolute;left:0;right:0;bottom:max(16px,env(safe-area-inset-bottom));text-align:center;color:#f3ecdf;font-size:14.5px;font-weight:600;padding:0 70px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .lbcount{position:absolute;top:max(18px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);color:#cdbfa6;font-size:13px;font-weight:700;letter-spacing:.05em}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+  .tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.2px}
+  .tag.papa{background:#e7eef7;color:#2c4f6e}
+  .tag.mama{background:#f7e7ef;color:#8a3a63}
+  .tag.mica{background:#ede7f7;color:#5a3a8a}
+  .tag.todos{background:var(--green-soft);color:var(--green)}
+  .acc{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;border:1px solid transparent}
+  .acc.facil{background:#e4f2e6;color:#2c6b3a;border-color:#c7e4cb}
+  .acc.caminata{background:#fdf1dd;color:#9a6a17;border-color:#f0dcb4}
+  .acc.auto{background:#e7eef7;color:#2c4f6e;border-color:#cdddec}
+  .acc.teleferico{background:#f0e7f7;color:#6a3a9a;border-color:#ddcaf0}
+  .card .porque{margin:4px 0 8px}
+  .card .hist{color:var(--muted);font-size:14.5px;margin:0 0 9px}
+  .card .meta{font-size:14px;margin:7px 0;padding:8px 11px;background:#faf6ee;border-radius:10px;border:1px solid var(--line)}
+  .card .meta b{color:var(--ink)}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{
+    display:inline-block;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:8px 13px;border-radius:10px;
+  }
+  .links a.maps{background:var(--green);color:#fff}
+  .links a.site{background:#fff;color:var(--green);border:1.5px solid var(--green)}
+  .links .verif{font-size:13px;font-weight:700;color:#9a6a17;background:var(--gold-soft);padding:8px 12px;border-radius:10px}
+  .pill-tipo{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+  .pill-tipo.especial{background:var(--gold-soft);color:var(--gold)}
+  .pill-tipo.casual{background:#eef0ec;color:var(--muted)}
+
+  /* FILTERS */
+  .filters{
+    background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:13px 14px;margin:0 0 20px;border:1px solid var(--line);
+  }
+  .filters .flabel{font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:0 0 7px}
+  .fbtns{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:11px}
+  .fbtn{
+    border:1.5px solid var(--line);background:#fff;color:var(--ink);
+    font-size:14px;font-weight:600;padding:8px 13px;border-radius:999px;cursor:pointer;
+    font-family:inherit;
+  }
+  .fbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
+  .fcount{font-size:13px;color:var(--muted);margin-top:2px}
+
+  /* EVENTS / DESCARTADOS */
+  .ev{background:var(--paper);border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;margin-bottom:11px;box-shadow:var(--shadow)}
+  .ev.no{border-left-color:#c9c2b4;opacity:.92}
+  .ev h4{margin:0 0 4px;font-size:16px}
+  .ev .when{font-size:13.5px;font-weight:700;color:var(--wine);margin-bottom:5px}
+  .ev .venue{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .ev .badge{font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.4px}
+  .ev .badge.ok{background:#e4f2e6;color:#2c6b3a}
+  .ev .badge.chk{background:var(--gold-soft);color:#9a6a17}
+  .ev a{font-size:13.5px;font-weight:700}
+
+  /* PLAN DIA A DIA */
+  .plan{background:var(--green-soft);border-radius:var(--radius);padding:14px 16px;margin:6px 0 18px}
+  .plan .day{margin-bottom:13px}
+  .plan .day:last-child{margin-bottom:0}
+  .plan .day .d{font-weight:800;color:var(--green);font-size:15px;margin-bottom:3px}
+  .plan .day .d small{font-weight:600;color:var(--muted)}
+  .plan .day p{margin:0;font-size:15px}
+
+  /* MOVERSE */
+  .move{background:#eef3f6;border-radius:var(--radius);padding:13px 16px;margin:6px 0 16px;font-size:15px;border:1px solid #d7e3ea}
+  .move .route{font-weight:800;color:var(--blue);margin-bottom:4px}
+  .move a{font-weight:700}
+
+  /* HOTEL */
+  .hotel{background:linear-gradient(160deg,#fbf3ef,#fef9f4);border:1.5px solid #ecd8cf;border-radius:var(--radius);padding:15px 16px;margin:6px 0 18px;box-shadow:var(--shadow)}
+  .hotel .htitle{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--wine);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+  .hotel h4{font-size:18.5px;margin:0 0 3px;line-height:1.25}
+  .hotel .haddr{font-size:13.5px;color:var(--muted);margin-bottom:9px}
+  .hotel .hubic{font-size:14.5px;margin:0 0 11px}
+  .hotel .hlinks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .hotel .hlinks a{display:inline-block;text-decoration:none;font-size:13.5px;font-weight:700;padding:8px 13px;border-radius:10px}
+  .hotel .hlinks a.maps{background:var(--green);color:#fff}
+  .hotel .hlinks a.site{background:#fff;color:var(--green);border:1.5px solid var(--green)}
+  .hotel .nearlbl{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 2px}
+  .hotel .nearlist{list-style:none;margin:0;padding:0}
+  .hotel .near{display:flex;gap:10px;padding:10px 0;border-top:1px dashed #ecd8cf;align-items:flex-start}
+  .hotel .near .nico{font-size:18px;flex:0 0 auto;line-height:1.35}
+  .hotel .near .nthumb{flex:0 0 auto;width:104px;height:78px;object-fit:cover;border-radius:10px;background:#e9e2d4}
+  .hotel .near .nbody{flex:1;min-width:0}
+  .hotel .near .nname{font-weight:700;font-size:14.5px}
+  .hotel .near .ndist{display:inline-block;font-size:11.5px;font-weight:700;color:var(--green);background:var(--green-soft);padding:2px 8px;border-radius:999px;margin-left:7px;white-space:nowrap}
+  .hotel .near .ntxt{font-size:14px;color:var(--ink);margin-top:3px}
+  .hotel .near .ntxt a{font-weight:700;white-space:nowrap}
+
+  /* BLOQUE BASE / CERCA DEL HOTEL */
+  .hotel .htitle{justify-content:space-between}
+  .hotel .hdates{font-weight:700;color:var(--muted);font-size:11px;letter-spacing:.03em;background:#fff;border:1px solid #ecd8cf;padding:2px 9px;border-radius:999px;text-transform:none}
+  .hotel.provisional{background:linear-gradient(160deg,#fbf6ee,#fefcf7);border-color:var(--gold-soft)}
+  .hotel.provisional .htitle{color:var(--gold)}
+  .hotel.provisional .hdates{border-color:var(--gold-soft)}
+  .provnote{font-size:13.5px;line-height:1.45;background:#fbf1d8;border:1px solid var(--gold);border-radius:10px;padding:9px 12px;margin:11px 0 2px;color:#7a5a17}
+  .nearwrap{margin-top:6px}
+  .neargrp{margin-top:12px}
+  .neargrp .nearlbl{margin:0 0 2px;color:var(--wine);font-size:12.5px}
+  .hotel.provisional .neargrp .nearlbl{color:var(--gold)}
+
+  /* CIERRES */
+  .cierres{background:#fbf3ef;border-radius:var(--radius);padding:13px 16px 7px;margin:6px 0 16px;border:1px solid #f0ddd4}
+  .cierres .ct{font-weight:800;color:var(--wine);margin-bottom:8px;font-size:15px}
+  .cierres ul{margin:0;padding-left:18px}
+  .cierres li{margin-bottom:7px;font-size:14.5px}
+
+  /* ANTES DE SALIR */
+  .checklist .card h4{color:var(--green)}
+  .kv{font-size:15px;margin:6px 0}
+  .kv b{display:inline-block;min-width:96px}
+  .big-flag{
+    background:linear-gradient(120deg,#fbf1d8,#f6ead0);
+    border:1.5px solid var(--gold);border-radius:var(--radius);
+    padding:15px 17px;margin:16px 0;box-shadow:var(--shadow);
+  }
+  .big-flag .ft{font-size:18px;font-weight:800;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+
+  /* TABLE */
+  .tablecard{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line);margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{background:var(--green);color:#fff;font-size:13px;letter-spacing:.3px}
+  tr.travel td{background:#f3ede1;font-style:italic;color:var(--muted)}
+  tr:last-child td{border-bottom:none}
+  td.base{font-weight:700;color:var(--green)}
+
+  .leyenda{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+  .leyenda .l{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--paper);border:1px solid var(--line);padding:6px 11px;border-radius:999px}
+
+  footer{background:#244c40;color:#cfe0d8;text-align:center;padding:24px 16px;margin-top:30px;font-size:13.5px}
+  footer b{color:#fff}
+
+  .note-inline{font-size:13.5px;color:var(--muted);font-style:italic;margin:8px 0}
+  .anchor{position:relative;top:-58px;visibility:hidden}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Selva Negra 2026</h1>
+    <div class="sub">La guía de la familia · Alemania y Alsacia</div>
+    <div class="dates">23 de junio al 8 de julio de 2026</div>
+  </div>
+</header>
+
+<noscript>
+  <div class="wrap" style="background:#fbf3ef;border:1px solid #f0ddd4;border-radius:12px;padding:14px 16px;margin:14px auto;font-size:15px">
+    Esta guía necesita JavaScript activado para mostrar todo el contenido. Activalo en el navegador y volvé a abrir el archivo.
+  </div>
+</noscript>
+
+<nav class="sticky" aria-label="Secciones de la guía">
+  <ul>
+    <li><a href="#resumen">Resumen</a></li>
+    <li><a href="top3.html" style="background:var(--gold-soft);color:var(--gold)">🏆 Top 3</a></li>
+    <li><a href="#berlin">Berlín</a></li>
+    <li><a href="#estrasburgo">Estrasburgo</a></li>
+    <li><a href="#baden-baden">Baden-Baden</a></li>
+    <li><a href="#friburgo">Friburgo</a></li>
+    <li><a href="#cierre">Cierre Berlín</a></li>
+    <li><a href="#antes">Antes de salir</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+<!-- ====================== RESUMEN ====================== -->
+<span class="anchor" id="resumen"></span>
+<section>
+  <h2 class="sec"><span class="em">🗺️</span> El viaje de un vistazo</h2>
+  <div class="intro">
+    Quince días entre Berlín, la Alsacia y la Selva Negra. El corazón del viaje es el <b>cumple 70 de papá el 1 de julio en Baden-Baden</b>. Todo está pensado para que se disfrute sin apuro: mamá no camina mucho, así que cada lugar lindo está marcado según cómo se llega (a pie y plano, en auto, o en teleférico/funicular). La naturaleza de la Selva Negra se concentra en Baden-Baden y Friburgo, que son la puerta de entrada al bosque.
+  </div>
+
+  <div class="tablecard">
+    <table>
+      <thead>
+        <tr><th>Base</th><th>Fechas</th><th>Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr class="travel"><td>Salta → Buenos Aires → Berlín</td><td>22-23 jun</td><td>Vuelos desde Argentina</td></tr>
+        <tr><td class="base">Berlín</td><td>23 al 27 jun</td><td>Llegan todos cansados. Día 1 suave.</td></tr>
+        <tr><td class="base">Estrasburgo</td><td>27 al 30 jun</td><td>Alsacia, Francia. Se habla francés.</td></tr>
+        <tr><td class="base">Baden-Baden</td><td>30 jun al 2 jul</td><td>🎂 1 de julio: cumple 70 de papá.</td></tr>
+        <tr><td class="base">Friburgo</td><td>2 al 6 jul</td><td>Hub de la Selva Negra.</td></tr>
+        <tr><td class="base">Berlín (cierre)</td><td>6 al 7 jul</td><td>Última noche y descanso.</td></tr>
+        <tr class="travel"><td>Berlín → Buenos Aires → Salta</td><td>8 jul</td><td>Vuelo de salida</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="leyenda">
+    <span class="l">🟢 Fácil / plano</span>
+    <span class="l">🚡 Teleférico / funicular / ascensor</span>
+    <span class="l">🚗 En auto</span>
+    <span class="l">🟡 Requiere caminata</span>
+  </div>
+  <p class="note-inline">Cada ciudad <b>arranca con tu base</b>: el hotel y, antes que nada, lo que tenés <b>cerca a pie</b> ordenado en ☕ desayuno, 🍽️ almuerzo/cena y 👀 museos y paseos cercanos, con la distancia caminando. Recién después vienen las <b>atracciones principales</b> de cada lugar, estén cerca o lejos. Los cuatro hoteles ya están reservados: <b>Meliá Berlín</b> (Mitte), <b>Le Bouclier d'Or</b> (Estrasburgo), <b>Belle Epoque</b> (Baden-Baden) y <b>Courtyard by Marriott</b> (Friburgo).</p>
+
+  <p style="margin:14px 0 4px"><a href="top3.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(120deg,#fbf1d8,#f6ead0);border:1.5px solid var(--gold);color:#7a5a17;text-decoration:none;font-weight:800;font-size:15px;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow-sm)">🏆 Ver el Top 3 imperdibles de cada ciudad →</a></p>
+
+  <div class="big-flag">
+    <div class="ft">🎷 Lo que encontramos de jazz</div>
+    <div style="font-size:15px">
+      <b>Berlín es el premio para papá.</b> Justo coincide con la <b>Jazzwoche Berlín #8</b> (20-26 jun) y con una serie de cinco noches del <b>Maria Baptist Trio en el A-Trane</b>. Hay jazz en vivo confirmado las noches del <b>23, 25, 26 y 27 de junio</b>, y de yapa una noche <b>gratis el 6 de julio</b> (Andreas Schmidt &amp; Friends) justo cuando vuelven a Berlín. En Estrasburgo, Baden-Baden y Friburgo, en cambio, las fechas no acompañan: los festivales de jazz de esas ciudades caen antes o después del viaje (ver el detalle en cada sección). El cumple del 1 de julio no tiene función en el Festspielhaus, así que la noche se arma con la cena especial.
+    </div>
+  </div>
+</section>
+
+<!-- Render target -->
+<div id="contenido"></div>
+
+<!-- ====================== ANTES DE SALIR ====================== -->
+<span class="anchor" id="antes"></span>
+<section class="checklist">
+  <h2 class="sec"><span class="em">🎒</span> Antes de salir</h2>
+
+  <div class="big-flag">
+    <div class="ft">🎂 El día más importante: 1 de julio, cumple 70 de papá</div>
+    <div style="font-size:15px">
+      Es en Baden-Baden, miércoles. Plan sugerido: arrancar con el <b>mercado de Bernhardusplatz</b> a la mañana (abre los miércoles), tarde tranquila en la <b>Lichtentaler Allee</b> o subida al <b>Merkur en funicular</b> con mamá, y a la noche la <b>cena en Le Jardin de France</b> (una estrella Michelin, francés clásico, terraza de verano). <b>Reservar con anticipación.</b> El Festspielhaus no tiene función esa noche, así que el brillo lo pone la cena.
+    </div>
+  </div>
+
+  <h3 class="block"><span class="bem">📌</span> Qué reservar con anticipación</h3>
+  <div class="card"><h4>Cúpula del Reichstag (Berlín)</h4><p class="porque">Entrada gratis pero con registro previo obligatorio (nombre y documento). Sin reserva, solo entran si quedan lugares de último momento.</p><div class="links"><a class="site" href="https://www.bundestag.de/en/visitthebundestag/dome/registration-245686" target="_blank" rel="noopener">Registrarse</a></div></div>
+  <div class="card"><h4>Cena del cumple — Le Jardin de France (Baden-Baden)</h4><p class="porque">Una estrella Michelin, se llena. Reservar por su sitio o por teléfono para la noche del 1 de julio. Opción B reservable: Restaurant Nigrum (OpenTable / TheFork / Michelin).</p><div class="links"><a class="site" href="https://www.lejardindefrance.de/" target="_blank" rel="noopener">Sitio oficial</a></div></div>
+  <div class="card"><h4>Cenas especiales en Berlín (si se quiere algo top)</h4><p class="porque">Rutz (3 estrellas Michelin) y Nobelhart &amp; Schmutzig (1 estrella) piden varias semanas de anticipación.</p><div class="links"><a class="site" href="https://www.rutz-restaurant.de/en/" target="_blank" rel="noopener">Rutz</a><a class="site" href="https://nobelhartundschmutzig.com/en/" target="_blank" rel="noopener">Nobelhart &amp; Schmutzig</a></div></div>
+  <div class="card"><h4>Jazz en el A-Trane (Berlín)</h4><p class="porque">Las noches del Maria Baptist Trio (23-27 jun) y la del 6 de julio. Club chico, conviene reservar mesa.</p><div class="links"><a class="site" href="https://a-trane.de/programm/" target="_blank" rel="noopener">Programación</a></div></div>
+  <div class="card"><h4>Barco accesible Batorama (Estrasburgo)</h4><p class="porque">Para que mamá suba sin escalones, hay que reservar antes el barco con plataforma para silla de ruedas (Gustave Doré, pontón accesible en Quai B / Palais Rohan).</p><div class="links"><a class="site" href="https://www.batorama.com/en/" target="_blank" rel="noopener">Batorama</a></div></div>
+
+  <h3 class="block"><span class="bem">🌦️</span> Clima y luz</h3>
+  <div class="card">
+    <div class="kv"><b>Temperatura:</b> fin de junio y principios de julio, templado a cálido. Lleven una campera liviana para las noches y para la altura de la Selva Negra (Feldberg, Mummelsee).</div>
+    <div class="kv"><b>Días largos:</b> atardece tarde (cerca de las 21:30-22h). Hay mucha luz para aprovechar sin apuro.</div>
+    <div class="kv"><b>Lluvia:</b> posible en la Selva Negra. Un paraguas chico o piloto liviano en la mochila. El funicular del Merkur y algunos teleféricos pueden suspenderse con viento o tormenta: chequear el día.</div>
+  </div>
+
+  <h3 class="block"><span class="bem">🧭</span> Datos prácticos</h3>
+  <div class="card">
+    <div class="kv"><b>Idioma:</b> alemán en Alemania; francés en Estrasburgo (el alemán también se entiende en la zona).</div>
+    <div class="kv"><b>Moneda:</b> euro (€) en los dos países.</div>
+    <div class="kv"><b>Enchufe:</b> tipo C/F (dos patas redondas), 230V. Llevar adaptador para los enchufes argentinos.</div>
+    <div class="kv"><b>Domingos:</b> en Alemania casi todo el comercio cierra los domingos y los mercados no funcionan. En Francia, ídem el domingo. Planificar compras para los otros días.</div>
+  </div>
+
+  <h3 class="block"><span class="bem">🚆</span> Transporte y tarjetas</h3>
+  <div class="card">
+    <div class="kv"><b>Tarjeta KONUS:</b> con casi cualquier alojamiento en la Selva Negra (el Courtyard de Friburgo incluido) te dan la <b>KONUS Gästekarte</b>: <b>transporte público regional gratis</b> (buses y muchos trenes locales). Pedila en el check-in y úsenla para moverse sin pagar.</div>
+    <div class="kv"><b>Berlin WelcomeCard:</b> transporte ilimitado en U-/S-Bahn, buses y ferries (zonas AB para la ciudad; <b>ABC</b> para Wannsee y Potsdam) más descuentos. Conviene para los días de museos y lago.</div>
+    <div class="kv"><b>Auto de alquiler:</b> medio viaje (castillos de Alsacia, lagos y miradores de la Selva Negra) depende del auto. Conviene tomarlo al llegar a la zona (Baden-Baden o Friburgo), no en Berlín. Pedí GPS y verificá peajes y estacionamiento en los cascos históricos.</div>
+  </div>
+
+  <h3 class="block"><span class="bem">🩺</span> Salud y asistencia</h3>
+  <div class="card">
+    <div class="kv"><b>Emergencias:</b> <b>112</b> en toda la Unión Europea (ambulancia, bomberos, policía); atienden en inglés.</div>
+    <div class="kv"><b>Asistencia en trenes:</b> la <b>DB</b> (Alemania) y la <b>SNCF</b> (Francia) dan <b>asistencia gratuita</b> para subir y bajar con movilidad reducida; hay que reservarla antes (DB Mobilitätsservice / SNCF Accès Plus). Clave para mamá con equipaje.</div>
+    <div class="kv"><b>Seguro de viaje:</b> contratá un seguro médico con buena cobertura, importante para papá (70). Llevá la medicación habitual y una lista de remedios a mano.</div>
+    <div class="kv"><b>Silla o scooter:</b> si algún día largo lo amerita, se puede alquilar silla de ruedas o scooter por día; preguntá en la recepción del hotel.</div>
+  </div>
+
+  <h3 class="block"><span class="bem">📱</span> Apps útiles</h3>
+  <div class="card">
+    <div class="kv"><b>DB Navigator:</b> trenes en Alemania (horarios, boletos, andenes).</div>
+    <div class="kv"><b>SNCF Connect:</b> trenes en Francia (el tramo a/desde Estrasburgo).</div>
+    <div class="kv"><b>Google Maps:</b> todos los lugares de esta guía tienen su link; descargar el mapa offline de cada ciudad.</div>
+    <div class="kv"><b>BVG (Berlín):</b> transporte público de la ciudad (U-Bahn, S-Bahn, ferries como el F10).</div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div>Guía armada para la familia con cariño · <b>Selva Negra 2026</b></div>
+  <div style="margin-top:6px">Generada el <b>21 de junio de 2026</b>. Los horarios y reservas pueden cambiar: conviene confirmar en cada sitio oficial pocos días antes.</div>
+</footer>
+
+<button class="backtop" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
+
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+  <div class="lbwrap">
+    <button class="lbclose" type="button" aria-label="Cerrar">✕</button>
+    <button class="lbbtn lbprev" type="button" aria-label="Foto anterior">‹</button>
+    <img id="lbimg" src="" alt="">
+    <button class="lbbtn lbnext" type="button" aria-label="Foto siguiente">›</button>
+    <div class="lbcount" id="lbcount"></div>
+    <div class="lbcap" id="lbcap"></div>
+  </div>
+</dialog>
+
+<dialog class="vdialog" id="vdialog" aria-label="Video">
+  <button class="vdclose" type="button" aria-label="Cerrar video">✕</button>
+  <div class="vdframe"><iframe id="vdiframe" src="" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+</dialog>
+
+<script>
+/* ===================== DATOS ===================== */
+const ACC = {
+  facil:{ic:"🟢",txt:"Fácil / plano"},
+  caminata:{ic:"🟡",txt:"Requiere caminata"},
+  auto:{ic:"🚗",txt:"En auto"},
+  teleferico:{ic:"🚡",txt:"Teleférico / funicular"}
+};
+
+const DATA = [
+{
+  id:"berlin", nombre:"Berlín", em:"🐻", fechas:"23 al 27 de junio · martes a sábado",
+  hotel:{
+    nombre:"Meliá Berlín ★★★★",
+    dir:"Friedrichstraße 103, 10117 Berlín · Mitte",
+    maps:"https://www.google.com/maps/search/?api=1&query=Melia+Berlin+Friedrichstrasse+103",
+    oficial:"https://www.melia.com/es/hoteles/alemania/berlin/melia-berlin",
+    ubic:"En pleno Mitte, sobre la Friedrichstraße y a orillas del Spree, junto al puente Weidendammer y a unos 3 minutos de la estación Friedrichstraße (S-/U-Bahn). Imbatible para mamá: el corazón histórico (Isla de los Museos, Unter den Linden, la Puerta de Brandeburgo) queda a pasos o a pocas paradas, todo llano, y los embarcaderos de los cruceros por el Spree están casi en la puerta.",
+    cerca:[
+      {nombre:"Father Carpenter",tipo:"desayuno",dist:"12-15 min a pie",txt:"Brunch australiano en un patio interior tranquilo y plano: huevos, bowls, tostadas, dulces y café de especialidad. En la zona de Hackescher Markt.",maps:"https://www.google.com/maps/search/?api=1&query=Father+Carpenter+Berlin"},
+      {nombre:"The Barn (Café Mitte)",tipo:"desayuno",dist:"10-12 min a pie",txt:"De los mejores cafés de especialidad de Berlín; filtrado y espresso, pasteles y desayunos livianos, a nivel de calle. En Auguststraße.",maps:"https://www.google.com/maps/search/?api=1&query=The+Barn+Auguststrasse+Berlin"},
+      {nombre:"Augustiner am Gendarmenmarkt",tipo:"comer",dist:"12-15 min a pie",txt:"Cervecería bávara clásica y contundente (codillo, Schnitzel, salchichas), muy céntrica y llana, abierta todo el día.",maps:"https://www.google.com/maps/search/?api=1&query=Augustiner+am+Gendarmenmarkt+Berlin"},
+      {nombre:"Borchardt",tipo:"comer",dist:"10-12 min a pie",txt:"Institución berlinesa junto al Gendarmenmarkt; famoso por su Wienerschnitzel, con carta amplia para todos los gustos. Conviene reservar.",maps:"https://www.google.com/maps/search/?api=1&query=Borchardt+Franzosische+Strasse+Berlin"},
+      {nombre:"DDR Museum",tipo:"atraccion",dist:"8-10 min a pie",txt:"Museo interactivo sobre la vida en la RDA, sobre el Spree frente al Berliner Dom. La exposición principal es accesible con rampa y ascensor.",maps:"https://www.google.com/maps/search/?api=1&query=DDR+Museum+Berlin"},
+      {nombre:"Isla de los Museos (Museumsinsel)",tipo:"atraccion",dist:"10-12 min a pie",txt:"Cinco museos de fama mundial en una isla peatonal del Spree, varios con acceso adaptado. El gran imperdible cultural, bajando por la Friedrichstraße.",maps:"https://www.google.com/maps/search/?api=1&query=Museumsinsel+Berlin"},
+      {nombre:"Birkenstock (Friedrichstraße)",tipo:"shopping",dist:"6-8 min a pie (misma calle)",txt:"Tienda oficial del calzado anatómico alemán, sobre la misma Friedrichstraße, llana y peatonal: lo más cómodo de alcanzar desde el hotel.",maps:"https://www.google.com/maps/search/?api=1&query=Birkenstock+Friedrichstrasse+Berlin"},
+      {nombre:"Mall of Berlin",tipo:"shopping",dist:"15 min a pie o U-Bahn",txt:"Centro comercial cubierto, plano y central (200 tiendas, con Zara y Uniqlo adentro), junto a Potsdamer Platz: cómodo para mamá si llueve.",maps:"https://www.google.com/maps/search/?api=1&query=Mall+of+Berlin+Leipziger+Platz"},
+      {nombre:"KaDeWe",tipo:"shopping",dist:"City West (U-Bahn)",txt:"La gran tienda por departamentos histórica de Berlín, con ascensores. Queda en el oeste, pero es LA referencia de grandes tiendas.",maps:"https://www.google.com/maps/search/?api=1&query=KaDeWe+Berlin"}
+    ]
+  },
+  intro:"Arrancan cansados del vuelo, así que el día 1 va suave: algo plano y de a poco. Berlín no es Selva Negra, pero es el mejor regalo para papá en jazz, con la Jazzwoche y las noches del A-Trane justo en estas fechas. Casi todo lo de mamá se hace en ascensor, barco o auto.",
+  plan:[
+    {d:"Mar 23 — Llegada", s:"suave", t:"Día tranquilo. Puerta de Brandeburgo + Memorial + un tramo plano de Unter den Linden, o directamente un crucero por el Spree sentados. Cena temprana cerca del centro. Si papá tiene energía, jazz en el A-Trane (Maria Baptist Trio, 20:30) o en el b-flat."},
+    {d:"Mié 24", s:"", t:"Cúpula del Reichstag (reservada) y un mirador en ascensor: Panoramapunkt o la Torre de TV. Tarde relajada en el Tiergarten con parada en el Café am Neuen See."},
+    {d:"Jue 25", s:"", t:"Palacio de Charlottenburg con su jardín plano. A la tarde, Markthalle Neun para el Street Food Thursday (paraíso de papá). A la noche, jazz en el A-Trane (Trío + Philip Sindy)."},
+    {d:"Vie 26", s:"", t:"Plan de lago para mamá: Wannsee y el ferry F10, o el Puente de Glienicke en auto. Vuelta por Markthalle Neun (abre viernes). Noche: Anthony Hervey Quartet en el Zig Zag (19h) o el Trío en el A-Trane."},
+    {d:"Sáb 27 — Viaje", s:"traslado", t:"Si hay tiempo a la mañana, una vuelta corta por el mercado de antigüedades de la Strasse des 17. Juni. Tren del mediodía a Estrasburgo (sale ~12:02, llega ~17:40)."}
+  ],
+  fotos:[
+    {nombre:"Panoramapunkt (Kollhoff Tower, Potsdamer Platz)",tags:["Mama","Todos"],acc:"teleferico",porque:"Es el mirador más cómodo de Berlín para mamá: el ascensor más rápido de Europa te sube en 20 segundos a la terraza, sin escaleras. Vista abierta del centro con el Reichstag, la Puerta de Brandeburgo y la torre de TV.",hist:"La torre Kollhoff es parte del Potsdamer Platz reconstruido en los 90, una de las plazas más dinámicas de la Europa de entreguerras que quedó arrasada por la guerra y partida por el Muro. Hoy el mirador está a 100 metros con café panorámico.",como:"En pleno centro, Potsdamer Platz. 5-10 min en U-Bahn/S-Bahn desde Mitte, o caminata corta y plana desde la Puerta de Brandeburgo (unos 10 min).",maps:"https://www.google.com/maps/search/?api=1&query=Panoramapunkt+Potsdamer+Platz+Berlin",oficial:"https://www.panoramapunkt.de/en/"},
+    {nombre:"Berliner Fernsehturm (Torre de TV, Alexanderplatz)",tags:["Mama","Mica","Todos"],acc:"teleferico",porque:"Ascensor expreso que sube en unos 40 segundos a la plataforma a 203 metros, sin esfuerzo físico. Vista 360 de toda la ciudad. Conviene reservar entrada con horario para no hacer cola.",hist:"El edificio más alto de Alemania (368 m), construido por la RDA en los años 60 como símbolo del poderío socialista. La esfera con el reflejo en forma de cruz al sol fue bautizada con ironía 'la venganza del Papa'.",como:"En Alexanderplatz, corazón del Berlín del este. A pasos de las estaciones de U-Bahn y S-Bahn, muy central y plano.",maps:"https://www.google.com/maps/search/?api=1&query=Berliner+Fernsehturm+Alexanderplatz+Berlin",oficial:"https://tv-turm.de/en/"},
+    {nombre:"Puerta de Brandeburgo",tags:["Mama","Mica","Todos"],acc:"facil",porque:"El spot de foto más icónico de Berlín, totalmente plano y peatonal en la Pariser Platz. Cero caminata exigente, ideal para mamá. Mejor temprano o al atardecer para evitar la multitud.",hist:"Construida entre 1788 y 1791 como puerta de la paz coronada por la cuádriga de la diosa Victoria. Quedó en tierra de nadie junto al Muro y se volvió el símbolo mundial de la reunificación alemana en 1989.",como:"Plena Mitte, junto al Reichstag y el Tiergarten. Estación S-Bahn/U-Bahn Brandenburger Tor justo al lado.",maps:"https://www.google.com/maps/search/?api=1&query=Brandenburger+Tor+Berlin",oficial:"https://www.visitberlin.de/en/brandenburg-gate"},
+    {nombre:"Memorial a los Judíos Asesinados de Europa",tags:["Mama","Mica","Todos"],acc:"facil",porque:"Campo de 2.710 estelas de hormigón, totalmente accesible y plano, con pasajes marcados para sillas de ruedas y movilidad reducida. Imagen potente y fotográfica, a metros de la Puerta de Brandeburgo.",hist:"Inaugurado en 2005, obra del arquitecto Peter Eisenman. Las estelas de distinta altura generan una sensación de desorientación deliberada. El centro de información subterráneo se alcanza por ascensor.",como:"A 3-4 min caminando de la Puerta de Brandeburgo, en Mitte. Plano todo el trayecto.",maps:"https://www.google.com/maps/search/?api=1&query=Memorial+to+the+Murdered+Jews+of+Europe+Berlin",oficial:"https://www.stiftung-denkmal.de/en/memorials/memorial-to-the-murdered-jews-of-europe/"},
+    {nombre:"Cúpula del Reichstag",tags:["Mama","Mica","Todos"],acc:"teleferico",porque:"Cúpula de vidrio de Norman Foster con rampa en espiral suave y ascensores: accesible para sillas de ruedas y para quien no quiere escaleras. Vista del centro y entrada gratis. Requiere reserva previa.",hist:"El Reichstag de 1894 fue incendiado en 1933, bombardeado en la guerra y restaurado tras la reunificación. La cúpula de vidrio simboliza la transparencia de la democracia: se camina literalmente por encima del parlamento.",como:"En Mitte, junto a la Puerta de Brandeburgo. Estación Brandenburger Tor a pasos. Hay que registrarse antes en la web del Bundestag.",maps:"https://www.google.com/maps/search/?api=1&query=Reichstag+Building+Berlin",oficial:"https://www.bundestag.de/en/visitthebundestag/dome/registration-245686"}
+  ],
+  mercados:[
+    {nombre:"Markthalle Neun (Kreuzberg)",tags:["Papa","Todos"],acc:"facil",porque:"Mercado histórico cubierto, con productores locales, quesos, panes y puestos de comida. Plano y techado, ideal para pasear sin apuro. El jueves a la noche es el famoso Street Food Thursday.",hist:"Una de las pocas market halls del siglo XIX que sobreviven en Berlín (1891), rescatada por un colectivo vecinal en 2011. Hoy es el corazón de la movida gastronómica de Kreuzberg.",como:"Eisenbahnstrasse, Kreuzberg. Unos 15 min en U-Bahn desde Mitte (U1/U3 hasta Görlitzer Bahnhof) y caminata corta y plana.",maps:"https://www.google.com/maps/search/?api=1&query=Markthalle+Neun+Berlin",oficial:"https://markthalleneun.de/en/",dias:"Martes a sábado (cerrado domingo y lunes). Street Food Thursday los jueves.",horarios:"Hall lun-sáb 8-20h. Mercado mar-jue 12-18h, vie 12-18h, sáb 10-18h. Street Food jue 17-22h. Ideal: jueves 25 (street food), viernes 26 o sábado 27."},
+    {nombre:"Mercado de antigüedades de la Strasse des 17. Juni (Tiergarten)",tags:["Papa","Mica","Todos"],acc:"facil",porque:"El mercado de pulgas más antiguo y grande de Berlín, fuerte en antigüedades, arte, libros y vinilos: perfecto para papá cazando discos y a Mica le encantarán las curiosidades. Todo al aire libre y plano.",hist:"Funciona desde los años 70 sobre la avenida que cruza el Tiergarten hacia la Puerta de Brandeburgo. Es el clásico mercado de fin de semana de los berlineses, con dealers serios de antigüedades.",como:"Junto a la estación S-Bahn Tiergarten, al lado del parque. 5-10 min en S-Bahn desde Mitte.",maps:"https://www.google.com/maps/search/?api=1&query=Flea+Market+Strasse+des+17+Juni+Berlin",oficial:"https://www.berlin.de/en/shopping/markets/flea-markets/1998184-2983302-flea-market-strasse-des-17juni.en.html",dias:"Sábados y domingos. El único día útil de la estadía es el sábado 27 (día de viaje, ir temprano).",horarios:"10-17h."}
+  ],
+  naturaleza:[
+    {nombre:"Crucero por el Spree desde el centro",tags:["Mama","Todos"],acc:"facil",porque:"La mejor manera para mamá de ver la ciudad sin caminar: sentados en el barco, pasando bajo decenas de puentes con vista al Reichstag, la Isla de los Museos y la zona gubernamental. Hay asientos cubiertos y al aire libre.",hist:"El Spree es el río que dio origen a Berlín; la navegación turística recorre el casco histórico y el barrio del gobierno, con comentario en alemán e inglés a bordo.",como:"Embarcaderos en el centro (Nikolaiviertel, Friedrichstrasse, junto a la Isla de los Museos), todos en Mitte. Acceso plano.",maps:"https://www.google.com/maps/search/?api=1&query=Spree+River+Cruise+Berlin+Nikolaiviertel",oficial:"https://www.sternundkreis.de/en/"},
+    {nombre:"Grosser Wannsee y ferry F10 a Kladow",tags:["Mama","Todos"],acc:"facil",porque:"Plan de lago muy relajado: se llega en S-Bahn hasta la orilla y el ferry F10 (incluido en el ticket de transporte) da un paseo de 20 min sobre el lago, sentados. Sin caminata exigente.",hist:"El Wannsee es el gran lago de recreo de los berlineses sobre el río Havel. El ferry F10 es una de las líneas más largas de la red y pasa frente a la isla de Schwanenwerder.",como:"Estación S-Bahn Wannsee (S1/S7), 25-30 min desde el centro. El embarcadero está junto a la estación, casi sin caminar.",maps:"https://www.google.com/maps/search/?api=1&query=Wannsee+Faehre+F10+Berlin",oficial:"https://www.berlin.de/en/public-transportation/ferries/1824948-7322324-ferry-f10.en.html"},
+    {nombre:"Puente de Glienicke y mirador sobre el Havel",tags:["Mama","Mica","Todos"],acc:"auto",porque:"Vistas del Havel, del castillo de Babelsberg y de los paisajes de Lenné, con muy poca caminata si se llega en auto: hay estacionamiento público en Königstrasse cerca del puente. Para mamá, naturaleza sin esfuerzo.",hist:"El 'Puente de los Espías': acá se intercambiaban agentes entre el este y el oeste durante la Guerra Fría, sobre la frontera entre Berlín y Potsdam.",como:"Extremo suroeste de Berlín, junto a Wannsee. En auto 30-40 min desde Mitte; estacionamiento en Königstrasse. También S-Bahn a Wannsee más bus.",maps:"https://www.google.com/maps/search/?api=1&query=Glienicker+Bruecke+Berlin",oficial:"https://www.berlin.de/en/attractions-and-sights/3560243-3104052-glienicke-bridge.en.html"},
+    {nombre:"Café am Neuen See (Tiergarten)",tags:["Mama","Todos"],acc:"facil",porque:"Cervecería al aire libre junto a un lago dentro del Tiergarten, bajo árboles altos. Naturaleza en pleno centro, con mesas a la sombra y botes a remo para mirar. Acceso plano y relajado.",hist:"Un clásico berlinés desde hace más de un siglo dentro del gran parque Tiergarten, antiguo coto de caza real convertido en pulmón verde de la ciudad.",como:"Lichtensteinallee 2, dentro del Tiergarten. Caminata plana y corta desde Zoologischer Garten o Tiergarten.",maps:"https://www.google.com/maps/search/?api=1&query=Cafe+am+Neuen+See+Berlin",oficial:"https://www.cafeamneuensee.de/"}
+  ],
+  castillos:[
+    {nombre:"Palacio de Charlottenburg",tags:["Mica","Mama","Todos"],acc:"facil",porque:"El palacio real más grande de Berlín, con interiores barrocos y rococó deslumbrantes y un jardín enorme, gratuito y plano, ideal para que mamá pasee tranquila mientras Mica recorre la historia.",hist:"Construido entre 1695 y 1699 como residencia de verano para Sophie Charlotte. Tras coronarse primer rey de Prusia, Federico lo amplió al estilo Versalles. Muy dañado en 1943 y reconstruido en parte.",como:"Barrio de Charlottenburg, oeste. Unos 20-25 min en U-Bahn (U7 Richard-Wagner-Platz / U2 Sophie-Charlotte-Platz) y caminata corta.",maps:"https://www.google.com/maps/search/?api=1&query=Schloss+Charlottenburg+Berlin",oficial:"https://www.spsg.de/en/palaces-gardens/object/charlottenburg-palace-old-palace/"}
+  ],
+  comer:[
+    {nombre:"Rutz",tipo:"especial",tags:["Todos"],acc:"facil",porque:"El único tres estrellas Michelin de Berlín: alta cocina alemana para una cena inolvidable, perfecta para celebrar los 70 de papá si quieren hacerlo acá. Reservar con varias semanas.",hist:"Empezó como vinoteca y escaló hasta lo más alto de la gastronomía alemana bajo el chef Marco Müller, con una cocina que reinterpreta el terruño alemán. Carta de vinos legendaria.",como:"Chausseestrasse, Mitte. Muy central, acceso plano.",maps:"https://www.google.com/maps/search/?api=1&query=Rutz+Restaurant+Berlin",oficial:"https://www.rutz-restaurant.de/en/"},
+    {nombre:"Nobelhart & Schmutzig",tipo:"especial",tags:["Todos"],acc:"facil",porque:"Una estrella Michelin con cocina abierta y producto 100% local: menú degustación en barra, íntimo y memorable. Alternativa especial más relajada que Rutz, igual de top.",hist:"Abierto en 2015, famoso por su radicalismo: solo ingredientes de Berlín-Brandeburgo, sin pimienta ni limón de afuera. Entre los 50 mejores del mundo.",como:"Friedrichstrasse, Kreuzberg/Mitte. Muy central, plano, cerca del U-Bahn.",maps:"https://www.google.com/maps/search/?api=1&query=Nobelhart+und+Schmutzig+Berlin",oficial:"https://nobelhartundschmutzig.com/en/"},
+    {nombre:"Zur letzten Instanz (Mitte)",tipo:"casual",tags:["Mica","Papa","Todos"],acc:"facil",porque:"El restaurante más antiguo de Berlín, cocina alemana clásica en un Brauhaus rústico cargado de historia. Para Mica es comer dentro de un monumento; para todos, contundente y rico (codillo, asados).",hist:"Sirve desde 1621. Tiene una estufa de azulejos del siglo XV que, según la tradición, calentó a Napoleón y a Beethoven.",como:"Cerca de la estación U-Bahn Klosterstrasse (U2), en Mitte. Muy central y plano.",maps:"https://www.google.com/maps/search/?api=1&query=Zur+letzten+Instanz+Berlin",oficial:"https://www.zurletzteninstanz.com/"},
+    {nombre:"Curry 36 (Kreuzberg)",tipo:"casual",tags:["Papa","Todos"],acc:"facil",porque:"El puesto de currywurst más icónico de Berlín desde 1981. Rápido, barato, riquísimo y bien berlinés: parada obligada para probar el plato símbolo de la ciudad.",hist:"La currywurst nació en el Berlín de posguerra, cuando una vendedora consiguió ketchup y curry de soldados británicos. Curry 36 perfeccionó la fórmula.",como:"Mehringdamm, Kreuzberg. 10-15 min en U-Bahn desde Mitte (U6/U7 Mehringdamm), a la salida.",maps:"https://www.google.com/maps/search/?api=1&query=Curry+36+Mehringdamm+Berlin",oficial:"https://www.curry36.de/"},
+    {nombre:"Konnopke's Imbiss (Prenzlauer Berg)",tipo:"casual",tags:["Papa","Todos"],acc:"facil",porque:"La currywurst histórica del este, bajo las vías del U-Bahn. Para papá es un viaje en el tiempo: misma familia desde 1930. Plano y al paso, con mesas altas al aire libre.",hist:"Max y Charlotte Konnopke abrieron en 1930. Desde 1960 sirven la currywurst sin tripa, inventada porque en la RDA no se conseguían tripas de cerdo.",como:"Schönhauser Allee, bajo la estación Eberswalder Strasse (U2). 10-15 min desde Mitte.",maps:"https://www.google.com/maps/search/?api=1&query=Konnopke+Imbiss+Berlin",oficial:"https://www.konnopke-imbiss.de/en"}
+  ],
+  eventos:[
+    {nombre:"Maria Baptist Trio — 'Five Special Nights' (noche 1)",fecha:"Mar 23 jun, 20:30",tipo:"jazz",ok:true,venue:"A-Trane, Bleibtreustrasse 1, Charlottenburg",desc:"El Maria Baptist Trio (piano, con Fabian Timm en contrabajo y Heinz Lichius en batería). Primera de cinco noches. Modern contemporary jazz en un club íntimo. Justo la noche que llegan.",link:"https://a-trane.de/programm/"},
+    {nombre:"AFROPITUco (latin jazz)",fecha:"Mar 23 jun, 21:00",tipo:"jazz",ok:true,venue:"b-flat, Dircksenstrasse 40, Mitte",desc:"Cuarteto de latin jazz (banda de Leipzig). Alternativa el mismo día al A-Trane, más cerca del centro. Puertas 20:00.",link:"https://b-flat-berlin.de/programm"},
+    {nombre:"Zig Zag Jazzed Up Jam Session",fecha:"Mar 23 jun",tipo:"jazz",ok:true,venue:"Zig Zag Jazz Club, Hauptstrasse 89, Friedenau",desc:"Jam session abierta con música en vivo continua (jazz, funk, swing), músicos consagrados y emergentes. Dentro de la Jazzwoche Berlín #8. Ambiente relajado.",link:"https://www.zigzag-jazzclub.berlin/programmneu"},
+    {nombre:"Maria Baptist Trio & Philip Sindy",fecha:"Jue 25 jun, 20:30",tipo:"jazz",ok:true,venue:"A-Trane, Charlottenburg",desc:"Tercera noche de la serie, el trío más el invitado Philip Sindy.",link:"https://a-trane.de/programm/"},
+    {nombre:"Anthony Hervey Quartet",fecha:"Vie 26 jun, 19:00",tipo:"jazz",ok:true,venue:"Zig Zag Jazz Club, Friedenau",desc:"Trompetista estadounidense (Juilliard, toca con Jazz at Lincoln Center; elogiado por Wynton Marsalis) con su cuarteto. Parte de la Jazzwoche Berlín #8.",link:"https://www.zigzag-jazzclub.berlin/programmneu"},
+    {nombre:"Maria Baptist Trio & Gabriel Coburger",fecha:"Vie 26 jun, 20:30",tipo:"jazz",ok:true,venue:"A-Trane, Charlottenburg",desc:"Cuarta noche de la serie, con Gabriel Coburger (sax tenor y flauta) como invitado.",link:"https://a-trane.de/programm/"},
+    {nombre:"Maria Baptist Trio & Jan von Klewitz (cierre)",fecha:"Sáb 27 jun, 20:30",tipo:"jazz",ok:true,venue:"A-Trane, Charlottenburg",desc:"Noche final de las 'Five Special Nights', con Jan von Klewitz (sax alto). Es el día de viaje a Estrasburgo, así que solo si extienden esa noche en Berlín.",link:"https://a-trane.de/programm/"},
+    {nombre:"Jazzwoche Berlín #8 (festival, contexto)",fecha:"20-26 jun",tipo:"festival",ok:true,venue:"Varios clubs de Berlín",desc:"La semana del jazz de Berlín, lema 'collective improv(e)ment'. Conciertos en muchos clubs; se solapa con los días 23-26 de la estadía. Buena fuente para descubrir más noches.",link:"https://www.ig-jazz-berlin.de/jazzwoche-berlin"},
+    {nombre:"Pat Metheny — 'Side-Eye III+' (NO entra)",fecha:"15 jun (antes del viaje)",tipo:"guitarra",ok:false,venue:"Admiralspalast, Berlín",desc:"El concierto de Pat Metheny en Berlín fue el 15 de junio, antes de que llegue la familia. Lo dejamos solo para que sepan que no coincide.",link:"https://www.patmetheny.org/tour"}
+  ],
+  cierres:[
+    "El Palacio de Charlottenburg y muchos museos cierran los lunes; llegan el martes 23, así que no afecta, pero no programen palacios/museos para un eventual lunes.",
+    "Markthalle Neun cierra domingos y lunes. Como salen el sábado 27, conviene ir el jueves 25 (Street Food), viernes 26 o sábado 27.",
+    "Los pulgas de Mauerpark y de Boxhagener Platz son solo los domingos: caen fuera de la estadía porque se van el sábado 27.",
+    "El mercado de antigüedades de la Strasse des 17. Juni es solo sábados y domingos: el único día útil es el sábado 27 (día de viaje, ir temprano).",
+    "No hay feriados durante el 23-27 de junio, así que todo funciona con horario normal.",
+    "La cúpula del Reichstag exige reserva previa online (gratis). Sin reserva, solo se entra si quedan lugares de último momento."
+  ],
+  move:{route:"Berlín → Estrasburgo · sábado 27 jun", txt:"Conviene el <b>tren</b>. El ICE directo Berlín-París (lanzado en dic 2024) para en Estrasburgo: una conexión directa, sin trasbordos, sale de Berlín Hbf ~12:02 y llega ~17:40 (unas 5h40-6h). Estación a estación, en pleno centro, sin las escaleras y controles del aeropuerto: ideal con persona mayor y equipaje. No hay vuelo directo BER-SXB (siempre con escala, y el aeropuerto queda a 12 km del centro), así que el tren gana en comodidad total.", link:"https://www.bahn.com/en", linktxt:"Deutsche Bahn"}
+},
+
+{
+  id:"estrasburgo", nombre:"Estrasburgo", em:"⚜️", fechas:"27 al 30 de junio · sábado a martes",
+  hotel:{
+    nombre:"Hôtel & Spa Le Bouclier d'Or ★★★★",
+    dir:"1 Rue du Bouclier, 67000 Estrasburgo · Petite France",
+    maps:"https://www.google.com/maps/search/?api=1&query=Hotel+Bouclier+d+Or+Strasbourg",
+    oficial:"https://www.lebouclierdor.com/en/",
+    ubic:"En pleno corazón de la Petite France, en un edificio del siglo XVI. Lo mejor para mamá: todo el casco histórico es plano y peatonal, así que llega caminando a casi todo sin esfuerzo. La catedral queda a 5 minutos a pie. El hotel tiene spa con pileta cubierta para relajar a la vuelta.",
+    cerca:[
+      {nombre:"Café Bretelles — Petite France",tipo:"desayuno",dist:"3-4 min a pie",txt:"Café de especialidad muy querido por los locales: buen café, granola, viennoiseries y brunch los fines de semana. Abre desde las 8h.",maps:"https://www.google.com/maps/search/?api=1&query=Cafe+Bretelles+Petite+France+Strasbourg"},
+      {nombre:"Plein la Moustache (boulangerie)",tipo:"desayuno",dist:"4-5 min a pie",txt:"Panadería artesanal de moda: croissants, pains au chocolat, mini-kouglofs y café para llevar o sentarse cerca de los muelles.",maps:"https://www.google.com/maps/search/?api=1&query=Plein+la+Moustache+boulangerie+Strasbourg"},
+      {nombre:"La Petite Alsace",tipo:"comer",dist:"4 min a pie",txt:"Cocina alsaciana tradicional (baeckeoffe, spätzle, coq au Riesling) en casas de entramado del s. XVI, en la misma calle del hotel y llano. Miles de reseñas.",maps:"https://www.google.com/maps/search/?api=1&query=La+Petite+Alsace+Rue+du+Bain+aux+Plantes+Strasbourg"},
+      {nombre:"Rue du Bain aux Plantes y Place Benjamin Zix",tipo:"atraccion",dist:"2-3 min a pie",txt:"La postal de la Petite France con las casas de entramado, a la vuelta del hotel. Ya está en esta guía como spot de fotos."},
+      {nombre:"Maison des Tanneurs",tipo:"comer",dist:"3 min a pie",txt:"Restaurante histórico de 1572 sobre el canal, clásico de flammekueche y cocina alsaciana. Conviene reservar.",maps:"https://www.google.com/maps/search/?api=1&query=Maison+des+Tanneurs+Strasbourg"},
+      {nombre:"La Corde à Linge",tipo:"comer",dist:"3-4 min a pie",txt:"Bistró alsaciano relajado en Place Benjamin Zix, con terraza sobre el agua. Bueno para flammekueche y spätzle, más informal.",maps:"https://www.google.com/maps/search/?api=1&query=La+Corde+a+Linge+Strasbourg"},
+      {nombre:"Barrage Vauban (terraza mirador)",tipo:"atraccion",dist:"6-8 min a pie",txt:"Mirador accesible con la mejor vista de los Ponts Couverts. Ya está en la guía."},
+      {nombre:"Catedral de Estrasburgo",tipo:"atraccion",dist:"5-7 min a pie",txt:"El gran ícono gótico, llano desde el hotel por calles peatonales."},
+      {nombre:"Embarcadero Batorama",tipo:"atraccion",dist:"6-8 min a pie",txt:"Punto de partida del paseo en barco por el Ill (reservar antes el barco accesible). Ya está en la guía."},
+      {nombre:"Galeries Lafayette Strasbourg",tipo:"shopping",dist:"9-11 min a pie",txt:"Gran tienda por departamentos (moda, perfumería, accesorios), llana por calles peatonales.",maps:"https://www.google.com/maps/search/?api=1&query=Galeries+Lafayette+Strasbourg"},
+      {nombre:"Rue des Grandes-Arcades y Place Kléber",tipo:"shopping",dist:"8-10 min a pie",txt:"El eje comercial peatonal del centro: Zara, H&M, Uniqlo y la gran plaza con bancos para descansar. Todo llano.",maps:"https://www.google.com/maps/search/?api=1&query=Rue+des+Grandes+Arcades+Strasbourg"},
+      {nombre:"Printemps Strasbourg",tipo:"shopping",dist:"9-11 min a pie",txt:"Otra tienda por departamentos sobre la zona peatonal, moda y belleza.",maps:"https://www.google.com/maps/search/?api=1&query=Printemps+Strasbourg"}
+    ]
+  },
+  intro:"Alsacia, pegada a la frontera: acá se habla francés y se come increíble. Llegan el sábado a la tarde, así que el grueso de los mercados de papá ya cerró ese día; el domingo casi todo el comercio descansa, ideal para barco, catedral o una excursión en auto a un castillo. Para mamá, todo lo de esta base es plano o se hace en auto.",
+  plan:[
+    {d:"Sáb 27 — Llegada", s:"suave", t:"Llegan ~17:40. Cena tranquila en la Petite France con flammekueche (Mama Bubbele o La Binchstub). Paseo corto y plano por los muelles iluminados."},
+    {d:"Dom 28", s:"comercios cerrados", t:"Día de domingo: comercio cerrado. Paseo en barco Batorama (mamá, reservar el accesible) + catedral por dentro + quais del Ill. Alternativa: excursión en auto al Mont Sainte-Odile (mirador casi desde el estacionamiento)."},
+    {d:"Lun 29", s:"", t:"Palais Rohan (abre lunes, cierra martes): los apartamentos del cardenal y sus museos. Después, la terraza del Barrage Vauban y un rato por la Rue du Bain aux Plantes en la Petite France."},
+    {d:"Mar 30 — Viaje", s:"traslado", t:"A la mañana, si dan ganas, una vuelta corta por el mercado del Boulevard de la Marne (abre martes 8-13h) antes del tren. Tren corto a Baden-Baden (35 min a 1h)."}
+  ],
+  fotos:[
+    {nombre:"Barrage Vauban (terraza panorámica)",tags:["Mama","Todos"],acc:"facil",porque:"El mirador accesible de Estrasburgo: terraza techada con la mejor vista de los Ponts Couverts, los techos de la Petite France y la catedral al fondo. Entrada gratis. Tiene ascensor a la terraza según fuentes turísticas (confirmar el día).",hist:"Lo construyó Vauban hacia 1690 como represa defensiva: en caso de ataque se cerraban las compuertas y se inundaba el sur de la ciudad. Hoy es un puente-galería con esculturas y mirador arriba.",como:"Extremo oeste de la Petite France, 10-12 min caminando llano desde la catedral, o muy cerca en taxi/auto.",maps:"https://www.google.com/maps/search/?api=1&query=Barrage+Vauban+Strasbourg",oficial:"https://www.visitstrasbourg.fr/en/"},
+    {nombre:"Pont du Faisan y Place Benjamin Zix",tags:["Mama","Mica","Todos"],acc:"facil",porque:"El rincón más fotogénico de la Petite France a nivel de calle, sin subir nada: el puentecito giratorio con la Maison des Tanneurs y los canales de fondo. Postal clásica.",hist:"Es el barrio de los curtidores y molineros del siglo XVI; las casas con entramado tenían desvanes abiertos para secar las pieles. El Pont du Faisan aún se abre para dejar pasar barcos.",como:"Corazón de la Petite France, 8-10 min llano desde la catedral por calles peatonales.",maps:"https://www.google.com/maps/search/?api=1&query=Place+Benjamin+Zix+Strasbourg",oficial:"https://www.visitstrasbourg.fr/en/discover/"},
+    {nombre:"Paseo en barco Batorama por el Ill",tags:["Mama","Todos"],acc:"facil",porque:"Ver la ciudad sentados desde el agua, sin caminar: Petite France, la Neustadt imperial y el barrio europeo en 70 min, con audioguía en español. Hay barco con plataforma elevadora para silla de ruedas (reservar antes).",hist:"Recorre el Ill que rodea la Grande Île, Patrimonio de la Humanidad. Pasa por las esclusas históricas y bajo los Ponts Couverts.",como:"Embarcadero en Place du Marché aux Poissons, a 150 m de la catedral, llano. Pontón accesible en Quai B (Palais Rohan).",maps:"https://www.google.com/maps/search/?api=1&query=Batorama+Strasbourg+embarcadere",oficial:"https://www.batorama.com/en/"},
+    {nombre:"Rue du Bain aux Plantes",tags:["Mama","Mica"],acc:"facil",porque:"La calle más bonita de la Petite France, con balcones floridos y casas de entramado del siglo XVI inclinadas sobre el canal. Plana y peatonal, perfecta para fotos tranquilas.",hist:"Fue el eje del barrio de los curtidores. Su nombre viene de los antiguos baños públicos. Varias casas datan de 1572 y conservan la estructura de madera original.",como:"En plena Petite France, unos 10 min llano desde la catedral.",maps:"https://www.google.com/maps/search/?api=1&query=Rue+du+Bain+aux+Plantes+Strasbourg",oficial:"verificar"}
+  ],
+  mercados:[
+    {nombre:"Mercado del Boulevard de la Marne (Esplanade)",tags:["Papa","Todos"],acc:"facil",porque:"El más grande de Estrasburgo, con comida, ropa y artículos del hogar, auténtico y poco turístico. Clave: abre los martes, así que el martes 30 de mañana (día de salida) entra justo antes del tren.",hist:"En el barrio universitario de la Esplanade, junto al campus y las instituciones europeas.",como:"Boulevard de la Marne, 20-25 min caminando o pocos minutos en auto/tranvía desde el centro.",maps:"https://www.google.com/maps/search/?api=1&query=Marche+Boulevard+de+la+Marne+Strasbourg",oficial:"https://www.strasbourg.eu/marches-brocantes",dias:"Martes y sábados. Útil el martes 30 (mañana) y el sábado 27 (pero ese día llegan recién a las 17:40).",horarios:"8:00 a 13:00."},
+    {nombre:"Brocante / Mercado de antigüedades",tags:["Papa","Todos"],acc:"facil",porque:"Para papá: hasta 40 anticuarios profesionales, vinilos, discos raros y curiosidades, en pleno casco histórico, llano. Ojo con el día.",hist:"El mercado de pulgas profesional fijo de la ciudad, entre la catedral y la plaza Gutenberg, en la zona medieval más antigua.",como:"Rue du Vieux-Marché-aux-Poissons / Rue du Vieil-Hôpital, 3-5 min llano de la catedral.",maps:"https://www.google.com/maps/search/?api=1&query=Brocante+Vieux+Marche+aux+Poissons+Strasbourg",oficial:"https://www.strasbourg.eu/marches-brocantes",dias:"Miércoles y sábados. En la estadía solo el sábado 27, pero llegan a las 17:40 y cierra a las 18h: difícil llegar.",horarios:"Aprox. 7:00 a 18:00."},
+    {nombre:"Mercado de productores — Place du Marché-Neuf",tags:["Papa","Todos"],acc:"facil",porque:"Mercado de productores locales, ideal para probar y comprar producto alsaciano directo del campo. Pequeño, céntrico y plano.",hist:"En una plaza del casco histórico cercana a la catedral, recuperando la tradición de los mercados de productores de la región.",como:"Place du Marché-Neuf, 5-7 min llano de la catedral.",maps:"https://www.google.com/maps/search/?api=1&query=Place+du+Marche+Neuf+Strasbourg",oficial:"https://www.strasbourg.eu/marches-brocantes",dias:"Sábados. En la estadía solo el sábado 27 (día de llegada por la tarde).",horarios:"7:30 a 16:00."}
+  ],
+  naturaleza:[
+    {nombre:"Parc de l'Orangerie",tags:["Mama","Todos"],acc:"facil",porque:"El parque ideal para mamá: senderos pavimentados y llanos, lago con sauces, cigüeñas en libertad y zoo gratuito. Naturaleza sin una sola subida.",hist:"El parque más antiguo y grande de la ciudad, diseñado en el siglo XVII por Le Nôtre (el de Versalles). Las cigüeñas, símbolo de Alsacia, anidan sobre el Pavillon Joséphine.",como:"Junto a las instituciones europeas, 25-30 min caminando o pocos minutos en auto/tranvía desde el centro.",maps:"https://www.google.com/maps/search/?api=1&query=Parc+de+l+Orangerie+Strasbourg",oficial:"https://www.visitstrasbourg.fr/en/"},
+    {nombre:"Mont Sainte-Odile (terrazas panorámicas)",tags:["Mama","Mica","Todos"],acc:"auto",porque:"Vistas enormes sobre toda la llanura de Alsacia desde dos terrazas a las que se llega prácticamente desde el estacionamiento. En días claros se ve hasta la catedral de Estrasburgo. Naturaleza accesible para mamá.",hist:"Monasterio fundado hacia el año 700 por Santa Odilia, patrona de Alsacia, sobre acantilados de arenisca rosa a 753 m. Rodeado por el enigmático Mur Païen, muralla de 10 km del siglo VII.",como:"40-50 min en auto desde Estrasburgo. Estacionamiento gratuito con plazas accesibles en la entrada.",maps:"https://www.google.com/maps/search/?api=1&query=Mont+Sainte+Odile+Ottrott",oficial:"https://www.mso-tourisme.com/en/"},
+    {nombre:"Quais y orillas del Ill",tags:["Mama","Todos"],acc:"facil",porque:"Paseo plano y arbolado al borde del agua que conecta el centro con la Petite France, con bancos y reflejos preciosos. Caminata corta y sin desniveles, a medida de mamá.",hist:"El Ill rodea la Grande Île, el corazón histórico Patrimonio Unesco. Las esclusas y diques regulan el río desde tiempos de Vauban.",como:"Arranca desde la misma catedral siguiendo los muelles, todo llano.",maps:"https://www.google.com/maps/search/?api=1&query=Quais+de+l+Ill+Strasbourg+Petite+France",oficial:"verificar"}
+  ],
+  castillos:[
+    {nombre:"Catedral de Notre-Dame de Estrasburgo",tags:["Mica","Todos"],acc:"facil",porque:"Una de las catedrales góticas más impresionantes de Europa, con su reloj astronómico y la fachada tallada. El interior es plano y accesible (la plataforma de la torre NO: son 330 escalones, no apta para mamá).",hist:"Construida entre los siglos XII y XV en arenisca rosa de los Vosgos. Con sus 142 m fue el edificio más alto del mundo hasta 1874. Víctor Hugo la llamó 'un prodigio de lo gigantesco y lo delicado'.",como:"Centro absoluto de la ciudad, llano y peatonal.",maps:"https://www.google.com/maps/search/?api=1&query=Cathedrale+Notre+Dame+Strasbourg",oficial:"https://www.cathedrale-strasbourg.fr/"},
+    {nombre:"Palais Rohan",tags:["Mica","Todos"],acc:"facil",porque:"Palacio barroco junto a la catedral con tres museos (Bellas Artes, Artes Decorativas y Arqueología). Los apartamentos del cardenal son espectaculares. Historia y arte sin caminar lejos. CERRADO los martes.",hist:"Construido entre 1732 y 1742 para el cardenal de Rohan, príncipe-obispo de Estrasburgo. Por sus salones pasaron María Antonieta, Luis XV y Napoleón.",como:"Place du Château, pegado a la catedral, 2 min llano.",maps:"https://www.google.com/maps/search/?api=1&query=Palais+Rohan+Strasbourg",oficial:"https://www.musees.strasbourg.eu/"},
+    {nombre:"Château du Haut-Koenigsbourg",tags:["Mica","Papa"],acc:"auto",porque:"El castillo medieval más imponente de Alsacia, restaurado y completo, con vistas enormes a la llanura. Para Mica es imperdible. Para mamá: el patio bajo es accesible (6 plazas accesibles arriba); el recorrido interior tiene 300 escalones, así que ella puede quedarse en exteriores y mirador.",hist:"Fortaleza del siglo XII a 757 m. Arrasada en la Guerra de los Treinta Años y restaurada entre 1900 y 1908 por el káiser Guillermo II como símbolo del poder alemán en Alsacia.",como:"55-65 min en auto desde Estrasburgo. Desde el parking, sendero de tierra en leve subida de 300 m.",maps:"https://www.google.com/maps/search/?api=1&query=Chateau+du+Haut+Koenigsbourg",oficial:"https://www.haut-koenigsbourg.fr/en/"},
+    {nombre:"Château du Haut-Barr (Saverne)",tags:["Mica","Papa"],acc:"auto",porque:"Castillo en ruinas apodado 'el Ojo de Alsacia', sobre tres peñascos con vistas de 360°. Romántico y poco turístico; se llega casi en auto. Las escaleras finales a la cima son cortas y opcionales.",hist:"Fortaleza del siglo XII de los obispos de Estrasburgo, en posición estratégica entre Lorena y Alsacia. Un puente llamado 'del Diablo' une dos de las rocas.",como:"45-50 min en auto desde Estrasburgo (vía Saverne); del centro de Saverne son 5 min en auto.",maps:"https://www.google.com/maps/search/?api=1&query=Chateau+du+Haut+Barr+Saverne",oficial:"https://www.visit.alsace/en/221001403-haut-barr-castle/"}
+  ],
+  comer:[
+    {nombre:"Maison Kammerzell",tipo:"especial",tags:["Todos"],acc:"facil",porque:"Comer bien dentro de un monumento: choucroute clásica y la famosa de tres pescados, en uno de los edificios más bonitos de la ciudad, frente a la catedral. Experiencia ineludible.",hist:"Casa renacentista del siglo XV-XVI, con fachada tallada y vidrieras, joya del entramado de madera alsaciano. Restaurante histórico desde hace más de un siglo.",como:"Place de la Cathédrale, pegado a la catedral, llano.",maps:"https://www.google.com/maps/search/?api=1&query=Maison+Kammerzell+Strasbourg",oficial:"https://www.maison-kammerzell.com/"},
+    {nombre:"Chez Yvonne (S'Burjerstuewel)",tipo:"especial",tags:["Todos","Papa"],acc:"facil",porque:"Probablemente el winstub más famoso de Alsacia: cocina tradicional de altísimo nivel (Bib Gourmand Michelin). Coq au Riesling, choucroute, carrilleras al pinot noir. Ambiente cálido y auténtico.",hist:"Mantiene viva la tradición del winstub alsaciano desde 1873. Punto de encuentro de gourmets y personalidades, en una callecita del casco antiguo.",como:"10 Rue du Sanglier, 3-4 min llano de la catedral.",maps:"https://www.google.com/maps/search/?api=1&query=Chez+Yvonne+Strasbourg",oficial:"https://www.restaurant-chez-yvonne.net/en/"},
+    {nombre:"La Binchstub",tipo:"casual",tags:["Todos","Mica"],acc:"facil",porque:"Cena rica y relajada: tartes flambées (flammekueche) de masa fina al horno de leña con producto local. Una de las favoritas de los estrasburgueses, ambiente simple y buena onda.",hist:"La tarte flambée es el plato emblemático de Alsacia, nacida como masa de pan fina para probar la temperatura del horno. La Binchstub la versiona artesanal.",como:"Sede de Broglie a 6-8 min llano del centro; también sedes Gayot y Austerlitz.",maps:"https://www.google.com/maps/search/?api=1&query=La+Binchstub+Broglie+Strasbourg",oficial:"verificar"},
+    {nombre:"Mama Bubbele",tipo:"casual",tags:["Todos"],acc:"facil",porque:"Tartes flambées para todos los gustos: 16 variedades, con opciones vegetarianas, veganas y sin gluten, sobre los muelles. Casual, inclusivo y a precio amable.",hist:"Bar à flammekueche moderno a orillas del Ill, que reinterpreta el plato alsaciano clásico con muchísimas combinaciones.",como:"Sobre los quais, a pocos minutos llano del centro.",maps:"https://www.google.com/maps/search/?api=1&query=Mama+Bubbele+Strasbourg",oficial:"https://www.mama-bubbele.fr/"}
+  ],
+  eventos:[
+    {nombre:"Las noches de jazz no acompañan",fecha:"28-30 jun",tipo:"jazz",ok:false,venue:"Estrasburgo",desc:"Verificado: el festival Jazzdor fue en marzo/junio fuera de estas fechas, y 'Jazz à la Petite France' es del 10 al 12 de julio, justo después del viaje. Para las noches del 28, 29 y 30 no encontramos jazz confirmado. Vale revisar de cerca culture.strasbourg.eu por si aparece algo.",link:"https://culture.strasbourg.eu/agenda/concerts/"},
+    {nombre:"The Blues Spot — iniciación al blues y noche bailable (a confirmar)",fecha:"26-28 jun, 18:30",tipo:"concierto",ok:false,venue:"Espace Le 23, Estrasburgo",desc:"Aparece en agendas locales un evento de blues con noche bailable que se solaparía con el domingo 28, pero no pudimos confirmar line-up ni horario exacto. A verificar antes de contar con él.",link:"https://strasbourg.curieux.net/agenda/categorie/jazz"}
+  ],
+  cierres:[
+    "Domingo 28: la mayoría de comercios y mercados de calle cierran (Francia). No funcionan los mercados Broglie, Boulevard de la Marne, productores ni la brocante. Sí abren la catedral, el Palais Rohan, los parques y Batorama.",
+    "Martes 30 (día de salida): los tres museos del Palais Rohan están CERRADOS. La mayoría de museos municipales cierran los martes.",
+    "El mercado de Place Broglie (miércoles y viernes) no cae en ningún día de la estadía.",
+    "La plataforma/torre de la catedral está abierta, pero son 330 escalones: no apta para mamá.",
+    "Batorama y el barco accesible requieren reserva previa para silla de ruedas; verificar horarios del día."
+  ],
+  move:{route:"Estrasburgo → Baden-Baden · martes 30 jun", txt:"<b>Tren</b>, trayecto corto transfronterizo: el más rápido ~35 min, en promedio ~1h, con servicios directos sin trasbordo. Cómodo para mamá. Nota: la estación de Baden-Baden queda a ~4 km del centro y de los balnearios, así que prevean un taxi corto hasta el alojamiento. Si ya tienen auto, son ~40 min por la A5, equivalente puerta a puerta.", link:"https://www.sncf-connect.com/en-en/", linktxt:"SNCF Connect"}
+},
+
+{
+  id:"baden-baden", nombre:"Baden-Baden", em:"🎂", fechas:"30 de junio al 2 de julio · martes a jueves",
+  hotel:{
+    nombre:"Hotel Belle Epoque ★★★★★",
+    dir:"Maria-Viktoria-Str. 2c, 76530 Baden-Baden",
+    maps:"https://www.google.com/maps/search/?api=1&query=Hotel+Belle+Epoque+Baden-Baden",
+    oficial:"https://www.hotel-belle-epoque.de/en/",
+    ubic:"Una villa señorial de 1874 rodeada de su propio parque, a un paso de la Lichtentaler Allee, la alameda arbolada y plana que es perfecta para mamá. Desde acá se llega caminando por terreno llano a los museos, el casino y el centro. Sirven un té de la tarde clásico, lindo detalle para el día del cumple.",
+    cerca:[
+      {nombre:"Café König",tipo:"desayuno",dist:"9-11 min a pie",txt:"El café-confitería más tradicional de Baden-Baden: desayunos, café, tortas caseras y pastelería. Camino llano por la zona peatonal. Abre 8:30 (dom 9:30).",maps:"https://www.google.com/maps/search/?api=1&query=Cafe+Konig+Lichtentaler+Strasse+Baden-Baden"},
+      {nombre:"Kaffeehaus Baden-Baden",tipo:"desayuno",dist:"10-12 min a pie",txt:"Panadería-café céntrica con panes y bollería recién horneados y bombonería artesanal. Opción simple y cómoda para arrancar el día.",maps:"https://www.google.com/maps/search/?api=1&query=Kaffeehaus+Baden-Baden+Gernsbacher+Strasse"},
+      {nombre:"Rizzi — The Restaurant",tipo:"comer",dist:"6-8 min a pie",txt:"Cocina mediterránea ligera con terraza al parque, sobre la Lichtentaler Allee. Terreno llano y muy buenas reseñas; conviene reservar.",maps:"https://www.google.com/maps/search/?api=1&query=Rizzi+Restaurant+Augustaplatz+Baden-Baden"},
+      {nombre:"Rive Gauche",tipo:"comer",dist:"7-9 min a pie",txt:"Cocina francesa en un invernadero histórico sobre la alameda, junto al Museum Frieder Burda. Mismo paseo llano del parque.",maps:"https://www.google.com/maps/search/?api=1&query=Rive+Gauche+Lichtentaler+Allee+Baden-Baden"},
+      {nombre:"Lichtentaler Allee",tipo:"parque",dist:"1-2 min a pie",txt:"La alameda histórica junto al río Oos: kilómetros llanos y arbolados, sin una sola subida. El paseo ideal para mamá, justo al lado del hotel."},
+      {nombre:"Museum Frieder Burda + Kunsthalle",tipo:"atraccion",dist:"8-10 min a pie",txt:"Arte moderno en un edificio de Richard Meier, sobre la misma Allee. Camino llano desde el hotel."},
+      {nombre:"Le Jardin de France",tipo:"comer",dist:"10-12 min a pie",txt:"La cena del cumple 70 de papá (una estrella Michelin). En el centro, terreno llano desde el hotel. Reservar para la noche del 1 de julio. Ya está en la guía.",maps:"https://www.google.com/maps/search/?api=1&query=Le+Jardin+de+France+Baden-Baden"},
+      {nombre:"Casino, Kurhaus y Trinkhalle",tipo:"atraccion",dist:"12-15 min a pie",txt:"El casino histórico más bello de Alemania y la galería de la fuente termal. Llano por la Allee, ideal para un paseo de tarde."},
+      {nombre:"Mercado de Bernhardusplatz",tipo:"mercado",dist:"12-15 min a pie",txt:"Mercado de productores los miércoles (justo el día del cumple) y sábados a la mañana. Llano hasta el centro. El plan de papá para arrancar el cumpleaños."},
+      {nombre:"Caracalla Therme / Friedrichsbad",tipo:"spa",dist:"taxi corto (5 min)",txt:"Las termas famosas de Baden-Baden, en el Römerplatz. Hay una subida suave: para mamá, mejor llegar en taxi."},
+      {nombre:"Sophienstraße (bulevar de boutiques)",tipo:"shopping",dist:"9-12 min a pie",txt:"El paseo elegante de tiendas de moda (Escada, marroquinería INKA), calle llana ideal para mirar vidrieras.",maps:"https://www.google.com/maps/search/?api=1&query=Sophienstrasse+Baden-Baden"},
+      {nombre:"Lange Straße y Wagener Galerie",tipo:"shopping",dist:"11-14 min a pie",txt:"La arteria comercial peatonal y la galería de moda; ahí también está H&M. Ojo: en Baden-Baden no hay Zara ni Birkenstock (el outlet Birkenstock queda a ~2h).",maps:"https://www.google.com/maps/search/?api=1&query=Lange+Strasse+Baden-Baden"}
+    ]
+  },
+  intro:"El corazón del viaje: acá papá cumple 70 el miércoles 1 de julio. Ciudad balneario elegante, con casino histórico, jardines y el Festspielhaus. Es perfecta para festejar sin esfuerzo: el Merkur sube en funicular, la Lichtentaler Allee es toda plana, y la cena especial está resuelta. Empieza la Selva Negra de verdad.",
+  plan:[
+    {d:"Mar 30 — Llegada", s:"suave", t:"Llegada en tren + taxi al centro. Tarde tranquila: paseo plano por la Lichtentaler Allee, la Trinkhalle y la fachada del Kurhaus/Casino. Si quieren, el mercado de Klosterplatz (Lichtental) abre los martes a la mañana."},
+    {d:"Mié 1 jul — 🎂 Cumple 70 de papá", s:"el día grande", t:"Mañana en el mercado de Bernhardusplatz (abre miércoles) para arrancar comprando algo rico. Mediodía y tarde sin apuro: subida al Merkur en funicular con mamá (vista 360 sin caminar) o paseo en auto al Mummelsee. A la noche, la cena del cumple en Le Jardin de France (reservada)."},
+    {d:"Jue 2 — Viaje", s:"traslado", t:"Mañana en el mercado de Augustaplatz (abre jueves, el grande para papá) y un último café en la Trinkhalle. Mediodía: tren corto a Friburgo (44 min)."}
+  ],
+  fotos:[
+    {nombre:"Torre mirador del Merkur (subiendo en funicular)",tags:["Mama","Todos"],acc:"teleferico",porque:"La vista más linda de Baden-Baden sin caminar nada: se sube todo en funicular y hay un ascensor gratis dentro de la torre que te deja a 23 metros, con panorama de 360° sobre la ciudad, la Selva Negra y el valle del Rin.",hist:"El Merkur (668 m) fue siempre el mirador de la ciudad balneario. El funicular original es de 1913, se reconstruyó en 1979 y hoy es uno de los más largos y empinados de Alemania (54% de pendiente).",como:"Desde el centro, bus 204 o 205 hasta Merkurwald (la estación del valle queda a menos de 50 m). 15-20 min en bus + 5 min de funicular. Abre de 10 a 22h; ida y vuelta 6€, combinado bus+funicular 9€.",maps:"https://www.google.com/maps/search/?api=1&query=Merkurbergbahn+Baden-Baden",oficial:"https://www.baden-baden.com/en/attractions/merkur-mountain-and-merkur-funicular-railway-704bb875d3"},
+    {nombre:"Trinkhalle (columnata)",tags:["Mama","Mica","Todos"],acc:"facil",porque:"Una columnata neoclásica de 90 metros con 16 columnas corintias y 14 frescos enormes. Es plano, en pleno centro, y la luz entre las columnas hace fotos preciosas a cualquier hora, sin pagar entrada.",hist:"La construyó Heinrich Hübsch entre 1839 y 1842 como paseo cubierto del balneario. Los frescos, de Jakob Götzenberger, ilustran leyendas de la región como invitación a recorrer los alrededores.",como:"En pleno centro, al lado del Kurhaus. Caminata plana de 2-5 min desde Augustaplatz o el casino.",maps:"https://www.google.com/maps/search/?api=1&query=Trinkhalle+Baden-Baden",oficial:"https://kurhaus-badenbaden.de/en/trinkhalle-wandelgang"},
+    {nombre:"Kurhaus y fachada del Casino",tags:["Mama","Mica","Todos"],acc:"facil",porque:"La postal clásica de Baden-Baden: el frente con columnas corintias y el friso de grifos, más los jardines de adelante. Todo a nivel del piso, sin escaleras, ideal para la foto de la familia.",hist:"El edificio principal lo diseñó Friedrich Weinbrenner en 1824. El casino, del siglo XIX, fue el más elegante de Europa y Dostoievski se inspiró acá para su novela 'El jugador'.",como:"Centro, frente a la Kaiserallee. Plano, 2-5 min a pie desde Augustaplatz.",maps:"https://www.google.com/maps/search/?api=1&query=Kurhaus+Casino+Baden-Baden",oficial:"https://kurhaus-badenbaden.de/en/"},
+    {nombre:"Gönneranlage (jardín de rosas)",tags:["Mama","Todos"],acc:"facil",porque:"Más de 11.000 rosales de unas 360 variedades en flor en pleno verano, con la Fuente Josephine art nouveau y un estanque con peces. A fin de junio y principios de julio está en su mejor momento. Plano salvo un par de escalones.",hist:"Lo donó el magnate del café germano-americano Hermann Sielcken, lleva el nombre del intendente Albert Gönner y lo diseñó Max Läuger entre 1909 y 1912 en estilo art nouveau.",como:"Sobre la Lichtentaler Allee, 15-20 min a pie planos desde el centro, o en bus. Entrada libre, abierto de 9h al atardecer.",maps:"https://www.google.com/maps/search/?api=1&query=Gonneranlage+Baden-Baden",oficial:"https://www.baden-baden.com/natur/goenneranlage"}
+  ],
+  mercados:[
+    {nombre:"Mercado semanal de Augustaplatz",tags:["Papa","Todos"],acc:"facil",porque:"El más grande y central, perfecto para papá: productos regionales frescos, flores, pan y artesanías en una plaza linda. Cae jueves, así que entra justo el jueves 2 (mañana del día de viaje).",hist:"Augustaplatz es una de las plazas clásicas del paseo balneario, cerca de la Lichtentaler Allee, y desde hace décadas alberga el mercado de productores.",como:"En el centro, sobre la Lichtentaler Allee. Plano, 5-10 min a pie desde el Kurhaus.",maps:"https://www.google.com/maps/search/?api=1&query=Augustaplatz+Baden-Baden",oficial:"https://www.baden-baden.com/en/shopping/weekly-markets-flea-markets",dias:"Lunes y jueves. Útil: jueves 2 a la mañana.",horarios:"7 a 13h."},
+    {nombre:"Mercado semanal de Bernhardusplatz",tags:["Papa","Todos"],acc:"facil",porque:"Mercado de barrio más chico y auténtico, bueno para fruta, verdura y productos de la zona. Cae miércoles, así que el miércoles 1 (el día del cumple) está abierto a la mañana: ideal para arrancar el día.",hist:"Bernhardusplatz es una placita del casco, junto a la iglesia de San Bernardo, punto de encuentro del barrio.",como:"En el casco, 5-10 min a pie planos desde el centro.",maps:"https://www.google.com/maps/search/?api=1&query=Bernhardusplatz+Baden-Baden",oficial:"https://www.baden-baden.com/en/shopping/weekly-markets-flea-markets",dias:"Miércoles y sábado. Útil: miércoles 1 (cumple).",horarios:"7 a 12h."},
+    {nombre:"Mercado semanal de Klosterplatz (Lichtental)",tags:["Papa","Todos"],acc:"auto",porque:"El mercado del barrio de Lichtental, tranquilo y pegado a la abadía. Cae martes, así que el martes 30 (día de llegada) está abierto. Producto fresco y trato de pueblo.",hist:"Lichtental nació alrededor de la abadía cisterciense de 1245 y conserva aire de aldea. La placita junto al convento es su centro de toda la vida.",como:"En Lichtental, al final de la Lichtentaler Allee. 5-10 min en auto o bus desde el centro; a pie es largo para mamá.",maps:"https://www.google.com/maps/search/?api=1&query=Klosterplatz+Lichtental+Baden-Baden",oficial:"https://www.baden-baden.com/en/shopping/weekly-markets-flea-markets",dias:"Martes y viernes. Útil: martes 30 (llegada).",horarios:"7 a 12h."}
+  ],
+  naturaleza:[
+    {nombre:"Mummelsee (lago en la Selva Negra)",tags:["Mama","Todos"],acc:"auto",porque:"Un lago de montaña precioso al que se llega en auto y se estaciona al lado. La vuelta al lago es de 15-20 min sobre pasarela de madera, totalmente plana y accesible para sillas de ruedas. Hay restaurante con terraza y botes a pedal.",hist:"Es un lago glaciar a 1.030 m, el más alto y conocido de la Selva Negra del norte. La leyenda dice que en el fondo vive el rey Mummel y sus ninfas de agua.",como:"40-50 min en auto del centro por la ruta panorámica Schwarzwaldhochstrasse (B500). Vale el viaje por el paisaje del camino.",maps:"https://www.google.com/maps/search/?api=1&query=Mummelsee+Seebach",oficial:"https://www.blackforest-highlights.com/"},
+    {nombre:"Lichtentaler Allee (paseo junto al río Oos)",tags:["Mama","Todos"],acc:"facil",porque:"El paseo más lindo y más plano de la ciudad: unos 2,3 km bordeando el río, con árboles centenarios, esculturas y jardines. Se camina lo que cada uno quiera, hay bancos por todos lados y casi no tiene desnivel.",hist:"Nació en el siglo XVII como avenida de tilos y en el XIX se convirtió en arboretum con especies de todo el mundo. Por acá pasearon Brahms, la reina Victoria y la alta sociedad europea.",como:"Arranca en pleno centro, junto al Kurhaus. Plano, cero caminata para empezar.",maps:"https://www.google.com/maps/search/?api=1&query=Lichtentaler+Allee+Baden-Baden",oficial:"https://www.baden-baden.com/natur/lichtentaler-allee"},
+    {nombre:"Wasserkunstanlage Paradies (cascada y jardines del Annaberg)",tags:["Mica","Todos"],acc:"auto",porque:"Jardines italianizantes en terrazas con fuentes y una cascada que cae 40 metros, más vistas lindas del casco. Ojo: la caminata desde el centro es empinada, así que para mamá conviene llegar en auto o bus y bajar las terrazas sin forzar.",hist:"Se inauguró en 1925, inspirado en los jardines de las villas italianas del Renacimiento, alimentado por un manantial subterráneo. Uno de los rincones románticos de la ciudad.",como:"En el barrio del Annaberg. En auto o bus 2015, 5-10 min desde el centro. A pie es subida fuerte, no recomendable para mamá.",maps:"https://www.google.com/maps/search/?api=1&query=Wasserkunstanlage+Paradies+Baden-Baden",oficial:"https://www.baden-baden.com/en/attractions/paradies-03fce230ea"}  ],
+  castillos:[
+    {nombre:"Altes Schloss Hohenbaden (castillo viejo)",tags:["Mica","Todos"],acc:"auto",porque:"Una ruina imponente sobre la roca del Battert, con torre, salones y vistas enormes del valle. Para Mica es historia pura; para mamá, se llega casi hasta arriba en auto y se ven los patios sin grandes subidas. Entrada libre.",hist:"Lo levantó hacia 1100 el margrave Herman II de Baden y fue residencia hasta 1479, cuando se mudaron al castillo nuevo del valle. Llegó a tener cien habitaciones; un incendio lo arruinó en 1599.",como:"10-15 min en auto del centro, con estacionamiento arriba; también sube el bus 215. Desde el parking, caminata corta hasta los patios.",maps:"https://www.google.com/maps/search/?api=1&query=Altes+Schloss+Hohenbaden+Baden-Baden",oficial:"https://www.altes-schlosshohenbaden.de/en/"},
+    {nombre:"Ruina del castillo de Yburg (en el Rebland)",tags:["Mica","Papa","Todos"],acc:"auto",porque:"Torre medieval entre viñedos con vista de 360° sobre la llanura del Rin. Combina castillo para Mica y vinos para papá: se llega en auto al pie y hay bodegas y tabernas cerca. Subir la torre es opcional.",hist:"Se construyó hacia 1190 para defender la frontera suroeste del margraviato. La destruyeron en la Guerra de los Campesinos de 1525, la reconstruyeron en 1620 y la arrasaron tropas francesas en 1689.",como:"10-15 min en auto del centro, hacia Varnhalt en el Rebland. Estacionamiento al pie; corta subida a la torre si quieren panorama.",maps:"https://www.google.com/maps/search/?api=1&query=Yburg+Baden-Baden",oficial:"https://en.wikipedia.org/wiki/Yburg_Castle"},
+    {nombre:"Neues Schloss (castillo nuevo)",tags:["Mica","Todos"],acc:"caminata",porque:"El palacio renacentista de los margraves, justo arriba del casco viejo, con una terraza que da una de las mejores vistas sobre los techos de la ciudad. La historia es riquísima y la vista compensa.",hist:"Fue sede de los margraves de Baden-Baden desde fines del siglo XV. Conserva el cuerpo principal de tres pisos, la cochera y la torre del archivo, renacentistas del siglo XVI.",como:"En el casco viejo, subida a pie de 10-15 min desde el Marktplatz por calles empedradas en cuesta. Para mamá es el límite; mejor evaluar taxi hasta cerca.",maps:"https://www.google.com/maps/search/?api=1&query=Neues+Schloss+Baden-Baden",oficial:"https://en.wikipedia.org/wiki/New_Castle_(Baden-Baden)"},
+    {nombre:"Stiftskirche y Marktplatz del casco viejo",tags:["Mica","Todos"],acc:"caminata",porque:"La iglesia más antigua de la ciudad, con tumbas de los margraves de Baden, sobre la placita empedrada del Marktplatz. Es el corazón histórico y abajo están las ruinas de los baños romanos. Llano dentro de la iglesia.",hist:"La Stiftskirche se levanta sobre antiguas termas romanas; guarda monumentos funerarios de la casa de Baden, incluido un crucifijo gótico de Nicolaus Gerhaert de 1467.",como:"En el casco viejo, subida suave de 10 min a pie desde el centro. La placita tiene cuesta empedrada; ir con calma con mamá.",maps:"https://www.google.com/maps/search/?api=1&query=Stiftskirche+Baden-Baden",oficial:"https://www.baden-baden.com/en/"}
+  ],
+  comer:[
+    {nombre:"Le Jardin de France im Stahlbad ⭐ CENA DEL CUMPLE",tipo:"especial",tags:["Papa","Mama","Mica","Todos"],acc:"facil",porque:"Esta es la cena del cumple de papá (miércoles 1 de julio). Una estrella Michelin, alta cocina francesa, en una casa termal del siglo XIX en pleno centro, con jardín de invierno que en verano se abre a terraza. Servicio cálido y carta de vinos excelente. Abre los miércoles: reservar con anticipación.",hist:"Sophie y Stephan Bernhard lo manejan desde 1998; el chef-patrón es francés y mantiene una cocina clásica que sigue siendo de las más pedidas de la ciudad. El edificio, el Stahlbad, fue un hotel balneario histórico.",como:"Augustaplatz 2, en el centro. Plano, 5-10 min a pie desde el Kurhaus.",maps:"https://www.google.com/maps/search/?api=1&query=Le+Jardin+de+France+Baden-Baden",oficial:"https://www.lejardindefrance.de/"},
+    {nombre:"Restaurant Nigrum (opción B para el cumple)",tipo:"especial",tags:["Papa","Mama","Mica","Todos"],acc:"caminata",porque:"Si quieren algo más moderno: estrella Michelin, ambiente de bóveda de piedra con tonos oscuros y arte, junto al Neues Schloss con vista a la ciudad. Reservable online (OpenTable, TheFork o Michelin). Buena opción B.",hist:"Funciona en unas antiguas caballerizas restauradas junto al castillo nuevo. Es una de las mesas más celebradas de Baden-Baden por su cocina creativa.",como:"Schlossstrasse 20, en el casco viejo. Subida a pie de 10-15 min desde el centro; para mamá, evaluar taxi hasta cerca.",maps:"https://www.google.com/maps/search/?api=1&query=Restaurant+Nigrum+Baden-Baden",oficial:"https://guide.michelin.com/us/en/baden-wurttemberg/baden-baden/restaurant/nigrum-1194444"},
+    {nombre:"Restaurante de la cima del Merkur",tipo:"casual",tags:["Mama","Todos"],acc:"teleferico",porque:"Comida casual con terraza y vista panorámica arriba del Merkur, a la que se sube todo en funicular. Perfecto para almorzar o tomar algo con mamá sin caminar, después de subir a la torre.",hist:"La cima del Merkur fue siempre destino de excursión de los huéspedes del balneario; hoy tiene restaurante, parque y pradera para tomar sol.",como:"Bus 204 o 205 hasta Merkurwald y funicular hasta la cima (5 min). Abre de 10 a 22h.",maps:"https://www.google.com/maps/search/?api=1&query=Merkur+Baden-Baden+restaurant",oficial:"https://www.baden-baden.com/en/attractions/merkur-mountain-and-merkur-funicular-railway-704bb875d3"},
+    {nombre:"Weinstube zum Engel (Rebland)",tipo:"casual",tags:["Papa","Todos"],acc:"auto",porque:"Taberna de vino auténtica en el Rebland, con cocina fresca y vinos de las bodegas de Baden-Baden. Casual, sabrosa y con onda de pueblo vinatero, ideal para papá después de ver Yburg.",hist:"En el corazón del Rebland, la zona vitivinícola de Baden-Baden, a unos 10 km del centro, rodeada de viñedos.",como:"10-15 min en auto del centro, hacia Varnhalt/Neuweier. Se combina bien con el castillo de Yburg.",maps:"https://www.google.com/maps/search/?api=1&query=Weinstube+zum+Engel+Neuweier+Baden-Baden",oficial:"https://www.outdooractive.com/en/gastro/schwarzwald/weinstube-zum-engel/808400825/"}
+  ],
+  eventos:[
+    {nombre:"Festspielhaus: sin función la noche del cumple",fecha:"1 jul",tipo:"concierto",ok:false,venue:"Festspielhaus Baden-Baden",desc:"Confirmado: el Festspielhaus no tiene función el 1 de julio. El concierto más cercano es el sábado 4 (London Symphony, Yuja Wang / Nézet-Séguin), ya fuera de la estadía. Para el cumple, la noche se arma con la cena en Le Jardin de France. Igual vale chequear la cartelera del 1 por si suman algo.",link:"https://www.festspielhaus.de/en/program"},
+    {nombre:"Baden-Badener Sommernächte (festival gratis) — arranca el 2",fecha:"2-5 jul",tipo:"festival",ok:false,venue:"Kurgarten / Kurhaus",desc:"Festival al aire libre y gratuito en el Kurgarten (tribute bands, big bands, DJs: jazz, soul, pop, latin). Ojo con las fechas: va del 2 al 5 de julio, justo cuando la familia se va a Friburgo, así que no cubre la noche del cumple. El line-up 2026 todavía no estaba publicado.",link:"https://kurhaus-badenbaden.de/de/event/baden-badener-sommernaechte-2026"},
+    {nombre:"Mr. M's Jazz Club (NO entra)",fecha:"marzo 2026",tipo:"jazz",ok:false,venue:"Kurhaus, Benazetsaal",desc:"El festival de jazz de Baden-Baden (con Nathan East y la All Star Band) es en marzo, no en julio. La próxima edición sería marzo 2027. Lo dejamos solo para descartarlo.",link:"https://www.badenbadenevents.de/en/event/384-mr-ms-jazz-club/"}
+  ],
+  cierres:[
+    "Le Jardin de France cierra domingos, lunes y los jueves a la noche. Para la cena del cumple, el miércoles 1 está abierto (reservar). Su web confirma cierre vacacional recién del 26/jul al 9/ago, así que el 1/jul opera.",
+    "No hay ningún domingo dentro de la estadía (martes 30 a jueves 2), así que no se pierden mercados ni comercios por el cierre dominical alemán.",
+    "Mercados: Augustaplatz lunes y jueves (cae el jueves 2); Bernhardusplatz miércoles y sábado (cae el miércoles 1); Klosterplatz Lichtental martes y viernes (cae el martes 30).",
+    "El funicular del Merkur opera de 10 a 22h; con lluvia fuerte o viento puede suspenderse, conviene chequear el día.",
+    "Las fuentes del Paradies am Annaberg pueden apagarse al caer la tarde; mejor ir de día para verlas funcionando.",
+    "Verificar la agenda del Festspielhaus: del 26/jun al 12/jul corre su festival de verano; mirar la cartelera exacta del 1/jul por si suman función.",
+    "Plan B si llueve el 1 (cumple): el Merkur y el Mummelsee dependen del clima. Alternativas bajo techo: las termas (Caracalla), el Museum Frieder Burda o el casino de día. La cena en Le Jardin de France queda firme igual.",
+    "Termas para mamá: la Caracalla Therme es la más cómoda (acceso adaptado y entrada por nivel), a diferencia del Friedrichsbad histórico con más escaleras. Igual conviene llegar en taxi por la subida final."
+  ],
+  move:{route:"Baden-Baden → Friburgo · jueves 2 jul", txt:"<b>Tren</b>, mismo eje del Rin con servicios ICE/IC/EC directos sin trasbordo: el más rápido ~44 min, en promedio ~1h09, con muchísima frecuencia. Estación a estación, sin escaleras complicadas, perfecto con equipaje y con mamá. En auto son ~1h por la A5, alternativa válida si ya tienen vehículo.", link:"https://www.bahn.com/en", linktxt:"Deutsche Bahn"}
+},
+
+{
+  id:"friburgo", nombre:"Friburgo", em:"🌲", fechas:"2 al 6 de julio · jueves a lunes",
+  hotel:{
+    nombre:"Courtyard by Marriott Freiburg ★★★★",
+    dir:"Eisenbahnstraße 47, 79098 Freiburg",
+    maps:"https://www.google.com/maps/search/?api=1&query=Courtyard+by+Marriott+Freiburg",
+    oficial:"https://www.marriott.com/en-us/hotels/bslfr-courtyard-freiburg/overview/",
+    ubic:"A pasos de la estación central (Hauptbahnhof), comodísimo para las excursiones en tren a la Selva Negra sin tener que manejar. El casco histórico, el Münster y el mercado quedan a unos 10-12 minutos a pie por terreno llano. El hotel tiene su propio Kitchen & Bar para una cena sin salir los días de excursión larga.",
+    cerca:[
+      {nombre:"HERMANN",tipo:"desayuno",dist:"2-3 min a pie",txt:"Café-restaurante junto a la estación, terreno totalmente llano: desayuno 'Funky Frühstück', waffles, panadería y café, con terraza.",maps:"https://www.google.com/maps/search/?api=1&query=HERMANN+Eisenbahnstrasse+Freiburg"},
+      {nombre:"Café Einstein",tipo:"desayuno",dist:"8-10 min a pie",txt:"Café de barrio muy bien valorado en Stühlinger, llano: desayuno abundante con producto regional, tortas caseras y buen café.",maps:"https://www.google.com/maps/search/?api=1&query=Cafe+Einstein+Eschholzstrasse+Freiburg"},
+      {nombre:"Augustiner im Bankepeter",tipo:"comer",dist:"10-12 min a pie",txt:"Gasthaus tradicional desde los años 30, mismo lado de las vías que el hotel y llano: cocina típica de Baden (Schnitzel, Spätzle) y vinos regionales a buen precio.",maps:"https://www.google.com/maps/search/?api=1&query=Augustiner+im+Bankepeter+Mathildenstrasse+Freiburg"},
+      {nombre:"Hauptbahnhof (estación central)",tipo:"tren",dist:"2-3 min a pie",txt:"La base de las excursiones: de acá salen los trenes y la conexión al Schauinsland y a Titisee. Llegar y salir sin estrés."},
+      {nombre:"Colombipark y Colombischlössle",tipo:"parque",dist:"5 min a pie",txt:"Parque con rosaleda y una villa neogótica que hoy es museo arqueológico. Verde y llano, a un paso del hotel."},
+      {nombre:"Markthalle Freiburg",tipo:"comer",dist:"10 min a pie",txt:"Mercado gastronómico cubierto con más de 20 puestos del mundo entero, en una vieja imprenta. Ideal para almuerzos variados y rápidos.",maps:"https://www.google.com/maps/search/?api=1&query=Markthalle+Freiburg"},
+      {nombre:"Münsterplatz y el Münster",tipo:"atraccion",dist:"10-12 min a pie",txt:"La catedral gótica y su mercado de productores (lunes a sábado por la mañana). El corazón del casco histórico, llano desde el hotel."},
+      {nombre:"Das Augustiner am Platz",tipo:"comer",dist:"12 min a pie",txt:"Cervecería de tradición bávara en pleno Augustinerplatz del casco viejo. Contundente, animada y bien local.",maps:"https://www.google.com/maps/search/?api=1&query=Augustiner+am+Platz+Freiburg"},
+      {nombre:"Kitchen & Bar at Courtyard",tipo:"comer",dist:"en el hotel",txt:"El restaurante-bar del propio hotel, para una cena tranquila sin salir después de un día largo de excursión."},
+      {nombre:"Kaiser-Joseph-Straße (KaJo)",tipo:"shopping",dist:"11-13 min a pie",txt:"La gran peatonal del casco, llana: Zara (de los más grandes de Alemania, con ascensor), H&M y Galeria Kaufhof. Sin Uniqlo en la ciudad.",maps:"https://www.google.com/maps/search/?api=1&query=Kaiser-Joseph-Strasse+Freiburg"},
+      {nombre:"Birkenstock Store (Augustinerplatz)",tipo:"shopping",dist:"12-14 min a pie",txt:"Tienda oficial de las sandalias alemanas, calzado cómodo ideal para mamá.",maps:"https://www.google.com/maps/search/?api=1&query=Birkenstock+Store+Augustinerplatz+Freiburg"},
+      {nombre:"Schwarzwald City",tipo:"shopping",dist:"10-12 min a pie",txt:"Centro comercial cubierto con +30 tiendas, baños y ascensores: refugio si llueve, entrada llana.",maps:"https://www.google.com/maps/search/?api=1&query=Schwarzwald+City+Freiburg"}
+    ]
+  },
+  intro:"El hub de la Selva Negra del sur, con dos andariveles propios: el funicular al Schlossberg (cerro urbano) y el teleférico Schauinslandbahn (el más viejo del mundo). Para mamá es la base soñada: casi todo lo lindo sale del centro en auto o en cabina cerrada. Lagos, cascadas y la ruta panorámica clásica, todo a mano.",
+  plan:[
+    {d:"Jue 2 — Llegada", s:"suave", t:"Llegada en tren. Münsterplatz: la catedral, el Historisches Kaufhaus rojo y el Münstermarkt (abre jueves, paraíso de papá con la Lange Rote). Cena relajada en la cervecería Feierling, bajo los castaños."},
+    {d:"Vie 3", s:"", t:"El plan estrella para mamá: teleférico Schauinslandbahn (20 min de cabina sin caminar) y comer en la cima con vista. O el funicular Schlossbergbahn al Dattler. De vuelta, otra pasada por el Münstermarkt."},
+    {d:"Sáb 4", s:"excursión", t:"Día de Selva Negra en auto: lago Titisee con paseo en barco (mamá, media hora sentados) y parada en el Hofgut Sternen camino de ida. Alternativa entre viñedos: el mirador del Kaiserstuhl, casi en auto."},
+    {d:"Dom 5", s:"ruta panorámica", t:"Domingo (mercados cerrados): día de excursión. Teleférico al Feldberg (cabina cerrada, vista del sur de la Selva Negra) o las cataratas de Triberg (con acceso accesible a la primera plataforma). Y si quieren cruzar a Francia, Colmar queda a ~45 min: pueblo-postal, llano y para todos."},
+    {d:"Lun 6 — Viaje", s:"traslado", t:"Mañana corta por el casco antiguo (las puertas medievales, el Schlossbergbahn rápido). Mediodía: tren a Berlín (~6h20). Llegan de noche a Berlín."}
+  ],
+  fotos:[
+    {nombre:"Teleférico Schauinslandbahn y mirador",tags:["Mama","Todos"],acc:"teleferico",porque:"El plan estrella para mamá: subís casi 800 metros en cabina cerrada sin caminar nada y arriba tenés vistas enormes al valle del Rin y los Vosgos. Es el teleférico circulante de pasajeros más viejo del mundo, así que también suma como dato lindo.",hist:"Inaugurado en 1930, fue el primer teleférico circulante de pasajeros del mundo. Salva un desnivel de 746 metros a lo largo de 3.600 metros. Desde entonces es el clásico paseo de los friburgueses.",como:"Estación del valle detrás de Günterstal, al sur de la ciudad. 20-25 min en auto desde el centro, o tranvía línea 2 hasta Günterstal y bus 21. La subida en cabina dura unos 20 min.",maps:"https://www.google.com/maps/search/?api=1&query=Schauinslandbahn+Talstation+Freiburg",oficial:"https://www.schauinslandbahn.de"},
+    {nombre:"Funicular Schlossbergbahn y terraza del Schlossberg",tags:["Mama","Todos"],acc:"teleferico",porque:"En 3 minutos y sin esfuerzo subís al cerro que mira toda la ciudad. Arriba, sin caminar, tenés la terraza del Dattler y el Kastaniengarten con la postal de Friburgo, la catedral y la Selva Negra de fondo.",hist:"El funicular actual es de 2008 y reemplazó a un teleférico que funcionó entre 1968 y 2006. Sube del Stadtgarten al Schlossberg, el cerro de 456 metros donde los duques de Zähringen tenían su castillo medieval.",como:"Estación del valle en el Stadtgarten, 5-10 min a pie del centro/Münsterplatz. Funciona todos los días de 9 a 22h (martes hasta las 18h).",maps:"https://www.google.com/maps/search/?api=1&query=Schlossbergbahn+Talstation+Freiburg",oficial:"https://visit.freiburg.de/en/schlossbergbahn"},
+    {nombre:"Mirador Totenkopf / Neunlindenturm (Kaiserstuhl), en auto",tags:["Mama","Todos"],acc:"auto",porque:"Punto más alto del Kaiserstuhl con vistas amplias a Friburgo, la Selva Negra, los Vosgos y el viñedo escalonado. Se llega prácticamente en auto y la zona es de viñedos volcánicos, muy fotogénica con luz de tarde.",hist:"El Totenkopf es la cumbre del Kaiserstuhl, una formación de colinas volcánicas de clima cálido famosa por sus vinos Pinot. Está coronado por la torre mirador Neunlindenturm.",como:"20-30 min al noroeste de Friburgo en auto, hacia Vogtsburg im Kaiserstuhl. La cumbre se alcanza en auto y queda un tramo corto a pie hasta la torre.",maps:"https://www.google.com/maps/search/?api=1&query=Neunlindenturm+Totenkopf+Kaiserstuhl",oficial:"verificar"},
+    {nombre:"Teleférico Feldbergbahn (Seebuck, Feldberg)",tags:["Mama","Todos"],acc:"teleferico",porque:"El monte más alto de la Selva Negra con cabinas cerradas de 8 plazas que admiten silla de ruedas. En días claros se ve hasta los Alpes. Cero caminata para llegar a la vista panorámica del sur de la Selva Negra.",hist:"El Feldberg (1.493 m) es la montaña más alta de la Selva Negra y de toda Alemania fuera de los Alpes y Baviera. El teleférico sube al Seebuck, coronado por la histórica torre Feldbergturm.",como:"50-60 min en auto desde Friburgo por la B31 vía Titisee. Estación del valle en Feldberg-Ort.",maps:"https://www.google.com/maps/search/?api=1&query=Feldbergbahn+Feldberg+Schwarzwald",oficial:"https://www.feldberg-erlebnis.de/en"},
+    {nombre:"Colmar (Alsacia, Francia)",tags:["Mama","Mica","Todos"],acc:"auto",porque:"El pueblo-postal de Alsacia: la 'Petite Venise' con sus canales, las casas de entramado de colores y plazas floridas. El centro es plano y peatonal, ideal para mamá, y para Mica es puro cuento. Se cruza a Francia en 45 min.",hist:"Colmar conserva un casco medieval y renacentista casi intacto. Es cuna del escultor Bartholdi, autor de la Estatua de la Libertad. Sus barrios de curtidores y pescadores están entre los más fotografiados de Europa.",como:"A unos 45-50 min en auto desde Friburgo cruzando el Rin. Estacionamientos en el borde del centro histórico, todo llano desde ahí.",maps:"https://www.google.com/maps/search/?api=1&query=Colmar+Petite+Venise+France",oficial:"https://www.tourisme-colmar.com/en/"}
+  ],
+  mercados:[
+    {nombre:"Münstermarkt (mercado de la catedral)",tags:["Papa","Todos"],acc:"facil",porque:"El mercado por excelencia de Friburgo para papá: hasta 130 puestos rodeando la catedral con flores, quesos, frutas, vino de Baden, miel y la famosa Lange Rote (la salchicha local). Plano, en pleno centro, perfecto para picar.",hist:"Se monta cada día de semana en la Münsterplatz, alrededor de la catedral gótica. Es una tradición de siglos ligada al rol comercial de la plaza y del Historisches Kaufhaus contiguo.",como:"En la Münsterplatz, corazón del casco antiguo. A pie desde cualquier punto, terreno llano.",maps:"https://www.google.com/maps/search/?api=1&query=M%C3%BCnstermarkt+Freiburg",oficial:"https://muenstermarkt.freiburg.de",dias:"Lunes a sábado. CERRADO domingos (el domingo 5 no hay mercado).",horarios:"Lun a vie 7:30-13:30; sábado 7:30-14:00. Útil: jueves 2, viernes 3, sábado 4."},
+    {nombre:"Markthalle Freiburg (mercado gastronómico cubierto)",tags:["Todos"],acc:"facil",porque:"Patio de comidas dentro de un edificio histórico de arenisca: unos 22 puestos con cocina de Baden, asiática, latina y de Medio Oriente. Ideal para que cada uno coma lo que quiere sin formalidad, y abre de noche.",hist:"En un edificio histórico catalogado de arenisca, se volvió uno de los puntos favoritos para comer afuera en Friburgo.",como:"Grünwälderstraße 4, en pleno casco antiguo, a pocos minutos a pie de la Münsterplatz, llano.",maps:"https://www.google.com/maps/search/?api=1&query=Markthalle+Freiburg",oficial:"https://www.markthalle-freiburg.de",dias:"Lunes a sábado. CERRADO domingos (el domingo 5 cierra).",horarios:"Lun a jue 8-20h; vie y sáb 8-22h."}
+  ],
+  naturaleza:[
+    {nombre:"Lago Titisee",tags:["Mama","Todos"],acc:"facil",porque:"El lago más conocido de la Selva Negra, con paseo costero plano y muy accesible. Para mamá lo ideal es el paseo en barco: vuelta tranquila de media hora sin caminar, viendo el lago desde el agua. Pueblo con cafés y tiendas.",hist:"El Titisee es el lago natural más grande de la Selva Negra, de origen glaciar. El pueblo de Titisee-Neustadt creció como destino de veraneo alrededor de sus aguas.",como:"Unos 30 km / 40-45 min desde Friburgo en auto por la B31, o tren regional por el Höllental en ~40 min. El estacionamiento se llena en temporada.",maps:"https://www.google.com/maps/search/?api=1&query=Titisee+lake+Black+Forest",oficial:"https://www.hochschwarzwald.de/en"},
+    {nombre:"Cataratas de Triberg",tags:["Mama","Mica","Todos"],acc:"caminata",porque:"De las cascadas más altas de Alemania. Para mamá hay una entrada accesible: detrás de la Asklepios Klinik el acceso es sin barreras hasta la 1ª plataforma, desde donde ya se ven las cascadas de frente, sin la subida empinada de los siete tramos. El recorrido completo sí es empinado y NO para mamá.",hist:"El río Gutach cae unos 163 metros en varios saltos a través del bosque. Triberg es además la cuna de los relojes cucú, así que el pueblo combina naturaleza y tradición relojera.",como:"Unos 60 km / 1h en auto desde Friburgo. Hay varios estacionamientos a pocos minutos de las entradas.",maps:"https://www.google.com/maps/search/?api=1&query=Triberger+Wasserf%C3%A4lle+Triberg",oficial:"https://www.triberg.de"},
+    {nombre:"Hofgut Sternen y mirador de la Ravennaschlucht (Höllental)",tags:["Mama","Todos"],acc:"auto",porque:"Parada cómoda camino al Titisee: un hofgut histórico con restaurante, taller de vidrio soplado y la capilla más antigua de la Selva Negra. Desde acá se ve el famoso viaducto ferroviario sobre la Ravennaschlucht sin meterse en la garganta (esa caminata NO es para mamá).",hist:"Antigua posta comercial del Höllental por donde pasaron Goethe y María Antonieta. La capilla St. Oswald fue consagrada en 1148 y es la iglesia parroquial conservada más antigua de la Selva Negra.",como:"25-30 min en auto desde Friburgo por la B31, debajo del puente, antes de Hinterzarten/Titisee.",maps:"https://www.google.com/maps/search/?api=1&query=Hofgut+Sternen+Ravennaschlucht",oficial:"https://www.hofgut-sternen.de/en/"}
+  ],
+  castillos:[
+    {nombre:"Catedral de Friburgo (Freiburger Münster)",tags:["Mica","Todos"],acc:"facil",porque:"La joya de la ciudad: una catedral gótica con una de las torres caladas más bellas de Europa. Se recorre por dentro sin caminata (la torre se sube por escalera, opcional) y por fuera es pura historia. Sobrevivió milagrosamente a la guerra.",hist:"Construida a lo largo de más de 300 años, del siglo XIII al XV. Su aguja calada de 116 metros es del s. XIV-XV, una obra maestra del gótico. Quedó casi intacta tras los bombardeos que arrasaron el centro.",como:"En la Münsterplatz, centro del casco antiguo. A pie desde cualquier punto, terreno llano.",maps:"https://www.google.com/maps/search/?api=1&query=Freiburger+M%C3%BCnster+cathedral",oficial:"https://www.freiburgermuenster.info"},
+    {nombre:"Historisches Kaufhaus",tags:["Mica","Todos"],acc:"facil",porque:"El edificio rojo más fotografiado de la Münsterplatz, con galería de arcadas, esculturas y escudos imperiales. Monumento clave del casco antiguo, justo enfrente de la catedral, sin ninguna caminata.",hist:"Su origen como administración del mercado se menciona ya en 1378. El edificio rojo actual lo levantó el maestro Lienhart Müller entre 1520 y 1532 como centro de aduanas y comercio.",como:"En la Münsterplatz, frente a la catedral. A pie, llano.",maps:"https://www.google.com/maps/search/?api=1&query=Historisches+Kaufhaus+Freiburg",oficial:"https://historischeskaufhaus.freiburg.de/en"},
+    {nombre:"Martinstor y Schwabentor (puertas medievales)",tags:["Mica","Todos"],acc:"facil",porque:"Las dos puertas medievales que sobreviven en la ciudad, hoy en plena zona peatonal. Buenas para entender el trazado de la Friburgo amurallada, sin esfuerzo y de paso entre comercios. El Schwabentor queda al pie del Schlossberg, así que se combina con el funicular.",hist:"El Martinstor es del siglo XIII (mencionado en 1238); en 1901 lo elevaron de 22 a 60 metros. El Schwabentor, con el mural de San Jorge (patrono de la ciudad), también fue ampliado en su modernización.",como:"En la Kaiser-Joseph-Straße (Martinstor) y el extremo este del casco (Schwabentor), a pocos minutos a pie, llano.",maps:"https://www.google.com/maps/search/?api=1&query=Martinstor+Freiburg",oficial:"https://visit.freiburg.de/en/martinstor-martins-gate"},
+    {nombre:"Ruinas del Burg Staufen (Staufen im Breisgau)",tags:["Mica"],acc:"caminata",porque:"Castillo en ruinas sobre una colina de viñedos, con la leyenda de Fausto encima. Para Mica, que ama castillos e historia, vale el desvío; vistas a la llanura del Rin. La subida es de unos 30 min, así que no es para mamá.",hist:"Levantado por los barones de Staufen a inicios del s. XII sobre un sitio romano, para proteger la minería de plata. Allí murió en 1539 Johann Georg Faust, el alquimista que inspiró el mito de Fausto. Ardió en 1633.",como:"25-30 min en auto al sur de Friburgo hasta Staufen; desde el pueblo, subida a pie de unos 30 min al castillo.",maps:"https://www.google.com/maps/search/?api=1&query=Burg+Staufen+Staufen+im+Breisgau",oficial:"https://www.staufen.de"}
+  ],
+  comer:[
+    {nombre:"Dattler Schlossbergrestaurant",tipo:"especial",tags:["Todos","Mama"],acc:"teleferico",porque:"La comida con la mejor vista de Friburgo, y se llega sin esfuerzo y sin barreras por el funicular. Cocina de Baden con toques mediterráneos, terraza panorámica sobre la catedral y los Vosgos, y su famosa Selva Negra (torta) casera. OJO: cerrado lunes y martes, así que el lunes 6 no abre; reservar terraza.",hist:"Una de las direcciones más conocidas de Friburgo, en lo alto del Schlossberg, al final del funicular. Repostería propia y la clásica Schwarzwälder Kirschtorte hecha en casa.",como:"Arriba del Schlossberg, llegando con el Schlossbergbahn desde el Stadtgarten. Acceso sin barreras.",maps:"https://www.google.com/maps/search/?api=1&query=Dattler+Schlossbergrestaurant+Freiburg",oficial:"https://dattler.de"},
+    {nombre:"Zum Roten Bären",tipo:"especial",tags:["Todos","Mica"],acc:"facil",porque:"Comer dentro de una de las casas de huéspedes más antiguas de Alemania, con cocina regional de Baden: sopas, pescados y carnes de la zona. Para Mica suma el plus histórico; para todos, sabor local en un edificio con siglos.",hist:"El edificio del Roten Bären (Oso Rojo) data de 1387 y se reivindica como una de las posadas más antiguas del país, junto a la muralla vieja.",como:"Oberlinden, casco antiguo, cerca del Schwabentor, a pocos minutos a pie del centro, llano.",maps:"https://www.google.com/maps/search/?api=1&query=Zum+Roten+B%C3%A4ren+Freiburg",oficial:"https://www.roter-baeren.de"},
+    {nombre:"Hausbrauerei Feierling",tipo:"casual",tags:["Papa","Todos"],acc:"facil",porque:"Cervecería propia con biergarten enorme bajo castaños en pleno casco antiguo: ambiente relajado, cerveza Inselhopf de elaboración propia y comida típica (pretzels, ensalada de salchicha, Bibeleskäs). Justo el plan informal que le gusta a papá.",hist:"La familia Feierling lleva más de 140 años elaborando cerveza en Friburgo. El biergarten, junto al Augustinerplatz, sienta hasta 700 personas bajo los castaños.",como:"Gerberau 46 / Augustinerplatz, casco antiguo, a minutos a pie del centro, terreno llano.",maps:"https://www.google.com/maps/search/?api=1&query=Hausbrauerei+Feierling+Freiburg",oficial:"https://www.feierling.de"},
+    {nombre:"Bergstation (restaurante del Schauinsland)",tipo:"casual",tags:["Mama","Todos"],acc:"teleferico",porque:"Comer o tomar algo a casi 1.300 metros, llegando con el teleférico sin caminata, con terraza y jardín de invierno mirando el valle del Rin y los Vosgos. Combina perfecto con el paseo del Schauinslandbahn. Verificar días y horarios antes de ir.",hist:"En la estación de cima del Schauinslandbahn, el teleférico circulante más antiguo del mundo (1930), uno de los grandes paseos clásicos de Friburgo.",como:"En la cima del Schauinsland, subiendo con el teleférico desde la estación del valle.",maps:"https://www.google.com/maps/search/?api=1&query=Bergstation+Schauinsland+Freiburg",oficial:"https://www.schauinslandbahn.de"}
+  ],
+  eventos:[
+    {nombre:"Jazzhaus Freiburg: sin jazz estos días",fecha:"2-6 jul",tipo:"jazz",ok:false,venue:"Jazzhaus, Schnewlinstrasse 1",desc:"El mítico Jazzhaus (jazz/blues/soul en una antigua bodega de oporto desde 1987) no tiene conciertos de jazz entre el 2 y el 6 de julio; el siguiente es el 17 de julio (Ramón Valle Quartet, pianista cubano), ya fuera del viaje. Vale revisar la grilla cerca de la fecha por si agregan algo.",link:"https://www.jazzhaus.de/programm.html"},
+    {nombre:"ZMF — Zelt-Musik-Festival (NO entra)",fecha:"15 jul-2 ago",tipo:"festival",ok:false,venue:"Mundenhof, Freiburg",desc:"El gran festival de música de Friburgo arranca el 15 de julio, después de que la familia se va el 6. No coincide.",link:"https://zmf.de/programm/"},
+    {nombre:"Pat Metheny en Konzerthaus (NO entra)",fecha:"19 jun (antes del viaje)",tipo:"guitarra",ok:false,venue:"Konzerthaus Freiburg",desc:"Pat Metheny tocó en Friburgo el 19 de junio, antes de que la familia llegue (2 jul). Una lástima por el timing.",link:"https://www.patmetheny.org/tour"}
+  ],
+  cierres:[
+    "Münstermarkt: cerrado el domingo 5 (solo lun a sáb). Jueves 2 y viernes 3 son días de mercado pleno; sábado 4 hasta las 14h.",
+    "Markthalle Freiburg: cerrada el domingo 5.",
+    "Dattler Schlossbergrestaurant: cerrado lunes y martes, o sea el lunes 6 (último día) no abre. Abierto jue 2, vie 3, sáb 4 y dom 5.",
+    "No hay feriados en julio en Baden-Württemberg en 2026, así que comercios y atracciones siguen su horario de temporada.",
+    "Domingo 5: las tiendas (no gastronómicas) cierran. Restaurantes, teleféricos y museos sí abren. Planificar compras para jue/vie/sáb.",
+    "Schlossbergbahn: los martes cierra antes (18h), pero en esta estadía no cae ningún martes."
+  ],
+  move:{route:"Friburgo → Berlín · lunes 6 jul", txt:"<b>Tren</b>: ICE directo sin trasbordos, ~6h20 el más rápido (promedio ~7h12), con unos 8 servicios diarios. Es largo, pero evita el estrés de aeropuertos: Friburgo no tiene aeropuerto comercial propio útil; volar sería desde EuroAirport Basel (a ~70 km), y sumando traslados queda en ~5-6h puerta a puerta con mucho más manejo de equipaje. Recomendamos el tren por comodidad, salvo que prioricen ganar 1-2h (en ese caso, volar desde Basilea/BSL). Llegan de noche a Berlín.", link:"https://www.bahn.com/en", linktxt:"Deutsche Bahn"}
+}
+];
+
+/* CIERRE BERLÍN — sección especial */
+const CIERRE = {
+  id:"cierre", nombre:"Cierre Berlín", em:"🌙", fechas:"6 al 7 de julio · lunes y martes",
+  intro:"Las últimas horas, ya sin valijas que armar todos los días. Llegan de noche el lunes desde Friburgo. Es para descansar, cerrar algo pendiente de la primera vuelta por Berlín y, si hay energía, una última noche de jazz.",
+  plan:[
+    {d:"Lun 6 — Llegada de noche", s:"", t:"Llegada del tren al anochecer. Cena tranquila cerca del alojamiento. Si papá tiene cuerda, regalo de despedida: Andreas Schmidt & Friends en el A-Trane, 20:30, ENTRADA GRATIS."},
+    {d:"Mar 7", s:"día libre suave", t:"Día relajado para lo que quedó pendiente: un museo de la Isla de los Museos, una vuelta por el Tiergarten, o compras de último momento (recordar que es martes, todo abierto). Cena de cierre del viaje."},
+    {d:"Mié 8 — Salida", s:"vuelo", t:"Vuelo de salida: Berlín → Buenos Aires → Salta."}
+  ],
+  eventos:[
+    {nombre:"Andreas Schmidt & Friends — última noche de jazz (GRATIS)",fecha:"Lun 6 jul, 20:30",tipo:"jazz",ok:true,venue:"A-Trane, Charlottenburg",desc:"Cierre redondo para papá: modern jazz con entrada gratis, justo la noche del regreso a Berlín. Si llegan con energía después del tren, vale la pena pasar aunque sea un rato.",link:"https://a-trane.de/programm/"}
+  ]
+};
+
+/* ===================== RENDER ===================== */
+function tagHtml(t){
+  const map={Papa:["papa","Papá"],Mama:["mama","Mamá"],Mica:["mica","Mica"],Todos:["todos","Todos"]};
+  const m=map[t]||["todos",t];
+  return '<span class="tag '+m[0]+'">'+m[1]+'</span>';
+}
+function accHtml(a){
+  const o=ACC[a]||ACC.facil;
+  return '<span class="acc '+a+'">'+o.ic+' '+o.txt+'</span>';
+}
+function linksHtml(it){
+  let h='<div class="links"><a class="maps" href="'+it.maps+'" target="_blank" rel="noopener">📍 Maps</a>';
+  if(it.oficial && it.oficial!=="verificar"){
+    h+='<a class="site" href="'+it.oficial+'" target="_blank" rel="noopener">🔗 Sitio oficial</a>';
+  } else {
+    h+='<span class="verif">🔎 Sitio a verificar</span>';
+  }
+  return h+'</div>';
+}
+function commons(f){ return "https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(String(f).replace(/ /g,"_"))+"?width=768"; }
+/* IMG: nombre del lugar -> archivo(s) de Wikimedia Commons (raw). Array = carrusel. Verificados por subagentes. */
+const IMG = {
+  // Berlín
+  "Puerta de Brandeburgo":["Brandenburg Gate Quadriga at Night.jpg","Brandenburger Tor morgens.jpg","Brandenburg Gate - Brandenburger Tor - Berlin - Germany - 01.jpg"],
+  "Cúpula del Reichstag":["Reichstag building, Berlin, Germany (wide view) 01.jpg","Reichstag in Berlin, with Spree.jpg"],
+  "Reichstag y avenida Unter den Linden":["Reichstag building, Berlin, Germany (wide view) 01.jpg","Reichstag in Berlin, with Spree.jpg"],
+  "Berliner Fernsehturm (Torre de TV, Alexanderplatz)":["Fernsehturm, Berlín, Alemania, 2016-04-21, DD 40-42 HDR.jpg","Weltzeituhr mit Fernsehturm - Alexanderplatz.jpg"],
+  "Memorial a los Judíos Asesinados de Europa":["Berlin - Holocaust Memorial 012.JPG"],
+  "Panoramapunkt (Kollhoff Tower, Potsdamer Platz)":["Berlin-Mitte 10-2012 View from Panorama Point img02.jpg","Berlin-Mitte 10-2012 View from Panorama Point img04.jpg"],
+  "Palacio de Charlottenburg":["Berlin, Charlottenburg, Schloss, 2012-07 CN-03.jpg","Aerial image of Schloss Charlottenburg (view from the southwest).jpg","Schloss Charlottenburg nachts.jpg"],
+  "Grosser Wannsee y ferry F10 a Kladow":["Grosser Wannsee Berlin.jpg"],
+  "Café am Neuen See (Tiergarten)":["B-Tiergarten skyline Mrz13.jpg"],
+  "Markthalle Neun (Kreuzberg)":["Berlin Markthalle IX Fassade Eisenbahnstrasse.jpg","Markthalle Neun 08.02.2015 16-21-31.JPG"],
+  "Mercado de pulgas de Mauerpark (Prenzlauer Berg)":["Berlin-Mauerpark-Flohmarkt (3).jpg","Flohmarkt am Mauerpark (9132510215).jpg"],
+  "Mercado de Boxhagener Platz (Friedrichshain)":["Boxhagener Platz Berlin.jpg"],
+  "Crucero por el Spree desde el centro":["Spree Berlin Ships.JPG","Museumsinsel and Bode-Museum, West view 20130724 1.jpg"],
+  "Puente de Glienicke y mirador sobre el Havel":["Glienicker Brücke, Berlin, 170501, ako.jpg","Le Glienicker Brücke (Wannsee, Berlin) (6337502050).jpg"],
+  "Isla de los Museos (Museumsinsel)":["Museumsinsel and Bode-Museum, West view 20130724 1.jpg","Museumsinsel Berlin.jpg"],
+  // Estrasburgo
+  "Pont du Faisan y Place Benjamin Zix":["Place Benjamin Zix, Strasbourg, 2025.jpg","Strasbourg-Place Benjamin-Zix.jpg","Pont du Faisan hiver.jpg","Strasbourg-Pont du Faisan (2).jpg"],
+  "Rue du Bain aux Plantes y Place Benjamin Zix":["Place Benjamin Zix, Strasbourg, 2025.jpg","Strasbourg-Place Benjamin-Zix.jpg"],
+  "Rue du Bain aux Plantes":["Strasbourg-33 rue du Bain-aux-Plantes (1).jpg","Strasbourg-33 rue du Bain-aux-Plantes (3).jpg"],
+  "Barrage Vauban (terraza panorámica)":["Barrage Vauban @ Strasbourg (31647191358).jpg","Barrage Vauban @ Strasbourg (44605641315).jpg","Barrage Vauban @ Strasbourg (44793977454).jpg"],
+  "Barrage Vauban (terraza mirador)":["Barrage Vauban @ Strasbourg (31647191358).jpg","Barrage Vauban @ Strasbourg (44605641315).jpg"],
+  "Catedral de Notre-Dame de Estrasburgo":["Strasbourg - Cathedral - West Façade I.jpg","Strasbourg Cathedral (52298308659).jpg"],
+  "Catedral de Estrasburgo":["Strasbourg - Cathedral - West Façade I.jpg","Strasbourg Cathedral (52298308659).jpg"],
+  "Parc de l'Orangerie":["20180915 Parc de l'Orangerie 03.jpg","20180915 Parc de l'Orangerie 04.jpg","Strasbourg (Bas-Rhin) - Neustadt - Parc de l'Orangerie - Pavillon Joséphine.jpg"],
+  "Mont Sainte-Odile (terrazas panorámicas)":["Sainte-Odile et sa cour.jpg","Mont Sainte-Odile 1 11 2011 4.jpg","Mont Sainte-Odile 170509 03.jpg"],
+  "Palais Rohan":["Palais Rohan face au quai des Bateliers, Strasbourg.jpg","Riverside façade of Palais Rohan, Strasbourg 01.jpg"],
+  "Château du Haut-Koenigsbourg":["France Haut-Koenigsbourg aerial view.jpg","Château du Haut-Koenigsbourg (755 m) (Orschwiller) (17).jpg","Castle of Haut-Koenigsbourg (2).jpg"],
+  "Château du Haut-Barr (Saverne)":["Haut-Barr castle (looking NE).jpg","Haut-Barr Chapelle.jpg"],
+  // Baden-Baden
+  "Torre mirador del Merkur (subiendo en funicular)":["Merkurturm Baden-Baden 2022-09-08.jpg","Bergstation der Merkur-Bergbahn.jpg"],
+  "Trinkhalle (columnata)":["Baden-Baden-Trinkhalle Panorama1-gje.jpg","Baden-Baden-Trinkhalle Panorama2-Platanen-gje.jpg","Trinkhalle Baden-Baden 2022-09-07 1.jpg"],
+  "Kurhaus y fachada del Casino":["Baden-Baden - Kurhaus.jpg","Baden-Baden - Kurhaus - HDR - 2015-02-14 - 0438-45.jpg","Kurhaus Baden-Baden 2022-09-07 1.jpg"],
+  "Casino, Kurhaus y Trinkhalle":["Baden-Baden - Kurhaus.jpg","Kurhaus Baden-Baden 2022-09-07 1.jpg"],
+  "Gönneranlage (jardín de rosas)":["Baden-Baden-Goenneranlage-Maskerade-02-Josefinenbrunnen-2012-gje.jpg"],
+  "Lichtentaler Allee (paseo junto al río Oos)":["Baden Baden - Lichtentaler Allee - View South.jpg","Baden Baden - Lichtentaler Allee - View SE.jpg","Baden-Baden, Fiaker auf der Lichtentaler Allee.JPG"],
+  "Lichtentaler Allee":["Baden Baden - Lichtentaler Allee - View South.jpg","Baden Baden - Lichtentaler Allee - View SE.jpg"],
+  "Mummelsee (lago en la Selva Negra)":["2017-Mummelsee.jpg","Mummelsee und Hotel.jpg","Mummelsee - view from the trail.jpg"],
+  "Wasserkunstanlage Paradies (cascada y jardines del Annaberg)":["Baden - Baden - Wasserkunst - Paradies - panoramio.jpg","Wassertreppe am Paradies - panoramio.jpg","Baden - Baden - Am Paradies - panoramio.jpg"],
+  "Cascada de Geroldsau (Geroldsauer Wasserfall)":["Baden-Baden - Geroldsauer Wasserfall 2018 Bild 1.jpg","Baden-Baden - Geroldsauer Wasserfall 2018 Bild 2.jpg","Geroldsauer Wasserfall im Schwarzwald.jpg"],
+  "Altes Schloss Hohenbaden (castillo viejo)":["Baden-Baden-Altes Schloss Hohenbaden-81-2016-gje.jpg","Baden-Baden 10-2015 img16 view to Burg Hohenbaden.jpg","Festung Schloss Hohenbaden.jpg"],
+  "Ruina del castillo de Yburg (en el Rebland)":["Yburg-06-von aussen-2017-gje.jpg","Yburg-04-Turm-2013-gje.jpg","Baden-Baden-vom Fremersbergturm-22-Yburg-2021-gje.jpg"],
+  "Stiftskirche y Marktplatz del casco viejo":["Baden-Baden-Stiftskirche-01a-Marktplatz-vom Alten Dampfbad-2017-gje.jpg","Baden Baden - Marktplatz - View West.jpg"],
+  "Museum Frieder Burda + Kunsthalle":["Baden-Baden 10-2015 img39 Museum Frieder Burda.jpg"],
+  "Caracalla Therme / Friedrichsbad":["Baden-Baden-Friedrichsbad-01-Suedost-gje.jpg"],
+  // Friburgo
+  "Teleférico Schauinslandbahn y mirador":["Schauinsland-2007-12-19.jpg","Freiburg von der Schauinslandbahn.jpg","Schauinsland 1040316.jpg"],
+  "Funicular Schlossbergbahn y terraza del Schlossberg":["Schlossbergbahn Freiburg - 2013.jpg","Dattler (Freiburg im Breisgau) 13656.jpg"],
+  "Mirador Totenkopf / Neunlindenturm (Kaiserstuhl), en auto":["Kaiserstuhl Totenkopf.JPG","Kaiserstuhl 2007 057 Neunlindenturm.jpg"],
+  "Teleférico Feldbergbahn (Seebuck, Feldberg)":["20041230-01144-Feldberggipfel.jpg"],
+  "Lago Titisee":["Titisee-blick von hochfirst.jpg","Black Forest Lake Titisee (9812968523).jpg","1 of 10 - Lake Titisee, Black Forest - GERMANY.jpg"],
+  "Schwarzwaldhochstraße (B500) y Mummelsee":["2017-Mummelsee.jpg","Mummelsee und Hotel.jpg"],
+  "Lago Schluchsee":["Blick auf den Schluchsee.JPG","20160709-00769-Schluchsee-Staumauer.jpg"],
+  "Cataratas de Triberg":["Triberger Wasserfälle 20180806 03.jpg","Triberger Wasserfälle unterer Teil.jpg","Triberg waterfall.jpg"],
+  "Catedral de Friburgo (Freiburger Münster)":["Freiburg im Breisgau Münster.jpg","Freiburger Münster - FaB.jpg"],
+  "Historisches Kaufhaus":["Historisches Kaufhaus Freiburg.jpg","Freiburg Muensterplatz Kaufhaus.jpg"],
+  "Martinstor y Schwabentor (puertas medievales)":["Freiburg im Breisgau - Martinstor.jpg","Freiburg - Schwabentor (2497812929).jpg"],
+  "Ruinas del Burg Staufen (Staufen im Breisgau)":["Burgruine Staufen 2011.jpg","Burg Staufen (Staufen im Breisgau) jm1294 jiw.jpg"],
+  "Münsterplatz y el Münster":["Freiburg - Münsterplatz.jpg","Münsterplatz (Freiburg) jm3334.jpg"],
+  "Colombipark y Colombischlössle":["Colombischlößchen (Freiburg) 3348.jpg"],
+  "Colmar (Alsacia, Francia)":["Little Venice in Colmar 01.jpg","Petite Venise (Colmar).jpg","Maison Pfister Colmar.jpg"]
+};
+/* VIDEO: nombre del lugar -> ID de YouTube (solo lugares que lo ameritan). Verificados por subagentes. */
+const VIDEO = {
+  "Berliner Fernsehturm (Torre de TV, Alexanderplatz)":"SVLsNzL4JwM",
+  "Pont du Faisan y Place Benjamin Zix":"MpEZEdOUD7Y",
+  "Château du Haut-Koenigsbourg":"9T7XD__Sllg",
+  "Torre mirador del Merkur (subiendo en funicular)":"ld23AYwLoZk",
+  "Mummelsee (lago en la Selva Negra)":"nkEnlWCIdXo",
+  "Teleférico Schauinslandbahn y mirador":"3yVT6H-pyB0",
+  "Cataratas de Triberg":"ND_LcANGn30"
+};
+function imgList(nombre){
+  var v=IMG[nombre]; if(!v) return [];
+  return (Array.isArray(v)?v:[v]).map(function(x){ return /^https?:\/\//.test(x)?x:commons(x); });
+}
+function imgUrl(nombre){ var l=imgList(nombre); return l[0]||""; }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+function rew(url,w){ return url.replace(/width=\d+/, "width="+w); }
+function slug(s){ return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,48); }
+function slideHtml(u,cap){
+  const c=esc(cap);
+  return '<figure class="carslide" data-full="'+rew(u,1600)+'" data-cap="'+c+'" role="button" tabindex="0" aria-label="Ampliar foto: '+c+'">'
+    +'<img src="'+rew(u,768)+'" srcset="'+rew(u,480)+' 480w, '+rew(u,768)+' 768w, '+rew(u,1100)+' 1100w" sizes="(max-width:760px) 100vw, 728px"'
+    +' alt="'+c+'" loading="lazy" decoding="async"'
+    +' onload="this.parentNode.classList.add(\'is-loaded\')" onerror="this.parentNode.classList.add(\'is-error\')">'
+    +'<span class="imgmsg" aria-hidden="true">📷 Necesita internet para ver la foto</span>'
+    +'</figure>';
+}
+function mediaHtml(nombre){
+  const list=imgList(nombre); if(!list.length) return "";
+  const vid=(typeof VIDEO!=="undefined")?VIDEO[nombre]:null;
+  const multi=list.length>1;
+  const slides=list.map(function(u){return slideHtml(u,nombre);}).join("");
+  const arrows=multi?'<button class="carbtn carprev" type="button" aria-label="Foto anterior">‹</button><button class="carbtn carnext" type="button" aria-label="Foto siguiente">›</button>':'';
+  const dots=multi?'<div class="cardots" aria-hidden="true">'+list.map(function(_,i){return '<i'+(i===0?' class="on"':'')+'></i>';}).join("")+'</div>':'';
+  const vbtn=vid?'<button class="carvideo" type="button" data-yt="'+esc(vid)+'" aria-label="Ver video de '+esc(nombre)+'">▶ Video</button>':'';
+  return '<div class="cardmedia'+(multi?' multi':'')+'">'
+    +'<div class="cartrack">'+slides+'</div>'
+    +arrows+dots+vbtn
+    +'<span class="zoomhint" aria-hidden="true">⤢</span>'
+    +'</div>';
+}
+function favHtml(nombre){
+  const id=slug(nombre);
+  return '<button class="favbtn" type="button" data-fav="'+id+'" aria-pressed="false" aria-label="Guardar en favoritos: '+esc(nombre)+'"><span class="favheart" aria-hidden="true"></span></button>';
+}
+function cardHtml(it){
+  const personas=(it.tags||[]).join(",");
+  const media=mediaHtml(it.nombre);
+  let tipo="";
+  if(it.tipo){ tipo=' <span class="pill-tipo '+it.tipo+'">'+(it.tipo==="especial"?"especial":"casual")+'</span>'; }
+  let meta="";
+  if(it.dias||it.horarios){
+    meta='<div class="meta">'+(it.dias?'<div><b>Días:</b> '+it.dias+'</div>':'')+(it.horarios?'<div><b>Horario:</b> '+it.horarios+'</div>':'')+'</div>';
+  }
+  return '<div class="card'+(media?' hasimg':'')+'" data-personas="'+personas+'" data-acc="'+it.acc+'" data-fid="'+slug(it.nombre)+'">'
+    +media
+    +favHtml(it.nombre)
+    +'<h4>'+it.nombre+tipo+'</h4>'
+    +'<div class="tags">'+(it.tags||[]).map(tagHtml).join("")+accHtml(it.acc)+'</div>'
+    +'<p class="porque">'+it.porque+'</p>'
+    +'<p class="hist">'+it.hist+'</p>'
+    +'<div class="meta"><b>Cómo llegar:</b> '+it.como+'</div>'
+    +meta
+    +linksHtml(it)
+    +'</div>';
+}
+function evHtml(e){
+  const badge=e.ok?'<span class="badge ok">Confirmado</span>':'<span class="badge chk">A verificar</span>';
+  return '<div class="ev'+(e.ok?'':' no')+'">'
+    +'<h4>'+e.nombre+'</h4>'
+    +'<div class="when">'+e.fecha+' · '+badge+'</div>'
+    +'<div class="venue">'+e.venue+'</div>'
+    +'<p style="margin:0 0 8px;font-size:14.5px">'+e.desc+'</p>'
+    +'<a href="'+e.link+'" target="_blank" rel="noopener">Ver más →</a>'
+    +'</div>';
+}
+function planHtml(plan){
+  let h='<div class="plan">';
+  plan.forEach(function(d){
+    h+='<div class="day"><div class="d">'+d.d+(d.s?' <small>· '+d.s+'</small>':'')+'</div><p>'+d.t+'</p></div>';
+  });
+  return h+'</div>';
+}
+function cierresHtml(arr){
+  return '<div class="cierres"><div class="ct">⚠️ Horarios y cierres a tener en cuenta</div><ul>'+arr.map(function(c){return '<li>'+c+'</li>';}).join("")+'</ul></div>';
+}
+function moveHtml(m){
+  return '<div class="move"><div class="route">🚆 '+m.route+'</div><p style="margin:0 0 8px">'+m.txt+'</p><a href="'+m.link+'" target="_blank" rel="noopener">'+m.linktxt+' →</a></div>';
+}
+function nearIco(t){
+  return ({desayuno:"☕",comer:"🍽️",shopping:"🛍️",atraccion:"📸",mercado:"🧺",spa:"♨️",parque:"🌳",tren:"🚆",otro:"📍"})[t]||"📍";
+}
+var NEARCATS=[
+  {key:"desayuno", lbl:"☕ Para desayunar cerca"},
+  {key:"comer",    lbl:"🍽️ Para almorzar o cenar cerca"},
+  {key:"ver",      lbl:"👀 Cerca del hotel para ver y pasear"},
+  {key:"shopping", lbl:"🛍️ Shopping cerca (para mamá)"}
+];
+function nearCat(tipo){
+  if(tipo==="desayuno") return "desayuno";
+  if(tipo==="comer") return "comer";
+  if(tipo==="shopping") return "shopping";
+  return "ver"; /* atraccion, parque, spa, mercado, tren, otro */
+}
+function nearItemHtml(n){
+  const a=n.maps?' <a href="'+n.maps+'" target="_blank" rel="noopener">📍 Maps →</a>':'';
+  const u=imgUrl(n.nombre);
+  const media=u?'<img class="nthumb" src="'+u+'" alt="'+n.nombre+'" loading="lazy" onerror="this.style.display=\'none\'">':'<span class="nico">'+nearIco(n.tipo)+'</span>';
+  return '<li class="near">'+media+'<div class="nbody">'
+    +'<span class="nname">'+n.nombre+'</span>'+(n.dist?'<span class="ndist">'+n.dist+'</span>':'')
+    +'<div class="ntxt">'+n.txt+a+'</div></div></li>';
+}
+function baseHotelHtml(b){
+  const h=b.hotel; if(!h) return "";
+  const prov=!!h.provisional;
+  let links="";
+  if(h.maps||h.oficial){
+    links='<div class="hlinks">';
+    if(h.maps) links+='<a class="maps" href="'+h.maps+'" target="_blank" rel="noopener">📍 Maps</a>';
+    if(h.oficial) links+='<a class="site" href="'+h.oficial+'" target="_blank" rel="noopener">🔗 Sitio oficial</a>';
+    links+='</div>';
+  }
+  const cerca=h.cerca||[];
+  let groups="";
+  NEARCATS.forEach(function(c){
+    const items=cerca.filter(function(n){return nearCat(n.tipo)===c.key;});
+    if(!items.length) return;
+    groups+='<div class="neargrp"><div class="nearlbl">'+c.lbl+'</div><ul class="nearlist">'
+      +items.map(nearItemHtml).join("")+'</ul></div>';
+  });
+  const title=prov?'🏨 Tu base en la ciudad':'🏨 Dónde se quedan';
+  let html='<div class="hotel'+(prov?' provisional':'')+'">'
+    +'<div class="htitle">'+title+(b.fechas?'<span class="hdates">'+b.fechas.split(' · ')[0]+'</span>':'')+'</div>'
+    +'<h4>'+h.nombre+'</h4>';
+  if(h.dir) html+='<div class="haddr">📍 '+h.dir+'</div>';
+  html+='<div class="hubic">'+h.ubic+'</div>'+links;
+  if(prov) html+='<div class="provnote">⚠️ Todavía no reservaron hotel en Berlín. Lo de abajo toma el centro (Mitte) como referencia; lo ajustamos apenas elijan alojamiento.</div>';
+  if(groups) html+='<div class="nearwrap">'+groups+'</div>';
+  html+='</div>';
+  return html;
+}
+function block(title,em,who,items){
+  if(!items||!items.length) return "";
+  let h='<h3 class="block"><span class="bem">'+em+'</span> '+title+(who?'<span class="who">'+who+'</span>':'')+'</h3>';
+  h+=items.map(cardHtml).join("");
+  return h;
+}
+
+function renderBase(b){
+  let h='<span class="anchor" id="'+b.id+'"></span><section aria-labelledby="h-'+b.id+'">';
+  h+='<div class="sec-dates">'+b.fechas+'</div>';
+  h+='<h2 class="sec" id="h-'+b.id+'"><span class="em">'+b.em+'</span> '+b.nombre+'</h2>';
+  h+='<hr class="sec-rule">';
+  h+='<div class="intro">'+b.intro+'</div>';
+  if(b.hotel) h+=baseHotelHtml(b);
+  h+='<h3 class="block"><span class="bem">🗓️</span> Plan día a día</h3>'+planHtml(b.plan);
+  h+=block("Spots para fotos","📷","Mamá",b.fotos);
+  h+=block("Mercados","🧺","Papá",b.mercados);
+  h+=block("Naturaleza sin caminata","🌿","",b.naturaleza);
+  h+=block("Castillos y monumentos","🏰","Mica",b.castillos);
+  h+=block("Para comer","🍽️","Todos",b.comer);
+  if(b.eventos&&b.eventos.length){
+    h+='<h3 class="block"><span class="bem">🎷</span> Jazz y qué pasa estos días</h3>';
+    h+=b.eventos.map(evHtml).join("");
+  }
+  if(b.cierres&&b.cierres.length) h+=cierresHtml(b.cierres);
+  if(b.move) h+='<h3 class="block"><span class="bem">🚆</span> Cómo moverse a la próxima base</h3>'+moveHtml(b.move);
+  h+='</section>';
+  return h;
+}
+
+function renderCierre(b){
+  let h='<span class="anchor" id="'+b.id+'"></span><section aria-labelledby="h-'+b.id+'">';
+  h+='<div class="sec-dates">'+b.fechas+'</div>';
+  h+='<h2 class="sec" id="h-'+b.id+'"><span class="em">'+b.em+'</span> '+b.nombre+'</h2>';
+  h+='<hr class="sec-rule">';
+  h+='<div class="intro">'+b.intro+'</div>';
+  h+='<h3 class="block"><span class="bem">🗓️</span> Plan día a día</h3>'+planHtml(b.plan);
+  h+='<h3 class="block"><span class="bem">🎷</span> Jazz</h3>'+b.eventos.map(evHtml).join("");
+  h+='</section>';
+  return h;
+}
+
+/* FILTERS BAR */
+const filtersHtml =
+  '<div class="filters">'
+  +'<div class="flabel">Filtrar por persona</div>'
+  +'<div class="fbtns" id="fp">'
+  +'<button class="fbtn active" type="button" aria-pressed="true" data-p="all">Todas</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-p="Papa">Papá</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-p="Mama">Mamá</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-p="Mica">Mica</button>'
+  +'</div>'
+  +'<div class="flabel">Filtrar por accesibilidad</div>'
+  +'<div class="fbtns" id="fa">'
+  +'<button class="fbtn active" type="button" aria-pressed="true" data-a="all">Todas</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-a="facil">🟢 Fácil</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-a="teleferico">🚡 Teleférico</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-a="auto">🚗 Auto</button>'
+  +'<button class="fbtn" type="button" aria-pressed="false" data-a="caminata">🟡 Caminata</button>'
+  +'</div>'
+  +'<div class="flabel">Tus favoritos</div>'
+  +'<div class="fbtns" id="fg">'
+  +'<button class="fbtn favfilter" type="button" aria-pressed="false" data-g="fav">⭐ Solo guardados</button>'
+  +'</div>'
+  +'<div class="fcount" id="fcount" role="status" aria-live="polite"></div>'
+  +'</div>';
+
+var out = filtersHtml;
+DATA.forEach(function(b){ out+=renderBase(b); });
+// insertar cierre antes de la sección "antes" (que es estática). Lo agregamos al final del contenido dinámico.
+out += renderCierre(CIERRE);
+var CONT=document.getElementById("contenido");
+CONT.innerHTML = out;
+CONT.setAttribute("tabindex","-1");
+
+/* ===== CARRUSELES (puntos activos según scroll) ===== */
+function initCarousels(){
+  document.querySelectorAll(".cardmedia.multi").forEach(function(cm){
+    var track=cm.querySelector(".cartrack"), dots=cm.querySelectorAll(".cardots i");
+    if(!track||!dots.length) return;
+    var ticking=false;
+    track.addEventListener("scroll",function(){
+      if(ticking) return; ticking=true;
+      requestAnimationFrame(function(){
+        var i=Math.round(track.scrollLeft/track.clientWidth);
+        dots.forEach(function(d,j){ d.classList.toggle("on",j===i); });
+        ticking=false;
+      });
+    },{passive:true});
+  });
+}
+initCarousels();
+
+/* ===== FAVORITOS (localStorage, con degradación) ===== */
+var HAS_STORAGE=(function(){try{var s=window.localStorage,t="__sn";s.setItem(t,t);s.removeItem(t);return true;}catch(e){return false;}})();
+function loadFav(){ if(!HAS_STORAGE) return {}; try{ var a=JSON.parse(localStorage.getItem("sn.fav")||"[]"),o={}; a.forEach(function(x){o[x]=1;}); return o; }catch(e){ return {}; } }
+function saveFav(){ if(!HAS_STORAGE) return; try{ localStorage.setItem("sn.fav", JSON.stringify(Object.keys(FAV))); }catch(e){} }
+var FAV=loadFav();
+function syncFav(){ document.querySelectorAll(".favbtn").forEach(function(b){ b.setAttribute("aria-pressed", FAV[b.getAttribute("data-fav")]?"true":"false"); }); }
+syncFav();
+
+/* ===== FILTROS ===== */
+var fP="all", fA="all", fG=false;
+function applyFilters(){
+  var cards=document.querySelectorAll(".card[data-acc]"), shown=0;
+  cards.forEach(function(c){
+    var personas=(c.getAttribute("data-personas")||"").split(",");
+    var acc=c.getAttribute("data-acc"), fid=c.getAttribute("data-fid");
+    var okP = fP==="all" || personas.indexOf(fP)>-1 || personas.indexOf("Todos")>-1;
+    var okA = fA==="all" || acc===fA;
+    var okG = !fG || !!FAV[fid];
+    if(okP&&okA&&okG){ c.style.display=""; shown++; } else { c.style.display="none"; }
+  });
+  var fc=document.getElementById("fcount");
+  if(fP==="all"&&fA==="all"&&!fG){ fc.textContent=""; }
+  else {
+    fc.textContent="Mostrando "+shown+" lugar"+(shown===1?"":"es")+" con el filtro elegido."
+      +(fG&&shown===0?" Todavía no guardaste ninguno: tocá el corazón ♡ sobre las fotos.":"");
+  }
+}
+function singleSelect(group, attr, setVal){
+  document.getElementById(group).addEventListener("click",function(e){
+    var btn=e.target.closest(".fbtn"); if(!btn||!this.contains(btn))return;
+    setVal(btn.getAttribute(attr));
+    this.querySelectorAll(".fbtn").forEach(function(b){ var on=b===btn; b.classList.toggle("active",on); b.setAttribute("aria-pressed",on?"true":"false"); });
+    applyFilters();
+  });
+}
+singleSelect("fp","data-p",function(v){fP=v;});
+singleSelect("fa","data-a",function(v){fA=v;});
+document.getElementById("fg").addEventListener("click",function(e){
+  var btn=e.target.closest(".fbtn"); if(!btn)return;
+  fG=!fG; btn.classList.toggle("active",fG); btn.setAttribute("aria-pressed",fG?"true":"false");
+  applyFilters();
+});
+
+/* ===== CLICKS EN EL CONTENIDO: favoritos + lightbox ===== */
+CONT.addEventListener("click",function(e){
+  var fb=e.target.closest(".favbtn");
+  if(fb){
+    var id=fb.getAttribute("data-fav");
+    if(FAV[id]) delete FAV[id]; else FAV[id]=1;
+    saveFav();
+    document.querySelectorAll('.favbtn[data-fav="'+id+'"]').forEach(function(b){ b.setAttribute("aria-pressed",FAV[id]?"true":"false"); });
+    if(fG) applyFilters();
+    return;
+  }
+  var vb=e.target.closest(".carvideo");
+  if(vb){ openVideo(vb.getAttribute("data-yt")); return; }
+  var ca=e.target.closest(".carbtn");
+  if(ca){ var tr=ca.parentNode.querySelector(".cartrack"); if(tr){ var w=tr.clientWidth; tr.scrollBy({left:ca.classList.contains("carnext")?w:-w,behavior:"smooth"}); } return; }
+  var slide=e.target.closest(".carslide");
+  if(slide && slide.classList.contains("is-loaded")) openLightbox(slide);
+});
+CONT.addEventListener("keydown",function(e){
+  if(e.key!=="Enter" && e.key!==" ") return;
+  var slide=e.target.closest && e.target.closest(".carslide");
+  if(slide){ e.preventDefault(); if(slide.classList.contains("is-loaded")) openLightbox(slide); }
+});
+
+/* ===== LIGHTBOX ===== */
+var LB=document.getElementById("lightbox"), LBimg=document.getElementById("lbimg"),
+    LBcap=document.getElementById("lbcap"), LBcount=document.getElementById("lbcount");
+var lbList=[], lbIdx=0, lbOpener=null;
+function openLightbox(fig){
+  lbList=[].slice.call(document.querySelectorAll(".carslide.is-loaded")).filter(function(f){
+    var c=f.closest(".card"); return !c || c.style.display!=="none";
+  });
+  lbIdx=lbList.indexOf(fig); if(lbIdx<0){ lbList=[fig]; lbIdx=0; }
+  lbOpener=fig; showLb();
+  if(typeof LB.showModal==="function"){ try{ LB.showModal(); }catch(e){ LB.setAttribute("open",""); } }
+  else LB.setAttribute("open","");
+}
+function showLb(){
+  var f=lbList[lbIdx]; if(!f)return;
+  LBimg.src=f.getAttribute("data-full"); LBimg.alt=f.getAttribute("data-cap")||"";
+  LBcap.textContent=f.getAttribute("data-cap")||"";
+  LBcount.textContent=(lbIdx+1)+" / "+lbList.length;
+}
+function lbNav(d){ if(!lbList.length)return; lbIdx=(lbIdx+d+lbList.length)%lbList.length; showLb(); }
+function closeLb(){ if(LB.open && typeof LB.close==="function") LB.close(); else LB.removeAttribute("open"); LBimg.removeAttribute("src"); if(lbOpener&&lbOpener.focus) lbOpener.focus(); }
+LB.querySelector(".lbnext").addEventListener("click",function(){lbNav(1);});
+LB.querySelector(".lbprev").addEventListener("click",function(){lbNav(-1);});
+LB.querySelector(".lbclose").addEventListener("click",closeLb);
+LB.addEventListener("click",function(e){ if(e.target===LB || e.target.classList.contains("lbwrap")) closeLb(); });
+LB.addEventListener("cancel",function(e){ e.preventDefault(); closeLb(); });
+document.addEventListener("keydown",function(e){ if(!LB.open)return; if(e.key==="ArrowRight")lbNav(1); else if(e.key==="ArrowLeft")lbNav(-1); });
+var lbTX=0;
+LB.addEventListener("touchstart",function(e){ lbTX=e.changedTouches[0].clientX; },{passive:true});
+LB.addEventListener("touchend",function(e){ var dx=e.changedTouches[0].clientX-lbTX; if(Math.abs(dx)>45) lbNav(dx<0?1:-1); },{passive:true});
+
+/* ===== VIDEO (YouTube en dialogo) ===== */
+var VD=document.getElementById("vdialog"), VDi=document.getElementById("vdiframe");
+function openVideo(id){
+  if(!id||!VD) return;
+  VDi.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0";
+  if(typeof VD.showModal==="function"){ try{ VD.showModal(); }catch(e){ VD.setAttribute("open",""); } }
+  else VD.setAttribute("open","");
+}
+function closeVideo(){ if(VDi) VDi.src=""; if(VD.open && typeof VD.close==="function") VD.close(); else VD.removeAttribute("open"); }
+if(VD){
+  VD.querySelector(".vdclose").addEventListener("click",closeVideo);
+  VD.addEventListener("click",function(e){ if(e.target===VD || e.target.classList.contains("vdframe")) closeVideo(); });
+  VD.addEventListener("cancel",function(e){ e.preventDefault(); closeVideo(); });
+}
+
+/* ===== SCROLL-SPY EN LA NAV ===== */
+(function(){
+  var nav=document.querySelector("nav.sticky"); if(!nav||!("IntersectionObserver" in window))return;
+  var links={};
+  nav.querySelectorAll("a").forEach(function(a){ links[a.getAttribute("href").slice(1)]=a; });
+  var targets=Object.keys(links).map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting)return;
+      var id=en.target.id;
+      for(var k in links){ links[k].classList.remove("active"); links[k].removeAttribute("aria-current"); }
+      if(links[id]){ links[id].classList.add("active"); links[id].setAttribute("aria-current","true"); }
+    });
+  },{rootMargin:"-45% 0px -50% 0px",threshold:0});
+  targets.forEach(function(t){ io.observe(t); });
+})();
+
+/* ===== VOLVER ARRIBA ===== */
+(function(){
+  var btn=document.querySelector(".backtop"), hero=document.querySelector("header.hero");
+  if(!btn)return;
+  if(hero && "IntersectionObserver" in window){
+    new IntersectionObserver(function(es){ btn.classList.toggle("show", !es[0].isIntersecting); }).observe(hero);
+  } else { btn.classList.add("show"); }
+  btn.addEventListener("click",function(){
+    var smooth=!matchMedia("(prefers-reduced-motion:reduce)").matches;
+    window.scrollTo({top:0,behavior:smooth?"smooth":"auto"});
+  });
+})();
+
+/* ===== BARRA DE PROGRESO (fallback si el navegador no soporta scroll timelines) ===== */
+(function(){
+  var bar=document.querySelector(".progress"); if(!bar)return;
+  if(window.CSS && CSS.supports && CSS.supports("animation-timeline: scroll()")) return;
+  var ticking=false;
+  function upd(){ var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    var p=max>0?((h.scrollTop||window.pageYOffset)/max):0; bar.style.transform="scaleX("+p+")"; ticking=false; }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
+  addEventListener("scroll",onScroll,{passive:true});
+  addEventListener("resize",onScroll,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
