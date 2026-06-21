@@ -320,6 +320,31 @@
   .leyenda{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
   .leyenda .l{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--paper);border:1px solid var(--line);padding:6px 11px;border-radius:999px}
 
+  /* accesibilidad: texto y contraste */
+  body.ts1{zoom:1.12}
+  body.ts2{zoom:1.25}
+  body.hc{--ink:#0f0d09;--ink-soft:#1c1810;--muted:#3a352a;--line:#b5a787;--line-strong:#9c8a66;--green:#1d3c30;--paper:#fffdf7}
+  .a11y{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:115;display:flex;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-lg);padding:5px}
+  .a11y button{border:none;background:var(--green-soft);color:var(--green);width:40px;height:40px;border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center}
+  .a11y button.on{background:var(--green);color:#fff}
+  .a11y button:active{transform:scale(.9)}
+  /* boton/estado offline */
+  .offline-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--green);color:var(--green);text-decoration:none;font-weight:800;font-size:15px;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow-sm);cursor:pointer;font-family:inherit}
+  .offline-cta:disabled{opacity:.65;cursor:default}
+  .offline-note{font-size:13px;color:var(--muted);margin:6px 0 0;max-width:560px}
+  /* boton telefono en hotel */
+  .hotel .hlinks a.tel{background:var(--wine);color:#fff}
+  /* frases utiles */
+  .frases{display:grid;gap:14px}
+  @media(min-width:620px){.frases{grid-template-columns:1fr 1fr}}
+  .frasecard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:14px 16px}
+  .frasecard h3{font-size:17px;color:var(--green);margin:0 0 8px;display:flex;align-items:center;gap:8px;font-family:var(--serif)}
+  .frasecard .fr{padding:8px 0;border-top:1px dashed var(--line)}
+  .frasecard .fr:first-of-type{border-top:none}
+  .frasecard .es{font-size:13.5px;color:var(--muted)}
+  .frasecard .tx{font-size:16px;font-weight:700;color:var(--ink)}
+  .frasecard .ph{font-size:13px;color:var(--green);font-style:italic}
+
   footer{background:#244c40;color:#cfe0d8;text-align:center;padding:24px 16px;margin-top:30px;font-size:13.5px}
   footer b{color:#fff}
 
@@ -355,6 +380,7 @@
     <li><a href="#baden-baden">Baden-Baden</a></li>
     <li><a href="#friburgo">Friburgo</a></li>
     <li><a href="#cierre">Cierre Berlín</a></li>
+    <li><a href="#frases">🗣️ Frases</a></li>
     <li><a href="#antes">Antes de salir</a></li>
   </ul>
 </nav>
@@ -396,6 +422,9 @@
 
   <p style="margin:14px 0 4px"><a href="top3.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(120deg,#fbf1d8,#f6ead0);border:1.5px solid var(--gold);color:#7a5a17;text-decoration:none;font-weight:800;font-size:15px;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow-sm)">🏆 Ver el Top 3 imperdibles de cada ciudad →</a></p>
 
+  <p style="margin:10px 0 2px"><button type="button" id="offline-btn" class="offline-cta">📥 Guardar para usar sin internet</button></p>
+  <p class="offline-note" id="offline-note">Tocá una vez con wifi (en el hotel) y después la guía y las fotos abren sin gastar datos. Funciona en el link compartido (la versión online).</p>
+
   <div class="big-flag">
     <div class="ft">🎷 Lo que encontramos de jazz</div>
     <div style="font-size:15px">
@@ -406,6 +435,42 @@
 
 <!-- Render target -->
 <div id="contenido"></div>
+
+<!-- ====================== FRASES ÚTILES ====================== -->
+<span class="anchor" id="frases"></span>
+<section>
+  <h2 class="sec"><span class="em">🗣️</span> Frases útiles</h2>
+  <hr class="sec-rule">
+  <p class="note-inline">Lo justo para arreglarse: <b>alemán</b> en Alemania, <b>francés</b> en Estrasburgo. Entre paréntesis, cómo suena más o menos.</p>
+  <div class="frases">
+    <div class="frasecard">
+      <h3>🇩🇪 Alemán — Berlín, Baden-Baden y Friburgo</h3>
+      <div class="fr"><div class="es">Hola / Buen día</div><div class="tx">Hallo / Guten Tag</div><div class="ph">(jálo / gúten tag)</div></div>
+      <div class="fr"><div class="es">Gracias / Por favor</div><div class="tx">Danke / Bitte</div><div class="ph">(dánke / bíte)</div></div>
+      <div class="fr"><div class="es">¿Habla inglés?</div><div class="tx">Sprechen Sie Englisch?</div><div class="ph">(spréjen zi ínglish)</div></div>
+      <div class="fr"><div class="es">La cuenta, por favor</div><div class="tx">Die Rechnung, bitte</div><div class="ph">(di réjnung, bíte)</div></div>
+      <div class="fr"><div class="es">¿Cuánto cuesta?</div><div class="tx">Was kostet das?</div><div class="ph">(vas kóstet das)</div></div>
+      <div class="fr"><div class="es">¿Dónde está el baño?</div><div class="tx">Wo ist die Toilette?</div><div class="ph">(vo ist di toaléte)</div></div>
+      <div class="fr"><div class="es">Una mesa para tres</div><div class="tx">Einen Tisch für drei</div><div class="ph">(áinen tish für drái)</div></div>
+      <div class="fr"><div class="es">¿Hay acceso para silla de ruedas?</div><div class="tx">Gibt es einen Rollstuhl-Zugang?</div><div class="ph">(guibt es áinen rólshtul-tsúgang)</div></div>
+      <div class="fr"><div class="es">Ayuda / Una urgencia</div><div class="tx">Hilfe / Ein Notfall</div><div class="ph">(jílfe / ain nótfal)</div></div>
+      <div class="fr"><div class="es">Llame a un médico</div><div class="tx">Rufen Sie einen Arzt</div><div class="ph">(rúfen zi áinen artst)</div></div>
+    </div>
+    <div class="frasecard">
+      <h3>🇫🇷 Francés — Estrasburgo</h3>
+      <div class="fr"><div class="es">Hola / Buen día</div><div class="tx">Bonjour</div><div class="ph">(bonyúr)</div></div>
+      <div class="fr"><div class="es">Gracias / Por favor</div><div class="tx">Merci / S'il vous plaît</div><div class="ph">(mersí / sil vu plé)</div></div>
+      <div class="fr"><div class="es">¿Habla inglés?</div><div class="tx">Parlez-vous anglais?</div><div class="ph">(parlé vu anglé)</div></div>
+      <div class="fr"><div class="es">La cuenta, por favor</div><div class="tx">L'addition, s'il vous plaît</div><div class="ph">(ladisión, sil vu plé)</div></div>
+      <div class="fr"><div class="es">¿Cuánto cuesta?</div><div class="tx">Combien ça coûte?</div><div class="ph">(combién sa cút)</div></div>
+      <div class="fr"><div class="es">¿Dónde está el baño?</div><div class="tx">Où sont les toilettes?</div><div class="ph">(u son le tualét)</div></div>
+      <div class="fr"><div class="es">Una mesa para tres</div><div class="tx">Une table pour trois</div><div class="ph">(ün tabl pur truá)</div></div>
+      <div class="fr"><div class="es">¿Hay acceso para silla de ruedas?</div><div class="tx">Y a-t-il un accès handicapé?</div><div class="ph">(i atíl an aksé andikapé)</div></div>
+      <div class="fr"><div class="es">Ayuda / Una urgencia</div><div class="tx">Au secours / Une urgence</div><div class="ph">(o secúr / ün uryáns)</div></div>
+      <div class="fr"><div class="es">Llame a un médico</div><div class="tx">Appelez un médecin</div><div class="ph">(aplé an medsán)</div></div>
+    </div>
+  </div>
+</section>
 
 <!-- ====================== ANTES DE SALIR ====================== -->
 <span class="anchor" id="antes"></span>
@@ -425,6 +490,17 @@
   <div class="card"><h4>Cenas especiales en Berlín (si se quiere algo top)</h4><p class="porque">Rutz (3 estrellas Michelin) y Nobelhart &amp; Schmutzig (1 estrella) piden varias semanas de anticipación.</p><div class="links"><a class="site" href="https://www.rutz-restaurant.de/en/" target="_blank" rel="noopener">Rutz</a><a class="site" href="https://nobelhartundschmutzig.com/en/" target="_blank" rel="noopener">Nobelhart &amp; Schmutzig</a></div></div>
   <div class="card"><h4>Jazz en el A-Trane (Berlín)</h4><p class="porque">Las noches del Maria Baptist Trio (23-27 jun) y la del 6 de julio. Club chico, conviene reservar mesa.</p><div class="links"><a class="site" href="https://a-trane.de/programm/" target="_blank" rel="noopener">Programación</a></div></div>
   <div class="card"><h4>Barco accesible Batorama (Estrasburgo)</h4><p class="porque">Para que mamá suba sin escalones, hay que reservar antes el barco con plataforma para silla de ruedas (Gustave Doré, pontón accesible en Quai B / Palais Rohan).</p><div class="links"><a class="site" href="https://www.batorama.com/en/" target="_blank" rel="noopener">Batorama</a></div></div>
+
+  <h3 class="block"><span class="bem">📞</span> Teléfonos de reservas</h3>
+  <div class="card">
+    <div class="kv"><b>🎂 Le Jardin de France</b> (cena del cumple): <a href="tel:+4972213007860">+49 7221 300 7860</a></div>
+    <div class="kv"><b>⛵ Batorama</b> (barco accesible, Estrasburgo): <a href="tel:+33369744404">+33 3 69 74 44 04</a></div>
+    <div class="kv"><b>🏨 Meliá Berlín:</b> <a href="tel:+493020607900">+49 30 2060 7900</a></div>
+    <div class="kv"><b>🏨 Le Bouclier d'Or</b> (Estrasburgo): <a href="tel:+33388137355">+33 3 88 13 73 55</a></div>
+    <div class="kv"><b>🏨 Belle Epoque</b> (Baden-Baden): <a href="tel:+497221300660">+49 7221 300660</a></div>
+    <div class="kv"><b>🏨 Courtyard by Marriott</b> (Friburgo): <a href="tel:+497616004800">+49 761 6004800</a></div>
+    <div class="kv" style="color:var(--muted);font-size:13.5px">Desde Argentina, marcá con el + incluido. Tocá un número para llamar desde el celular.</div>
+  </div>
 
   <h3 class="block"><span class="bem">🌦️</span> Clima y luz</h3>
   <div class="card">
@@ -472,6 +548,12 @@
   <div style="margin-top:6px">Generada el <b>21 de junio de 2026</b>. Los horarios y reservas pueden cambiar: conviene confirmar en cada sitio oficial pocos días antes.</div>
 </footer>
 
+<div class="a11y" role="group" aria-label="Accesibilidad">
+  <button id="a11y-dec" type="button" aria-label="Achicar el texto" title="Texto más chico">A−</button>
+  <button id="a11y-inc" type="button" aria-label="Agrandar el texto" title="Texto más grande">A+</button>
+  <button id="a11y-hc" type="button" aria-pressed="false" aria-label="Alto contraste" title="Alto contraste">◐</button>
+</div>
+
 <button class="backtop" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
 
 <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
@@ -507,6 +589,7 @@ const DATA = [
     dir:"Friedrichstraße 103, 10117 Berlín · Mitte",
     maps:"https://www.google.com/maps/search/?api=1&query=Melia+Berlin+Friedrichstrasse+103",
     oficial:"https://www.melia.com/es/hoteles/alemania/berlin/melia-berlin",
+    tel:"+49 30 2060 7900",
     ubic:"En pleno Mitte, sobre la Friedrichstraße y a orillas del Spree, junto al puente Weidendammer y a unos 3 minutos de la estación Friedrichstraße (S-/U-Bahn). Imbatible para mamá: el corazón histórico (Isla de los Museos, Unter den Linden, la Puerta de Brandeburgo) queda a pasos o a pocas paradas, todo llano, y los embarcaderos de los cruceros por el Spree están casi en la puerta.",
     cerca:[
       {nombre:"Father Carpenter",tipo:"desayuno",dist:"12-15 min a pie",txt:"Brunch australiano en un patio interior tranquilo y plano: huevos, bowls, tostadas, dulces y café de especialidad. En la zona de Hackescher Markt.",maps:"https://www.google.com/maps/search/?api=1&query=Father+Carpenter+Berlin"},
@@ -585,6 +668,7 @@ const DATA = [
     dir:"1 Rue du Bouclier, 67000 Estrasburgo · Petite France",
     maps:"https://www.google.com/maps/search/?api=1&query=Hotel+Bouclier+d+Or+Strasbourg",
     oficial:"https://www.lebouclierdor.com/en/",
+    tel:"+33 3 88 13 73 55",
     ubic:"En pleno corazón de la Petite France, en un edificio del siglo XVI. Lo mejor para mamá: todo el casco histórico es plano y peatonal, así que llega caminando a casi todo sin esfuerzo. La catedral queda a 5 minutos a pie. El hotel tiene spa con pileta cubierta para relajar a la vuelta.",
     cerca:[
       {nombre:"Café Bretelles — Petite France",tipo:"desayuno",dist:"3-4 min a pie",txt:"Café de especialidad muy querido por los locales: buen café, granola, viennoiseries y brunch los fines de semana. Abre desde las 8h.",maps:"https://www.google.com/maps/search/?api=1&query=Cafe+Bretelles+Petite+France+Strasbourg"},
@@ -658,6 +742,7 @@ const DATA = [
     dir:"Maria-Viktoria-Str. 2c, 76530 Baden-Baden",
     maps:"https://www.google.com/maps/search/?api=1&query=Hotel+Belle+Epoque+Baden-Baden",
     oficial:"https://www.hotel-belle-epoque.de/en/",
+    tel:"+49 7221 300660",
     ubic:"Una villa señorial de 1874 rodeada de su propio parque, a un paso de la Lichtentaler Allee, la alameda arbolada y plana que es perfecta para mamá. Desde acá se llega caminando por terreno llano a los museos, el casino y el centro. Sirven un té de la tarde clásico, lindo detalle para el día del cumple.",
     cerca:[
       {nombre:"Café König",tipo:"desayuno",dist:"9-11 min a pie",txt:"El café-confitería más tradicional de Baden-Baden: desayunos, café, tortas caseras y pastelería. Camino llano por la zona peatonal. Abre 8:30 (dom 9:30).",maps:"https://www.google.com/maps/search/?api=1&query=Cafe+Konig+Lichtentaler+Strasse+Baden-Baden"},
@@ -733,6 +818,7 @@ const DATA = [
     dir:"Eisenbahnstraße 47, 79098 Freiburg",
     maps:"https://www.google.com/maps/search/?api=1&query=Courtyard+by+Marriott+Freiburg",
     oficial:"https://www.marriott.com/en-us/hotels/bslfr-courtyard-freiburg/overview/",
+    tel:"+49 761 6004800",
     ubic:"A pasos de la estación central (Hauptbahnhof), comodísimo para las excursiones en tren a la Selva Negra sin tener que manejar. El casco histórico, el Münster y el mercado quedan a unos 10-12 minutos a pie por terreno llano. El hotel tiene su propio Kitchen & Bar para una cena sin salir los días de excursión larga.",
     cerca:[
       {nombre:"HERMANN",tipo:"desayuno",dist:"2-3 min a pie",txt:"Café-restaurante junto a la estación, terreno totalmente llano: desayuno 'Funky Frühstück', waffles, panadería y café, con terraza.",maps:"https://www.google.com/maps/search/?api=1&query=HERMANN+Eisenbahnstrasse+Freiburg"},
@@ -1013,13 +1099,12 @@ function nearItemHtml(n){
 function baseHotelHtml(b){
   const h=b.hotel; if(!h) return "";
   const prov=!!h.provisional;
-  let links="";
-  if(h.maps||h.oficial){
-    links='<div class="hlinks">';
-    if(h.maps) links+='<a class="maps" href="'+h.maps+'" target="_blank" rel="noopener">📍 Maps</a>';
-    if(h.oficial) links+='<a class="site" href="'+h.oficial+'" target="_blank" rel="noopener">🔗 Sitio oficial</a>';
-    links+='</div>';
-  }
+  let links='<div class="hlinks">';
+  if(h.maps) links+='<a class="maps" href="'+h.maps+'" target="_blank" rel="noopener">📍 Maps</a>';
+  if(h.tel) links+='<a class="tel" href="tel:'+h.tel.replace(/[^\d+]/g,"")+'">📞 Llamar</a>';
+  if(h.oficial) links+='<a class="site" href="'+h.oficial+'" target="_blank" rel="noopener">🔗 Sitio oficial</a>';
+  links+='<a class="site" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent("qué ver en "+b.nombre)+'" target="_blank" rel="noopener">🗺️ Ver la zona</a>';
+  links+='</div>';
   const cerca=h.cerca||[];
   let groups="";
   NEARCATS.forEach(function(c){
@@ -1286,6 +1371,52 @@ if(VD){
   addEventListener("scroll",onScroll,{passive:true});
   addEventListener("resize",onScroll,{passive:true});
   upd();
+})();
+
+/* ===== ACCESIBILIDAD: tamaño de texto y contraste ===== */
+(function(){
+  var KEY="sn.a11y", st={ts:0,hc:false};
+  try{ st=Object.assign(st, JSON.parse(localStorage.getItem(KEY)||"{}")); }catch(e){}
+  var inc=document.getElementById("a11y-inc"), dec=document.getElementById("a11y-dec"), hcb=document.getElementById("a11y-hc");
+  function apply(){
+    document.body.classList.toggle("ts1", st.ts===1);
+    document.body.classList.toggle("ts2", st.ts>=2);
+    document.body.classList.toggle("hc", !!st.hc);
+    if(hcb){ hcb.classList.toggle("on",!!st.hc); hcb.setAttribute("aria-pressed",st.hc?"true":"false"); }
+    try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){}
+  }
+  if(inc) inc.addEventListener("click",function(){ st.ts=Math.min(2,st.ts+1); apply(); });
+  if(dec) dec.addEventListener("click",function(){ st.ts=Math.max(0,st.ts-1); apply(); });
+  if(hcb) hcb.addEventListener("click",function(){ st.hc=!st.hc; apply(); });
+  apply();
+})();
+
+/* ===== SERVICE WORKER + GUARDAR OFFLINE ===== */
+(function(){
+  var btn=document.getElementById("offline-btn"), note=document.getElementById("offline-note");
+  if(!("serviceWorker" in navigator)){ if(note) note.textContent="Tu navegador no permite guardar sin internet."; if(btn) btn.style.display="none"; return; }
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+  if(!btn) return;
+  try{ if(localStorage.getItem("sn.offline")==="1"){ btn.textContent="✓ Disponible sin internet"; btn.disabled=true; } }catch(e){}
+  btn.addEventListener("click",function(){
+    if(location.protocol==="file:"){ if(note) note.textContent="Esto funciona en el link compartido (versión online), no abriendo el archivo local."; return; }
+    btn.disabled=true; btn.textContent="Descargando… 0%";
+    var urls=[];
+    try{ Object.keys(IMG).forEach(function(name){ imgList(name).forEach(function(u){ urls.push(rew(u,768)); urls.push(rew(u,1100)); }); }); }catch(e){}
+    ["index.html","itinerario-selva-negra.html","top3.html"].forEach(function(p){ urls.push(p); });
+    urls=urls.filter(function(u,i){ return urls.indexOf(u)===i; });
+    var done=0, total=urls.length, i=0;
+    function pump(){
+      if(i>=total) return;
+      var u=urls[i++], opt=/^https?:/.test(u)?{mode:"no-cors"}:{};
+      fetch(u,opt).catch(function(){}).then(function(){
+        done++;
+        if(done>=total){ btn.textContent="✓ Disponible sin internet"; if(note) note.textContent="Listo: ya podés abrir la guía sin gastar datos."; try{localStorage.setItem("sn.offline","1");}catch(e){} }
+        else { btn.textContent="Descargando… "+Math.round(done/total*100)+"%"; pump(); }
+      });
+    }
+    for(var k=0;k<6;k++) pump();
+  });
 })();
 </script>
 </body>

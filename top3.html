@@ -151,6 +151,7 @@ function cityHtml(c){
   return h;
 }
 document.getElementById("cont").innerHTML = CITIES.map(cityHtml).join("");
+if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js").catch(function(){}); }
 </script>
 </body>
 </html>
