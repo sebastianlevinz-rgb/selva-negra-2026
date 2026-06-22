@@ -65,7 +65,7 @@
   :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
   button{font-family:inherit}
   /* contención de pintado por card, sin reservar tamaño (evita saltos de scroll) */
-  .card{contain:layout paint style}
+  .card{contain:layout paint style;content-visibility:auto;contain-intrinsic-size:auto 520px}
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
@@ -100,7 +100,7 @@
   }
   nav.sticky ul{display:flex;gap:6px;list-style:none;margin:0;padding:8px 12px;white-space:nowrap}
   nav.sticky a{
-    display:inline-flex;align-items:center;min-height:40px;text-decoration:none;color:var(--ink);
+    display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--ink);
     padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600;
     background:var(--green-soft);transition:background var(--t),color var(--t);
   }
@@ -229,7 +229,7 @@
   .fbtn{
     border:1.5px solid var(--line);background:#fff;color:var(--ink);
     font-size:14px;font-weight:600;padding:8px 13px;border-radius:999px;cursor:pointer;
-    font-family:inherit;
+    font-family:inherit;min-height:44px;
   }
   .fbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
   .fcount{font-size:13px;color:var(--muted);margin-top:2px}
@@ -326,7 +326,7 @@
   body.ts3{zoom:1.45}
   body.hc{--ink:#0f0d09;--ink-soft:#1c1810;--muted:#3a352a;--line:#b5a787;--line-strong:#9c8a66;--green:#1d3c30;--paper:#fffdf7}
   .a11y{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:115;display:flex;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-lg);padding:5px}
-  .a11y button{border:none;background:var(--green-soft);color:var(--green);width:40px;height:40px;border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center}
+  .a11y button{border:none;background:var(--green-soft);color:var(--green);width:44px;height:44px;border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center}
   .a11y button.on{background:var(--green);color:#fff}
   .a11y button:active{transform:scale(.9)}
   .a11y .a11ylbl{font-size:12px;font-weight:800;color:var(--muted);align-self:center;padding:0 2px 0 8px;white-space:nowrap}
@@ -360,11 +360,15 @@
   .frasecard .tx{font-size:16px;font-weight:700;color:var(--ink)}
   .frasecard .ph{font-size:13px;color:var(--green);font-style:italic}
 
-  footer{background:#244c40;color:#cfe0d8;text-align:center;padding:24px 16px;margin-top:30px;font-size:13.5px}
+  footer{background:#244c40;color:#cfe0d8;text-align:center;padding:24px 16px 92px;margin-top:30px;font-size:13.5px}
   footer b{color:#fff}
 
   .note-inline{font-size:13.5px;color:var(--muted);font-style:italic;margin:8px 0}
-  .anchor{position:relative;top:-58px;visibility:hidden}
+  .anchor{visibility:hidden}
+  .kv{overflow-wrap:anywhere}
+  .carcount{position:absolute;top:9px;left:9px;z-index:4;background:rgba(31,32,25,.6);color:#fff;font:700 12px/1 var(--sans);padding:5px 9px;border-radius:999px;letter-spacing:.04em}
+  .toast{position:fixed;left:50%;bottom:calc(78px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(10px);z-index:130;background:var(--green);color:#fff;font-weight:700;font-size:14px;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:opacity var(--t),transform var(--t)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
@@ -581,6 +585,8 @@
   <button id="a11y-inc" type="button" aria-label="Agrandar el texto" title="Texto más grande">A+</button>
   <button id="a11y-hc" type="button" aria-pressed="false" aria-label="Alto contraste" title="Alto contraste">◐</button>
 </div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <button class="backtop" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
 
@@ -1041,9 +1047,10 @@ function mediaHtml(nombre){
   const arrows=multi?'<button class="carbtn carprev" type="button" aria-label="Foto anterior">‹</button><button class="carbtn carnext" type="button" aria-label="Foto siguiente">›</button>':'';
   const dots=multi?'<div class="cardots" aria-hidden="true">'+list.map(function(_,i){return '<i'+(i===0?' class="on"':'')+'></i>';}).join("")+'</div>':'';
   const vbtn=vid?'<button class="carvideo" type="button" data-yt="'+esc(vid)+'" aria-label="Ver video de '+esc(nombre)+'">▶ Video</button>':'';
+  const count=multi?'<div class="carcount" aria-hidden="true">1/'+list.length+'</div>':'';
   return '<div class="cardmedia'+(multi?' multi':'')+'">'
     +'<div class="cartrack">'+slides+'</div>'
-    +arrows+dots+vbtn
+    +arrows+dots+count+vbtn
     +'<span class="zoomhint" aria-hidden="true">⤢</span>'
     +'</div>';
 }
@@ -1225,14 +1232,15 @@ CONT.setAttribute("tabindex","-1");
 /* ===== CARRUSELES (puntos activos según scroll) ===== */
 function initCarousels(){
   document.querySelectorAll(".cardmedia.multi").forEach(function(cm){
-    var track=cm.querySelector(".cartrack"), dots=cm.querySelectorAll(".cardots i");
+    var track=cm.querySelector(".cartrack"), dots=cm.querySelectorAll(".cardots i"), cnt=cm.querySelector(".carcount");
     if(!track||!dots.length) return;
-    var ticking=false;
+    var total=dots.length, ticking=false;
     track.addEventListener("scroll",function(){
       if(ticking) return; ticking=true;
       requestAnimationFrame(function(){
         var i=Math.round(track.scrollLeft/track.clientWidth);
         dots.forEach(function(d,j){ d.classList.toggle("on",j===i); });
+        if(cnt) cnt.textContent=(i+1)+"/"+total;
         ticking=false;
       });
     },{passive:true});
@@ -1267,12 +1275,17 @@ function applyFilters(){
       +(fG&&shown===0?" Todavía no guardaste ninguno: tocá el corazón ♡ sobre las fotos.":"");
   }
 }
+function scrollToResults(){
+  if(fP==="all"&&fA==="all"&&!fG) return;
+  var cards=document.querySelectorAll(".card[data-acc]");
+  for(var i=0;i<cards.length;i++){ if(cards[i].style.display!=="none"){ cards[i].scrollIntoView({behavior:"smooth",block:"start"}); return; } }
+}
 function singleSelect(group, attr, setVal){
   document.getElementById(group).addEventListener("click",function(e){
     var btn=e.target.closest(".fbtn"); if(!btn||!this.contains(btn))return;
     setVal(btn.getAttribute(attr));
     this.querySelectorAll(".fbtn").forEach(function(b){ var on=b===btn; b.classList.toggle("active",on); b.setAttribute("aria-pressed",on?"true":"false"); });
-    applyFilters();
+    applyFilters(); scrollToResults();
   });
 }
 singleSelect("fp","data-p",function(v){fP=v;});
@@ -1280,17 +1293,22 @@ singleSelect("fa","data-a",function(v){fA=v;});
 document.getElementById("fg").addEventListener("click",function(e){
   var btn=e.target.closest(".fbtn"); if(!btn)return;
   fG=!fG; btn.classList.toggle("active",fG); btn.setAttribute("aria-pressed",fG?"true":"false");
-  applyFilters();
+  applyFilters(); scrollToResults();
 });
+
+/* ===== TOAST (feedback breve) ===== */
+var TOAST=document.getElementById("toast"), toastT=null;
+function showToast(msg){ if(!TOAST)return; TOAST.textContent=msg; TOAST.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(function(){ TOAST.classList.remove("show"); },1600); }
 
 /* ===== CLICKS EN EL CONTENIDO: favoritos + lightbox ===== */
 CONT.addEventListener("click",function(e){
   var fb=e.target.closest(".favbtn");
   if(fb){
-    var id=fb.getAttribute("data-fav");
-    if(FAV[id]) delete FAV[id]; else FAV[id]=1;
+    var id=fb.getAttribute("data-fav"), on;
+    if(FAV[id]){ delete FAV[id]; on=false; } else { FAV[id]=1; on=true; }
     saveFav();
-    document.querySelectorAll('.favbtn[data-fav="'+id+'"]').forEach(function(b){ b.setAttribute("aria-pressed",FAV[id]?"true":"false"); });
+    document.querySelectorAll('.favbtn[data-fav="'+id+'"]').forEach(function(b){ b.setAttribute("aria-pressed",on?"true":"false"); });
+    showToast(on?"Guardado ♥":"Quitado de guardados");
     if(fG) applyFilters();
     return;
   }
@@ -1343,7 +1361,7 @@ var VD=document.getElementById("vdialog"), VDi=document.getElementById("vdiframe
 function openVideo(id){
   if(!id||!VD) return;
   vdOpener=document.activeElement;
-  VDi.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0";
+  VDi.src="https://www.youtube-nocookie.com/embed/"+id+"?rel=0&playsinline=1";
   if(typeof VD.showModal==="function"){ try{ VD.showModal(); }catch(e){ VD.setAttribute("open",""); } }
   else VD.setAttribute("open","");
   var cl=VD.querySelector(".vdclose"); if(cl&&cl.focus) cl.focus();
@@ -1424,25 +1442,49 @@ if(VD){
   navigator.serviceWorker.register("sw.js").catch(function(){});
   if(!btn) return;
   try{ if(localStorage.getItem("sn.offline")==="1"){ btn.textContent="✓ Disponible sin internet"; btn.disabled=true; } }catch(e){}
+  function pickW(){ var dpr=window.devicePixelRatio||1, css=Math.min(window.innerWidth||375,760), need=css*dpr; return need<=520?480:(need<=860?768:1100); }
   btn.addEventListener("click",function(){
     if(location.protocol==="file:"){ if(note) note.textContent="Esto funciona en el link compartido (versión online), no abriendo el archivo local."; return; }
-    btn.disabled=true; btn.textContent="Descargando… 0%";
-    var urls=[];
-    try{ Object.keys(IMG).forEach(function(name){ imgList(name).forEach(function(u){ urls.push(rew(u,480)); urls.push(rew(u,768)); urls.push(rew(u,1100)); }); }); }catch(e){}
+    var W=pickW(), urls=[];
+    try{ Object.keys(IMG).forEach(function(name){ imgList(name).forEach(function(u){ urls.push(rew(u,W)); }); }); }catch(e){}
     ["index.html","itinerario-selva-negra.html","top3.html"].forEach(function(p){ urls.push(p); });
     urls=urls.filter(function(u,i){ return urls.indexOf(u)===i; });
-    var done=0, total=urls.length, i=0;
+    var estMB=Math.max(1,Math.round(urls.length*0.11));
+    var con=navigator.connection||{}, slow=!!con.saveData||/2g|3g/.test(con.effectiveType||"");
+    if(!window.confirm("Voy a descargar ~"+estMB+" MB de fotos para verlas sin internet. Conviene con wifi. ¿Seguir?")) return;
+    btn.disabled=true; btn.textContent="Descargando… 0%";
+    var done=0, fail=0, total=urls.length, i=0, CONC=slow?2:4;
+    function one(u){
+      var opt=/^https?:/.test(u)?{mode:"no-cors"}:{}, ac=("AbortController" in window)?new AbortController():null, to=null;
+      if(ac){ opt.signal=ac.signal; to=setTimeout(function(){ try{ac.abort();}catch(e){} },15000); }
+      return fetch(u,opt).then(function(){}, function(){ fail++; }).then(function(){ if(to) clearTimeout(to); });
+    }
     function pump(){
       if(i>=total) return;
-      var u=urls[i++], opt=/^https?:/.test(u)?{mode:"no-cors"}:{};
-      fetch(u,opt).catch(function(){}).then(function(){
+      var u=urls[i++];
+      one(u).then(function(){
         done++;
-        if(done>=total){ btn.textContent="✓ Disponible sin internet"; if(note) note.textContent="Listo: ya podés abrir la guía sin gastar datos."; try{localStorage.setItem("sn.offline","1");}catch(e){} }
-        else { btn.textContent="Descargando… "+Math.round(done/total*100)+"%"; pump(); }
+        btn.textContent="Descargando… "+Math.round(done/total*100)+"%";
+        if(done>=total){
+          if(fail===0){ btn.textContent="✓ Disponible sin internet"; if(note) note.textContent="Listo: ya podés abrir la guía sin gastar datos."; try{localStorage.setItem("sn.offline","1");}catch(e){} }
+          else { btn.disabled=false; btn.textContent="Reintentar descarga"; if(note) note.textContent="Se guardó casi todo, pero "+fail+" archivos fallaron (red). Probá de nuevo con mejor señal."; }
+        } else pump();
       });
     }
-    for(var k=0;k<6;k++) pump();
+    for(var k=0;k<CONC;k++) pump();
   });
+})();
+
+/* ===== RECORDAR POSICIÓN AL IR/VOLVER DEL TOP 3 ===== */
+(function(){
+  try{
+    document.addEventListener("click",function(e){
+      var a=e.target.closest&&e.target.closest('a[href^="top3"]');
+      if(a){ try{ sessionStorage.setItem("sn.gs", String(window.scrollY||window.pageYOffset||0)); }catch(x){} }
+    },true);
+    var gs=sessionStorage.getItem("sn.gs");
+    if(gs!==null){ sessionStorage.removeItem("sn.gs"); var y=parseInt(gs,10)||0; if(y>0) setTimeout(function(){ window.scrollTo(0,y); },60); }
+  }catch(e){}
 })();
 </script>
 </body>
