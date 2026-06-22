@@ -62,6 +62,14 @@
   .t3 a.guia{background:#fff;color:var(--green);border:1.5px solid var(--green);text-decoration:none;font-size:13.5px;font-weight:700;padding:7px 13px;border-radius:10px}
   .bonus{background:var(--green-soft);border-radius:12px;padding:11px 14px;margin:2px 0 18px;font-size:14.5px}
   .bonus b{color:var(--green)}
+  body.ts1{zoom:1.12}
+  body.ts2{zoom:1.28}
+  body.ts3{zoom:1.45}
+  body.hc{--ink:#0f0d09;--ink-soft:#1c1810;--muted:#3a352a;--line:#b5a787;--green:#1d3c30;--paper:#fffdf7}
+  .a11y{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:50;display:flex;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow);padding:5px}
+  .a11y .a11ylbl{font-size:12px;font-weight:800;color:var(--muted);align-self:center;padding:0 2px 0 8px;white-space:nowrap}
+  .a11y button{border:none;background:var(--green-soft);color:var(--green);width:40px;height:40px;border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center}
+  .a11y button.on{background:var(--green);color:#fff}
   footer{background:#244c40;color:#cfe0d8;text-align:center;padding:24px 16px;margin-top:24px;font-size:13.5px}
   footer a{color:#fff;font-weight:700}
 </style>
@@ -86,6 +94,13 @@
 </nav>
 
 <div class="wrap" id="cont"></div>
+
+<div class="a11y" role="group" aria-label="Accesibilidad: tamaño de texto y contraste">
+  <span class="a11ylbl" aria-hidden="true">Texto</span>
+  <button id="a11y-dec" type="button" aria-label="Achicar el texto" title="Texto más chico">A−</button>
+  <button id="a11y-inc" type="button" aria-label="Agrandar el texto" title="Texto más grande">A+</button>
+  <button id="a11y-hc" type="button" aria-pressed="false" aria-label="Alto contraste" title="Alto contraste">◐</button>
+</div>
 
 <footer>
   <div>Top 3 de <b>Selva Negra 2026</b> · <a href="itinerario-selva-negra.html">abrir la guía completa →</a></div>
@@ -152,6 +167,23 @@ function cityHtml(c){
 }
 document.getElementById("cont").innerHTML = CITIES.map(cityHtml).join("");
 if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js").catch(function(){}); }
+(function(){
+  var KEY="sn.a11y", st={ts:0,hc:false};
+  try{ st=Object.assign(st, JSON.parse(localStorage.getItem(KEY)||"{}")); }catch(e){}
+  var inc=document.getElementById("a11y-inc"), dec=document.getElementById("a11y-dec"), hcb=document.getElementById("a11y-hc");
+  function apply(){
+    document.body.classList.toggle("ts1", st.ts===1);
+    document.body.classList.toggle("ts2", st.ts===2);
+    document.body.classList.toggle("ts3", st.ts>=3);
+    document.body.classList.toggle("hc", !!st.hc);
+    if(hcb){ hcb.classList.toggle("on",!!st.hc); hcb.setAttribute("aria-pressed",st.hc?"true":"false"); }
+    try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){}
+  }
+  if(inc) inc.addEventListener("click",function(){ st.ts=Math.min(3,st.ts+1); apply(); });
+  if(dec) dec.addEventListener("click",function(){ st.ts=Math.max(0,st.ts-1); apply(); });
+  if(hcb) hcb.addEventListener("click",function(){ st.hc=!st.hc; apply(); });
+  apply();
+})();
 </script>
 </body>
 </html>
